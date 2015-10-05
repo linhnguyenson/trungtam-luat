@@ -1,0 +1,8 @@
+[29-Jun-2015 13:36:40 UTC] PHP Fatal error:  Class 'DrawAttention_Pro' not found in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/plugins/draw-attention-pro/public/class-drawattention.php on line 113
+[29-Jun-2015 14:17:19 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 108
+[29-Jun-2015 14:17:26 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 108
+[29-Jun-2015 14:17:27 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 108
+[14-Aug-2015 07:13:09 UTC] PHP Parse error:  syntax error, unexpected '<' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 227
+[28-Sep-2015 08:24:04 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 182
+[28-Sep-2015 08:24:05 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 182
+[28-Sep-2015 08:24:06 UTC] PHP Parse error:  syntax error, unexpected '}' in /home3/mosaweb/public_html/demosite10.com/virtualhome/wp-content/themes/VH-theme/includes/shortcode.php on line 182
