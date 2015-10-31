@@ -56,7 +56,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .alignleft { display: inline; float: left; margin-right: 1.5em; }
 .alignright { display: inline; float: right; margin-left: 1.5em; }
 .aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
-
+.img-full{width: 100%;}
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -187,12 +187,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 
 .inside-full-height {height: 100%;}/*ie not working, js fixed*/
+.row-expand{margin-left: -10px; margin-right: -10px;}
 .row-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
 .col-height { display: table-cell; float: none; height: 100%; }
 .col-top { vertical-align: top; }
 .col-middle { vertical-align: middle; }
 .col-bottom { vertical-align: bottom; }
 @media (min-width:480px) {
+	.row-xs-expand{margin-left: -10px; margin-right: -10px;}
 	.row-xs-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
 	.col-xs-height { display: table-cell; float: none; height: 100%; }
 	.col-xs-top { vertical-align: top; }
@@ -200,6 +202,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.col-xs-bottom { vertical-align: bottom; }
 }
 @media (min-width:768px) {
+	.row-sm-expand{margin-left: -10px; margin-right: -10px;}
 	.row-sm-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
 	.col-sm-height { display: table-cell; float: none; height: 100%; }
 	.col-sm-top { vertical-align: top; }
@@ -207,6 +210,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.col-sm-bottom { vertical-align: bottom; }
 }
 @media (min-width:992px) {
+	.row-md-expand{margin-left: -10px; margin-right: -10px;}
 	.row-md-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
 	.col-md-height { display: table-cell; float: none; height: 100%; }
 	.col-md-top { vertical-align: top; }
@@ -214,6 +218,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	.col-md-bottom { vertical-align: bottom; }
 }
 @media (min-width:1200px) {
+	.row-lg-expand{margin-left: -10px; margin-right: -10px;}
 	.row-lg-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
 	.col-lg-height { display: table-cell; float: none; height: 100%; }
 	.col-lg-top { vertical-align: top; }
@@ -272,6 +277,18 @@ body{background-color: #ecf0f1;}
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+## Slider
+--------------------------------------------------------------*/
+.carousel{padding: 10px;}
+.carousel .item-inner{background-size: cover;}
+.carousel-indicators{width: 50%; margin-left: 0; margin-bottom: 0; padding-right: 40px; text-align: right;}
+.carousel-indicators li{border: none; background-color: rgba(226,226,226,0.75);}
+.carousel-indicators .active{background-color: #528c1b;}
+.carousel-caption{left: 20px;  text-align: left; padding: 0; text-shadow: none; max-width: 420px; bottom: 30px;}
+.carousel-caption .caption-title{background-color: rgba(25,181,254,0.75); border-bottom: 2px solid rgba(226,226,226,0.75); padding: 10px 18px;}
+.carousel-caption .caption-title h2{font-size: 16px; text-transform: uppercase; margin: 0;}
+.carousel-caption .caption-des{background-color: rgba(44,62,80,0.75); padding: 15px 18px;}
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 
@@ -302,6 +319,9 @@ body{background-color: #ecf0f1;}
 	.main-navigation{position: relative;}
 	.main-navigation .menu-toggle{position: absolute; left: 50%; margin-left: -18px; margin-top: -42px;}
 	.main-navigation a{font-weight: normal; text-transform: capitalize; padding: 5px 10px;}
+
+	/*Slider*/
+	.carousel-caption{position: static; max-width: 100%; background-color: #000;}
 
 }/* end xs devices (mobiles, 767px and down) */
 

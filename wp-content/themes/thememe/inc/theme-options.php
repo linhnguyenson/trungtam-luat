@@ -49,6 +49,10 @@ function custom_theme_options() {
        array(
         'id'          => 'general',
         'title'       => __( 'General', 'thememe' )
+      ),
+        array(
+        'id'          => 'home',
+        'title'       => __( 'Home', 'thememe' )
       )
     ),
     'settings'        => array(
@@ -98,7 +102,29 @@ function custom_theme_options() {
             'type'        => 'upload',
           )
         )
-      )
+      ),
+
+      //Home
+      array(
+        'id'          => 'home_slider',
+        'label'       => __( 'Slider', 'thememe' ),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'home',
+        'settings'    => array( 
+          array(
+            'id'          => 'slider_des',
+            'label'       => __( 'Description', 'thememe' ),
+            'type'        => 'textarea',
+          ),
+          array(
+            'id'          => 'slider_img',
+            'label'       => __( 'Image', 'thememe' ),
+            'type'        => 'upload',
+          )
+        )
+      ),
       
 
       //end options
