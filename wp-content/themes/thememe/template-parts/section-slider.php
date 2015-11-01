@@ -4,7 +4,7 @@ $slider_data = ot_get_option( 'home_slider' );
 	
 if(!empty($slider_data)){ ?>
 
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+	<div id="carousel-slider" class="carousel slide" data-ride="carousel">
 		
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
@@ -31,7 +31,7 @@ if(!empty($slider_data)){ ?>
 			<!-- Indicators -->
 			<ol class="carousel-indicators">
 				<?php for ($j=0; $j < $i; $j++) { ?>
-					<li data-target="#carousel-example-generic" data-slide-to="<?php echo $j; ?>" <?php echo $j==0?'class="active"':''; ?>></li>
+					<li data-target="#carousel-slider" data-slide-to="<?php echo $j; ?>" <?php echo $j==0?'class="active"':''; ?>></li>
 				<?php }?> 
 			    
 			</ol>

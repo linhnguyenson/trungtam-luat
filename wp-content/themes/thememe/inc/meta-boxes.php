@@ -20,7 +20,7 @@ function _custom_meta_boxes() {
 
       'id'          => 'Reviews_settings',
 
-      'title'       => 'Review Settings',
+      'title'       => __('Review Settings', 'thememe' ),
 
       'pages' => array('reviews'),
 
@@ -31,11 +31,29 @@ function _custom_meta_boxes() {
       'fields'      => array(
 
         array(
-          'id'          => 'reviews_rate',
-          'label'       => __( 'Rated', 'nopoopstain' ),
-          'type'        => 'numeric-slider',
-          'section'     => 'your_section',
-          'min_max_step'=> '1,5,1',
+          'id'          => 'reviews_email',
+          'label'       => __( 'Email', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'reviews_fb',
+          'label'       => __( 'Facebook', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'reviews_linkedin',
+          'label'       => __( 'Linkedin', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'reviews_google_plus',
+          'label'       => __( 'Google +', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'reviews_youtube',
+          'label'       => __( 'Youtube', 'thememe' ),
+          'type'        => 'text',
         )
 
       )

@@ -70,28 +70,51 @@ function thememe_comment($comment, $args, $depth) {
 }
 
 function breadcrumbs() {
-	echo '<a href="';
+
+	echo '<ol class="breadcrumb">';
+	echo '<li><a href="';
 	echo esc_url( home_url( '/' ) );
 	echo '">';
 	_e('home','thememe');
-	echo "</a>";
-		if (is_category() || is_single()) {
-			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+	echo "</a></li>";
+		if (is_category()) {
+			echo '<li>';
 			the_category(' &bull; ');
-				if (is_single()) {
-					echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-					the_title();
-				}
+			echo '</li>';
+
+		}elseif (is_single()) {
+			$post_type=get_post_type( get_the_ID() );
+			if($post_type!='post'){
+				
+				echo '<li><a href="'.get_post_type_archive_link( $post_type ).'">'.$post_type.'</a></li>';
+				
+			}else{
+				echo '<li>';
+				the_category(' &bull; ');
+				echo '</li>';
+			}
+			echo '<li class="active">';
+			the_title();
+			echo '</li>';
         } elseif (is_page()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+            echo '<li class="active">';
             echo the_title();
-		} elseif (is_search()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+            echo '</li>';
+		}elseif (is_home()) {
+			echo '<li class="active">';
+            echo 'News & Events';
+            echo '</li>';
+		}
+		 elseif (is_search()) {
+            echo '<li class="active">Search Results for... ';
 			echo '"<em>';
 			echo the_search_query();
 			echo '</em>"';
+			echo '</li>';
         } elseif (is_date()) {
-        	echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        	echo '<li class="active">';
         	the_archive_title();
+        	echo '</li>';
         }
-    }
+     echo "</ol>";
+}

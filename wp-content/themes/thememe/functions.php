@@ -118,6 +118,10 @@ function thememe_scripts() {
 
 	wp_enqueue_style( 'thememe-css-font-awesome', get_template_directory_uri() . '/skins/font-awesome/css/font-awesome.min.css','4.4.0', false );
 
+	wp_enqueue_style( 'thememe-css-font-serif', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic','', false );
+
+	wp_enqueue_style( 'thememe-css-font-san-serif', '','https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,300,300italic,800,800italic', false );
+
 	wp_enqueue_style( 'thememe-css-bootstrap', get_template_directory_uri() . '/skins/css/bootstrap.min.css','3.3.5', false );
 
 	wp_enqueue_style( 'thememe-style', get_stylesheet_uri() );
