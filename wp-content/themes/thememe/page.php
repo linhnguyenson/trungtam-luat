@@ -17,7 +17,9 @@ get_header(); ?>
 	<div class="col-md-9">	
 		<div id="primary" class="content-area box-content">
 			<main id="main" class="site-main box-content-body" role="main">
-
+				<header class="page-header">
+					<?php if (function_exists('breadcrumbs')) breadcrumbs(); ?>
+				</header><!-- .page-header -->
 				<?php while ( have_posts() ) : the_post(); ?>
 
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
