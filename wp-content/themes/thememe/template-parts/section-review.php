@@ -90,7 +90,6 @@
 		</div>
 	</div>
 </div>
-<!--This script is for the indicator outside the carousel main div-->
 <script type="text/javascript">
 	jQuery(function($) {
 		$('#carousel-review').on('slide.bs.carousel', function () {
