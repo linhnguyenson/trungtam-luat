@@ -34,11 +34,10 @@ get_header(); ?>
 		<div class="row row-sm-height">
 			<div class="col-sm-9 col-sm-height col-sm-top">
 				<div class="inside-full-height box-content">
+					<?php echo do_shortcode("[catbox slug=dao-tao-ngan-han /]");?>
 				</div>
 			</div>
 			<div class="col-sm-3 col-sm-height col-sm-top">
-				
-
 				<?php echo get_template_part( 'template-parts/section', 'review' ); ?>
 				
 			</div>
