@@ -32,10 +32,11 @@ get_header(); ?>
 <section id="section-3">
 	<div class="row-sm-expand">
 		<div class="row row-sm-height">
-			<div class="col-sm-9 col-sm-height col-sm-top">
-				<div class="inside-full-height box-content">
-					<?php echo do_shortcode("[catbox slug=dao-tao-ngan-han /]");?>
-				</div>
+			<div class="col-sm-hafl-9 col-sm-height col-sm-top">
+				<?php echo do_shortcode("[catbox slug=dao-tao-ngan-han /]");?>
+			</div>
+			<div class="col-sm-hafl-9 col-sm-height col-sm-top">
+				<?php echo do_shortcode("[catbox slug=chuong-tinh-dao-tao /]");?>
 			</div>
 			<div class="col-sm-3 col-sm-height col-sm-top">
 				<?php echo get_template_part( 'template-parts/section', 'review' ); ?>
@@ -44,20 +45,6 @@ get_header(); ?>
 		</div>
 	</div>	
 </section>
-<section id="section-3">
-	<div class="row-sm-expand">
-		<div class="row row-sm-height">
-			<div class="col-sm-9 col-sm-height col-sm-top">
-				<div class="inside-full-height box-content">
-					<?php echo do_shortcode("[catbox slug=chuong-tinh-dao-tao /]");?>
-				</div>
-			</div>
-			<div class="col-sm-3 col-sm-height col-sm-top">
-				
-				
-			</div>
-		</div>
-	</div>	
-</section>
+
 
 <?php get_footer(); ?>

@@ -210,16 +210,14 @@ function category_box_func($atts, $content="") {
 	$category_link = get_category_link( $cat->cat_ID );
 	$shortcode = "<div class='inside-full-height box-content box-content-has-footer'>
 					<div class='box-content-header'><h2 class='widget-title heading-title'>$cat->cat_name</h2></div>
-							<div class='box-content-body'>
-								[catlist name=$slug date=yes dateformat='(d-m-Y h:i A)' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=div excerpt_class=excerpt excerpt_size=25 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' /]
-								[catlist name=$slug offset=1 date=yes dateformat=(d-m-Y) date_tag=span date_class=post-date /]
-							</div>
-					<div class='content-footer'>
-						<div class='row'>
-							<div class='col-xs-6 text-right'>
-								<a href='$category_link' class='readmore'><span><i class='fa fa-bars'></i></span> Xem tất cả</a>
-							</div>
-						</div>
+					<div class='box-content-body cat-group'>
+						[catlist name=$slug date=yes dateformat='-d/m/Y h:i A' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=p excerpt_class=excerpt excerpt_size=15 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' /]
+						[catlist name=$slug offset=1 date=yes dateformat=-d/m/Y date_tag=span date_class=post-date /]
+					</div>
+					<div class='content-footer text-right'>
+					
+						<a href='$category_link' class='readmore'><span><i class='fa fa-bars'></i></span> Xem tất cả</a>
+							
 					</div>
 				</div>";
 	return do_shortcode($shortcode);

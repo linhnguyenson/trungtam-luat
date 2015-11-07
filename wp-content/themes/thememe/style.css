@@ -47,11 +47,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 body,
 .more-link{font-family: 'Open Sans', sans-serif;}
-p{font-family: 'Noto Serif', serif;}
+p, .cat-group .lcp_catlist .post-date{font-family: 'Noto Serif', serif;}
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .text-brand-primary { color: #41218e; }
-.fa{font-size: 15px;}
+
 
 /*--------------------------------------------------------------
 # Helper Class
@@ -85,9 +85,9 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .box-content .box-content-header .heading-title{margin: 0; color: #fff; font-size: 16px; text-transform: uppercase;}
 
 .box-content .box-content-body{padding: 10px 15px;}
-.box-content .box-content-body > ul{padding-left: 28px;}
 
-.box-content.box-content-has-footer{padding-bottom: 42px;}
+
+.box-content.box-content-has-footer .box-content-body{padding-bottom: 42px;}
 .box-content.box-content-has-footer .content-footer{position: absolute; height: 42px; bottom: 0; left: 0; right: 0; padding: 10px 15px; border-top: 1px solid #f2f1ef;}
 
 .box-content.box-content-center{text-align: center;}
@@ -206,6 +206,9 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .grid-gutter-10 .col-sm-12,
 .grid-gutter-10 .col-md-12,
 .grid-gutter-10 .col-lg-12 { padding-left: 5px; padding-right: 5px; }
+@media (min-width:768px) {
+	.col-sm-hafl-9{width: 37.5%; padding-left: 10px; padding-right: 10px;}
+}
 
 /*--------------------------------------------------------------
 ## Height equals
@@ -213,14 +216,14 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 
 .inside-full-height {height: 100%;}/*ie not working, js fixed*/
 .row-expand{margin-left: -10px; margin-right: -10px;}
-.row-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
+.row-height {display: table; table-layout: fixed; height: 100%; width: 100%; margin-left: 0; margin-right: 0;}
 .col-height { display: table-cell; float: none; height: 100%; }
 .col-top { vertical-align: top; }
 .col-middle { vertical-align: middle; }
 .col-bottom { vertical-align: bottom; }
 @media (min-width:480px) {
 	.row-xs-expand{margin-left: -10px; margin-right: -10px;}
-	.row-xs-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
+	.row-xs-height { display: table; table-layout: fixed; height: 100%; width: 100%;  margin-left: 0; margin-right: 0;}
 	.col-xs-height { display: table-cell; float: none; height: 100%; }
 	.col-xs-top { vertical-align: top; }
 	.col-xs-middle { vertical-align: middle; }
@@ -228,7 +231,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 }
 @media (min-width:768px) {
 	.row-sm-expand{margin-left: -10px; margin-right: -10px;}
-	.row-sm-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
+	.row-sm-height { display: table; table-layout: fixed; height: 100%; width: 100%;  margin-left: 0; margin-right: 0;}
 	.col-sm-height { display: table-cell; float: none; height: 100%; }
 	.col-sm-top { vertical-align: top; }
 	.col-sm-middle { vertical-align: middle; }
@@ -236,7 +239,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 }
 @media (min-width:992px) {
 	.row-md-expand{margin-left: -10px; margin-right: -10px;}
-	.row-md-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
+	.row-md-height { display: table; table-layout: fixed; height: 100%; width: 100%;  margin-left: 0; margin-right: 0;}
 	.col-md-height { display: table-cell; float: none; height: 100%; }
 	.col-md-top { vertical-align: top; }
 	.col-md-middle { vertical-align: middle; }
@@ -244,12 +247,14 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 }
 @media (min-width:1200px) {
 	.row-lg-expand{margin-left: -10px; margin-right: -10px;}
-	.row-lg-height { display: table; table-layout: fixed; height: 100%; width: 100%; }
+	.row-lg-height { display: table; table-layout: fixed; height: 100%; width: 100%;  margin-left: 0; margin-right: 0;}
 	.col-lg-height { display: table-cell; float: none; height: 100%; }
 	.col-lg-top { vertical-align: top; }
 	.col-lg-middle { vertical-align: middle; }
 	.col-lg-bottom { vertical-align: bottom; }
 }
+
+
 
 
 /*--------------------------------------------------------------
@@ -383,6 +388,18 @@ body{background-color: #ecf0f1; color: #333;}
 table{width: 100% !important; margin-bottom: 20px;}
 table td{padding: 5px;}
 table ul{padding-left: 20px;}
+
+
+.cat-group .lcp_catlist{padding-left: 0; list-style: none; clear: both; overflow: hidden;}
+.cat-group .lcp_catlist .post-date{color: #999; font-style: italic; font-size: 12px; display: block; margin: 5px 0 10px;}
+.cat-group .lcp_catlist .excerpt{font-size: 13px;}
+.cat-group .lcp_catlist:first-child li{padding-left: 130px; position: relative;}
+.cat-group .lcp_catlist:first-child li img{position: absolute; width: 120px; height: auto; left: 0; top: 0;}
+.cat-group .lcp_catlist:first-child li .featured_title{font-size: 16px; font-weight: 700; display: block;}
+.cat-group .lcp_catlist:last-child li{position: relative; padding-left: 10px;}
+.cat-group .lcp_catlist:last-child li:before{position: absolute; content: "\f04b"; font-family: 'FontAwesome'; color: #999; left: 0; top: 5px;}
+
+.cat-group .lcp_catlist:last-child a{display: block; font-weight: 700;}
 
 
 /*--------------------------------------------------------------
