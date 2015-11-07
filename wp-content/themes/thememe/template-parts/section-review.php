@@ -90,3 +90,18 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	jQuery(function($) {
+		$('#carousel-review').on('slide.bs.carousel', function () {
+			$holder = $( ".carouse-clone ol li.active" );
+			$holder.next( "li" ).addClass("active");
+			if($holder.is(':last-child'))
+			{
+				$holder.removeClass("active");
+				$(".carouse-clone ol li:first").addClass("active");
+			}
+			$holder.removeClass("active");
+		});
+	});
+</script>
