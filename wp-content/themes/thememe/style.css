@@ -51,6 +51,7 @@ p{font-family: 'Noto Serif', serif;}
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .text-brand-primary { color: #41218e; }
+.fa{font-size: 15px;}
 
 /*--------------------------------------------------------------
 # Helper Class
@@ -328,9 +329,9 @@ body{background-color: #ecf0f1; color: #333;}
 .page-header a{color: #888;}
 .breadcrumb{margin-bottom: 0; background-color: transparent; padding: 0;}
 .breadcrumb>li+li:before{content: "\f105"; font-family: "FontAwesome"; font-weight: normal; font-size: 16px; position: relative; bottom: -1px;}
-.entry-title{font-size: 26px; font-weight: 700; margin-top: 0;}
+.entry-title{font-weight: 700; margin-top: 0; text-transform: uppercase;}
 
-.entry-meta{color: #999; padding: 10px 0 12px; border-top: 1px solid #efefef; border-bottom: 1px solid #efefef; font-size: 11px; text-transform: uppercase; color: #888; margin-top: 20px;}
+.entry-meta{color: #999; padding: 10px 0 12px; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1); font-size: 11px; text-transform: uppercase; color: #888; margin-top: 20px;}
 .entry-meta i{font-size: 16px; position: relative; bottom: -1px;}
 .entry-meta > span{display: inline-block; margin-right: 10px;}
 .cat-links ul{list-style: none; margin: 0; padding: 0;}
@@ -338,7 +339,8 @@ body{background-color: #ecf0f1; color: #333;}
 .cat-links a{color: #fff; padding: 2px 8px; border-radius: 2px; background-color: #19B5FE; margin-right: 5px; font-size: 10px;}
 .cat-links a:hover{background-color: #2C3E50; text-decoration: none;}
 
-.tags-links{font-size: 11px; text-transform: uppercase;}
+.entry-footer{padding-top: 20px;}
+.tags-links{font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 10px; }
 .tags-links >*{display: inline-block; padding: 4px 15px; margin-right: 10px;}
 .tags-links span{background-color: #2C3E50; color: #fff;}
 .tags-links a{text-decoration: none; background-color: #aaa; color: #fff;}
@@ -352,8 +354,32 @@ body{background-color: #ecf0f1; color: #333;}
 .entry-content{margin-top: 20px;}
 
 .posts > article{margin-bottom: 30px;}
+.wp-post-image{margin-bottom: 20px;}
 
+.post-nav{
+	border-top: 2px solid #2C3E50;
+	margin-left: -25px;
+	margin-right: -25px;
+	padding: 20px 25px; margin-top: 20px; margin-bottom: 20px; 
+    overflow: hidden;
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+}
+.post-nav h4{text-transform: uppercase; font-size: 13px;}
+.nav-label{color: #888; font-size: 12px;}
+.nav-label span{display: inline-block; margin: 0 8px;}
 
+.related-posts{padding: 0 25px 20px;
+	margin-left: -25px;
+	margin-right: -25px;
+	overflow: hidden;
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+}
+.related-posts h3{text-transform: uppercase; margin-bottom: 20px; font-size: 18px;}
+
+.post-block h4{text-transform: uppercase; font-size: 13px;}
+.post-block .meta{color: #888; font-size: 11px; text-transform: uppercase;}
 table{width: 100% !important; margin-bottom: 20px;}
 table td{padding: 5px;}
 table ul{padding-left: 20px;}
@@ -362,11 +388,11 @@ table ul{padding-left: 20px;}
 /*--------------------------------------------------------------
 ## Comment
 --------------------------------------------------------------*/
-.comments-area{margin-top: 20px; border-top: 2px solid #2C3E50;}
-.comments-title, .comment-reply-title{font-size: 16px;}
+.comments-area{margin-top: 20px;}
+.comments-title, .comment-reply-title{font-size: 18px; text-transform: uppercase;}
 .comment-list{padding-left: 0; list-style: none;}
 .comment-list .children{padding-left: 0; list-style: none;}
-.comment{position: relative; border-top: 1px dashed #efefef; margin-top: 20px; padding-top: 20px;}
+.comment{position: relative; border-top: 1px dashed rgba(0, 0, 0, 0.1); margin-top: 20px; padding-top: 20px;}
 .comment-list > .comment:first-child{border-top: none;}
 .comment-list .children .comment{padding-left: 74px;}
 .comment-meta > a{color: #999;}
@@ -391,6 +417,9 @@ table ul{padding-left: 20px;}
 	.site-top .search-form{width: 240px; max-width: 100%; float: right;}
 	.main-navigation #primary-menu-right > li:last-child > a{padding-right: 0;}
 	.main-navigation #primary-menu-left > li:first-child > a{padding-left: 0;}
+
+	/*post*/
+	.post-nav .nav-next{text-align: right; border-left: 1px solid rgba(0, 0, 0, 0.1);}
 }
 /* end Small devices (tablets, 768px and up) */
 

@@ -41,6 +41,9 @@ function thememe_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'thumb-full', 750, 375, true );
+	add_image_size( 'thumb-post', 150, 100, true );
+	add_image_size( 'thumb-blog', 284, 192, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
