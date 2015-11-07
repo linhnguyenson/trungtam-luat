@@ -125,7 +125,30 @@ function custom_theme_options() {
           )
         )
       ),
-      
+      array(
+        'id'          => 'home_cat_1',
+        'label'       => __( 'Section 1: Category', 'thememe' ),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'category-select',
+        'section'     => 'home',  
+      ),
+      array(
+        'id'          => 'home_cat_2',
+        'label'       => __( 'Section 2: Category 1', 'thememe' ),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'category-select',
+        'section'     => 'home',  
+      ),
+      array(
+        'id'          => 'home_cat_3',
+        'label'       => __( 'Section 2: Category 2', 'thememe' ),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'category-select',
+        'section'     => 'home',  
+      ),
 
       //end options
     )
