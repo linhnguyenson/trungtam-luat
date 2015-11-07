@@ -17,8 +17,10 @@
 			<?php thememe_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-
+	<?php echo do_shortcode('[ssba]' );?>
 	<div class="entry-content">
+
+		<?php the_post_thumbnail('thumb-full');?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -30,6 +32,7 @@
 
 	<footer class="entry-footer">
 		<?php thememe_entry_footer(); ?>
+		<?php echo do_shortcode('[ssba]' );?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 

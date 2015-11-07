@@ -74,8 +74,8 @@ function breadcrumbs() {
 	echo '<ol class="breadcrumb">';
 	echo '<li><a href="';
 	echo esc_url( home_url( '/' ) );
-	echo '">';
-	_e('home','thememe');
+	echo '"><i class="fa fa-home"></i> ';
+	_e('Home','thememe');
 	echo "</a></li>";
 		if (is_category()) {
 			echo '<li>';
