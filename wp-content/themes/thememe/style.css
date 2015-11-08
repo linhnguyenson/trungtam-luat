@@ -424,10 +424,12 @@ table ul{padding-left: 20px;}
 .list-post li span.post-date{color: #999; font-style: italic; font-size: 11px; display: block; margin: 5px 0 10px;}
 
 
-.review .review-thumb{width: 130px; height: 130px; border-radius: 50%; margin: 0 auto;}
+.review .review-thumb{width: 130px; height: 130px; border-radius: 50%; margin: 0 auto; background-position: center; background-size: cover;}
 .review .review-body .title{font-size: 16px; color: #333;}
 .review .review-body .entry{color: #999; padding: 10px 10px 0; position: relative;}
 .review .review-body .entry:before{content: "\f10d"; font-family: 'FontAwesome'; position: absolute; font-size: 20px; color: #eee; top: -10px; left: 0}
+.page-template-page-reviews .review{margin: 10px 0;}
+
 /*--------------------------------------------------------------
 ## Comment
 --------------------------------------------------------------*/
