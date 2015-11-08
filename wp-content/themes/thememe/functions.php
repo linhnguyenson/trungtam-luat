@@ -134,7 +134,7 @@ function thememe_scripts() {
 	wp_enqueue_script( 'thememe-navigation', get_template_directory_uri() . '/skins/js/navigation.js', array(), '20120206', true );
 
 
-	wp_enqueue_script( 'thememe-js-customizer', get_template_directory_uri() . '/skins/js/customizer.js', array('jquery'), '1.0', true );
+	wp_enqueue_script( 'thememe-js-customizer', get_template_directory_uri() . '/skins/js/customizer.js', array('jquery','thememe-js-bootstrap'), '1.0', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -211,8 +211,8 @@ function category_box_func($atts, $content="") {
 	$shortcode = "<div class='inside-full-height box-content box-content-has-footer'>
 					<div class='box-content-header'><h2 class='widget-title heading-title'>$cat->cat_name</h2></div>
 					<div class='box-content-body cat-group'>
-						[catlist name=$slug date=yes dateformat='-d/m/Y h:i A' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=p excerpt_class=excerpt excerpt_size=15 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' /]
-						[catlist name=$slug offset=1 date=yes dateformat=-d/m/Y date_tag=span date_class=post-date /]
+						[catlist name=$slug date=yes dateformat='d/m/Y h:i A' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=p excerpt_class=excerpt excerpt_size=15 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' /]
+						[catlist name=$slug offset=1 date=yes dateformat=d/m/Y date_tag=span date_class=post-date numberposts=4 /]
 					</div>
 					<div class='content-footer text-right'>
 					

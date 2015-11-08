@@ -26,7 +26,7 @@
 						$contact_google_plus = get_post_meta( get_the_ID(), 'reviews_google_plus', true );
 						$contact_youtube = get_post_meta( get_the_ID(), 'reviews_youtube', true );
 						?>
-						<div class="item <?php echo $i==0?' active':''; ?>">
+						<div class="item review <?php echo $i==0?' active':''; ?>">
 							<div class="item-inner review-thumb" style="background-image:url('<?php echo $url; ?>')">
 								<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130"></a>						
 							</div>

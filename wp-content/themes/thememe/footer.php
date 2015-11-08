@@ -24,5 +24,10 @@
 
 <?php wp_footer(); ?>
 
+<script type="text/javascript">
+	jQuery(function($) {
+		$('[data-toggle="tooltip"]').tooltip({htmt:true});
+	});
+</script>	
 </body>
 </html>

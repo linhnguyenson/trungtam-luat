@@ -84,8 +84,8 @@ function custom_theme_options() {
       ),
 
       array(
-        'id'          => 'socials',
-        'label'       => 'Socials',
+        'id'          => 'ads',
+        'label'       => __('Link - Ads','thememe'),
         'desc'        => '',
         'std'         => '',
         'type'        => 'list-item',
@@ -97,10 +97,15 @@ function custom_theme_options() {
             'type'        => 'text',
           ),
           array(
-            'id'          => 'icon',
-            'label'       => 'Icon',
+            'id'          => 'ads_image',
+            'label'       => __('Image','thememe'),
             'type'        => 'upload',
-          )
+          ),
+          array(
+            'id'          => 'embed_code',
+            'label'       => __('or Embed Code','thememe'),
+            'type'        => 'textarea',
+          ),
         )
       ),
 
@@ -144,6 +149,14 @@ function custom_theme_options() {
       array(
         'id'          => 'home_cat_3',
         'label'       => __( 'Section 2: Category 2', 'thememe' ),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'category-select',
+        'section'     => 'home',  
+      ),
+      array(
+        'id'          => 'home_cat_4',
+        'label'       => __( 'Section 3: Category 1', 'thememe' ),
         'desc'        => '',
         'std'         => '',
         'type'        => 'category-select',
