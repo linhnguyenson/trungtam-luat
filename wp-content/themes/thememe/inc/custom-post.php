@@ -83,3 +83,51 @@ function jss_display_post_thumbnail_column($col, $id){
       break;
   }
 }
+
+
+
+//----------------------------------------------
+//----------register and label calendar post type
+//----------------------------------------------
+$calendar_labels = array(
+    'name' => _x('Calendar', 'post type general name'),
+    'singular_name' => _x('Calendar', 'post type singular name'),
+    'add_new' => _x('Add New', 'calendar'),
+    'add_new_item' => __("Add New Calendar"),
+    'edit_item' => __("Edit Calendar"),
+    'new_item' => __("New Calendar"),
+    'view_item' => __("View Calendar"),
+    'search_items' => __("Search Calendar"),
+    'not_found' =>  __('No galleries found'),
+    'not_found_in_trash' => __('No galleries found in Trash'),
+    'parent_item_colon' => ''
+        
+);
+$calendar_args = array(
+    'labels' => $calendar_labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => true,
+    'hierarchical' => false,
+    'menu_position' => null,
+    'capability_type' => 'post',
+    'supports' => array('title', 'editor', 'thumbnail'),
+    'menu_icon' => 'dashicons-calendar'
+);
+register_post_type('calendar', $calendar_args);
+
+add_action( 'init', 'jss_create_calendar_taxonomies', 0);
+ 
+function jss_create_calendar_taxonomies(){
+    register_taxonomy(
+        'calendartype', 'calendar',
+        array(
+            'hierarchical'=> true,
+            'label' => 'Calendar Types',
+            'singular_label' => 'Calendar Type',
+            'rewrite' => true
+        )
+    );    
+}

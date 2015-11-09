@@ -11,7 +11,7 @@ if ( ! function_exists( 'thememe_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function thememe_posted_on() {
+function thememe_posted_on($before='',$after='') {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -24,6 +24,11 @@ function thememe_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 	/* translators: used between list items, there is a space after the comma */
+	if ( $before){
+		printf( '<span class="meta-before">' . esc_html__( '%1$s', 'thememe' ) . '</span>', $before );
+	}
+	
+
 	$categories_list = get_the_category_list( esc_html__( '', 'thememe' ) );
 	if ( $categories_list && thememe_categorized_blog() ) {
 		printf( '<span class="cat-links">' . esc_html__( '%1$s', 'thememe' ) . '</span>', $categories_list ); // WPCS: XSS OK.
@@ -46,6 +51,9 @@ function thememe_posted_on() {
 		echo '<span class="comments-link"><i class="fa fa-comment"></i> ';
 		comments_popup_link( esc_html__( 'Leave a comment', 'thememe' ), esc_html__( '1', 'thememe' ), esc_html__( '%', 'thememe' ) );
 		echo '</span>';
+	}
+	if ( $after){
+		printf( '<span class="meta-after">' . esc_html__( '%1$s', 'thememe' ) . '</span>', $after );
 	}
 }
 endif;

@@ -430,6 +430,12 @@ table ul{padding-left: 20px;}
 .review .review-body .entry:before{content: "\f10d"; font-family: 'FontAwesome'; position: absolute; font-size: 20px; color: #eee; top: -10px; left: 0}
 .page-template-page-reviews .review{margin: 10px 0;}
 
+.calendar-detail{line-height: 1.6;}
+.calendar-detail dd span{display: inline-block; margin-right: 8px; font-size: 12px; color: #999;}
+.list-note{padding: 10px 10px 10px 90px; background-color: #fefefe; border: 1px solid #2C3E50; position: relative; border-radius: 4px; font-size: 12px;}
+.list-note:after{position: absolute; content: ""; width: 60px; height: 100%; left: 0; top: 0;  border-right: 1px solid #2C3E50; background-color: #2C3E50;}
+.list-note:before{content: "\f06a"; font-family: "FontAwesome"; font-size: 20px; color: #DC4E41; position: absolute; left: 30px; margin-left: -10px; top: 50%; margin-top: -10px; z-index: 9;}
+.list-note li{margin-bottom: 10px;}
 /*--------------------------------------------------------------
 ## Comment
 --------------------------------------------------------------*/
