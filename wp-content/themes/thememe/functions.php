@@ -134,7 +134,7 @@ function thememe_scripts() {
 	wp_enqueue_script( 'thememe-navigation', get_template_directory_uri() . '/skins/js/navigation.js', array(), '20120206', true );
 
 
-	wp_enqueue_script( 'thememe-js-customizer', get_template_directory_uri() . '/skins/js/customizer.js', array('jquery','thememe-js-bootstrap'), '1.0', true );
+	
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

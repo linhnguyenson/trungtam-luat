@@ -11,7 +11,7 @@ if ( ! function_exists( 'thememe_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function thememe_posted_on($before='',$after='') {
+function thememe_posted_on($before='',$after='', $timer=true) {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -38,12 +38,12 @@ function thememe_posted_on($before='',$after='') {
 		esc_html_x( 'by %s', 'post author', 'thememe' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
-
-	$posted_on = sprintf(
-		'<i class="fa fa-clock-o"></i> '.esc_html_x( '%s', 'post date', 'thememe' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
+	if($timer){
+		$posted_on = sprintf(
+			'<i class="fa fa-clock-o"></i> '.esc_html_x( '%s', 'post date', 'thememe' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		);
+	}
 
 	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 

@@ -33,18 +33,40 @@ if($calendar_attachment){
 	$tokens = explode('/', $calendar_attachment);
 	$attachment= '<a class="attachment" href="'.$calendar_attachment.'"><i class="fa fa-paperclip"></i> '.$tokens[sizeof($tokens)-1].'</a>';
 }
- 
 
 ?>
+
+<?php 
+	
+	$terms = get_the_terms(get_the_ID(), 'calendartype' );
+	if (!empty($terms)){
+		$label .='<span class="in-term"> Khóa học ';
+		foreach ( $terms as $term ) {
+			$term_link = get_term_link( $term );
+			if ( is_wp_error( $term_link ) ) {
+		        continue;
+		    }
+		    $label .=' <a href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
+		}
+		$label .='</span>';
+		
+	}
+	
+
+
+?>
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<a href="<?php the_permalink();?>"><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></a>
 
 		<div class="entry-meta">
-			<?php thememe_posted_on($label,$attachment); ?>
+			<?php thememe_posted_on($label,$attachment,false); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-	<?php echo do_shortcode('[ssba]' );?>
+
+	<?php if(is_single()): echo do_shortcode('[ssba]' );?>
 	<div class="entry-content">
 
 		<?php the_post_thumbnail('thumb-full');?>
@@ -55,27 +77,31 @@ if($calendar_attachment){
 				'after'  => '</div>',
 			) );
 		?>
-		<dl class="dl-horizontal calendar-detail">
-		  	<?php printf( '<dt>' . esc_html__( 'Thời gian đăng ký', 'thememe' ) . '</dt><dd>' . esc_html__( '%1s - %2s', 'thememe' ) . '</dd>',$calendar_date_start->format('d/m/Y'),$calendar_date_end->format('d/m/Y')) ?>
-			<?php printf( '<dt>' . esc_html__( 'Địa điểm', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_location) ?>
-			<?php printf( '<dt>' . esc_html__( 'Học phí', 'thememe' ) . '</dt><dd>' . esc_html__( '%s VNĐ', 'thememe' ) . '</dd>',$calendar_price) ?>
-			<?php printf( '<dt>' . esc_html__( 'Liên hệ', 'thememe' ) . '</dt><dd><span><i class="fa fa-user"></i></span> ' . esc_html__( '%1s', 'thememe' ) . '</dd><dd><span><i class="fa fa-phone"></i></span>' . esc_html__( '%2s', 'thememe' ) . '</dd><dd><span><i class="fa fa-envelope"></i></span>' . esc_html__( '%3s', 'thememe' ) . '</dd>',$calendar_contact_name, $calendar_contact_phone, $calendar_contact_email) ?>
-		</dl>
-		<?php 
-		if(!empty($calendar_note)):
-			$list_note=preg_split('/\r\n|[\r\n]/', $calendar_note);
-			echo '<ul class="list-note">';
-			foreach ($list_note as $key => $value) {
-				echo '<li>'.$value.'</li>';
-			}
-			echo '</ul>';
-		endif;
-		?>
+		
+			<dl class="dl-horizontal calendar-detail">
+			  	<?php printf( '<dt>' . esc_html__( 'Thời gian đăng ký', 'thememe' ) . '</dt><dd>' . esc_html__( '%1s - %2s', 'thememe' ) . '</dd>',$calendar_date_start->format('d/m/Y'),$calendar_date_end->format('d/m/Y')) ?>
+				<?php printf( '<dt>' . esc_html__( 'Địa điểm', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_location) ?>
+				<?php printf( '<dt>' . esc_html__( 'Học phí', 'thememe' ) . '</dt><dd>' . esc_html__( '%s VNĐ', 'thememe' ) . '</dd>',$calendar_price) ?>
+				<?php printf( '<dt>' . esc_html__( 'Liên hệ', 'thememe' ) . '</dt><dd><span><i class="fa fa-user"></i></span> ' . esc_html__( '%1s', 'thememe' ) . '</dd><dd><span><i class="fa fa-phone"></i></span>' . esc_html__( '%2s', 'thememe' ) . '</dd><dd><span><i class="fa fa-envelope"></i></span>' . esc_html__( '%3s', 'thememe' ) . '</dd>',$calendar_contact_name, $calendar_contact_phone, $calendar_contact_email) ?>
+			</dl>
+			
+			<?php 
+			if(!empty($calendar_note)):
+				$list_note=preg_split('/\r\n|[\r\n]/', $calendar_note);
+				echo '<ul class="list-note">';
+				foreach ($list_note as $key => $value) {
+					echo '<li>'.$value.'</li>';
+				}
+				echo '</ul>';
+			endif;
+			?>
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php thememe_entry_footer(); ?>
 		<?php echo do_shortcode('[ssba]' );?>
 	</footer><!-- .entry-footer -->
+	<?php endif;?>
 </article><!-- #post-## -->
 
