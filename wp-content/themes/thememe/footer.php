@@ -28,7 +28,10 @@
 	jQuery(function($) {
 		function resize_full_height() {
 			$(".inside-full-height").each(function (index, element) {
-				$(element).height($(element).parent().height());
+				var elementHeight = $(element).height();
+				var parentHeight = $(element).parent().height();
+				if(elementHeight < parentHeight)
+					$(element).height(parentHeight);
 			});
 		}
 
