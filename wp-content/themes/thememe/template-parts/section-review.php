@@ -26,13 +26,13 @@
 						$contact_google_plus = get_post_meta( get_the_ID(), 'reviews_google_plus', true );
 						$contact_youtube = get_post_meta( get_the_ID(), 'reviews_youtube', true );
 						?>
-						<div class="item <?php echo $i==0?' active':''; ?>">
+						<div class="item review <?php echo $i==0?' active':''; ?>">
 							<div class="item-inner review-thumb" style="background-image:url('<?php echo $url; ?>')">
-								<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130"></a>						
+								<img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130">						
 							</div>
 
 							<div class="review-body text-center">
-								<a href="<?php the_permalink();?>"><h4 class="title"><?php the_title();?></h4></a>
+								<h4 class="title"><?php the_title();?></h4>
 								<div class="entry">
 									<?php the_content();?>
 								</div>
@@ -85,7 +85,7 @@
 				</div>
 			</div>
 			<div class="col-xs-6 text-right">
-				<a class="readmore" href=""><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
+				<a class="readmore" href="/giang-vien-tu-van-vien/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
 			</div>
 		</div>
 	</div>

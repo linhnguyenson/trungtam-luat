@@ -23,7 +23,8 @@ get_header(); ?>
 			</div>
 			<div class="col-sm-3 col-sm-height col-sm-top">
 				<div class="inside-full-height box-content">
-					<div class="box-content-header"><h2 class="widget-title heading-title">Recent Posts</h2></div>
+					
+					<?php echo get_template_part( 'template-parts/section', 'recents' ); ?>
 				</div>
 			</div>
 		</div>
@@ -63,6 +64,28 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>	
+</section>
+
+<section id="section-3" class="section">
+	<div class="row">
+		<div class="col-sm-9">
+			<div class="row-sm-expand">
+				<div class="row row-sm-height">
+					<div class="col-sm-9 col-sm-height col-sm-top">
+						<?php  $cat = get_category(ot_get_option('home_cat_4'));?>
+						<?php echo do_shortcode("[catbox slug=".$cat->slug." /]");?>
+					</div>
+					<div class="col-sm-9 col-sm-height col-sm-top">
+						
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="col-sm-3">
+			<?php echo get_template_part( 'template-parts/section', 'ads' ); ?>			
+		</div>
+	</div>
+	
 </section>
 
 
