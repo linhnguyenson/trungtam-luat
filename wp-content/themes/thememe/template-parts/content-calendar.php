@@ -22,11 +22,11 @@ $calendar_note = get_post_meta( get_the_ID(), 'calendar_note', true );
 $calendar_attachment = get_post_meta( get_the_ID(), 'calendar_attachment', true );
 
 if( $now < $calendar_date_start ) {
-    $label='<span class="label label-danger upcomming">Upcomming</span>';
+    $label='<span class="label label-danger upcomming">Sắp diễn ra </span>';
 } elseif ( $now <= $calendar_date_end ){
-    $label='<span class="label label-success doing">Doing</span>';
+    $label='<span class="label label-success doing">Đang diễn ra</span>';
 }else{
-	$label='<span class="label label-default expired">expired</span>';
+	$label='<span class="label label-default expired"> Hết hạn</span>';
 }
 
 if($calendar_attachment){
@@ -56,10 +56,10 @@ if($calendar_attachment){
 			) );
 		?>
 		<dl class="dl-horizontal calendar-detail">
-		  	<?php printf( '<dt>' . esc_html__( 'Date', 'thememe' ) . '</dt><dd>' . esc_html__( '%1s - %2s', 'thememe' ) . '</dd>',$calendar_date_start->format('d/m/Y'),$calendar_date_end->format('d/m/Y')) ?>
-			<?php printf( '<dt>' . esc_html__( 'Location', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_location) ?>
-			<?php printf( '<dt>' . esc_html__( 'Price', 'thememe' ) . '</dt><dd>' . esc_html__( '%s VNĐ', 'thememe' ) . '</dd>',$calendar_price) ?>
-			<?php printf( '<dt>' . esc_html__( 'Contact', 'thememe' ) . '</dt><dd><span><i class="fa fa-user"></i></span> ' . esc_html__( '%1s', 'thememe' ) . '</dd><dd><span><i class="fa fa-phone"></i></span>' . esc_html__( '%2s', 'thememe' ) . '</dd><dd><span><i class="fa fa-envelope"></i></span>' . esc_html__( '%3s', 'thememe' ) . '</dd>',$calendar_contact_name, $calendar_contact_phone, $calendar_contact_email) ?>
+		  	<?php printf( '<dt>' . esc_html__( 'Thời gian đăng ký', 'thememe' ) . '</dt><dd>' . esc_html__( '%1s - %2s', 'thememe' ) . '</dd>',$calendar_date_start->format('d/m/Y'),$calendar_date_end->format('d/m/Y')) ?>
+			<?php printf( '<dt>' . esc_html__( 'Địa điểm', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_location) ?>
+			<?php printf( '<dt>' . esc_html__( 'Học phí', 'thememe' ) . '</dt><dd>' . esc_html__( '%s VNĐ', 'thememe' ) . '</dd>',$calendar_price) ?>
+			<?php printf( '<dt>' . esc_html__( 'Liên hệ', 'thememe' ) . '</dt><dd><span><i class="fa fa-user"></i></span> ' . esc_html__( '%1s', 'thememe' ) . '</dd><dd><span><i class="fa fa-phone"></i></span>' . esc_html__( '%2s', 'thememe' ) . '</dd><dd><span><i class="fa fa-envelope"></i></span>' . esc_html__( '%3s', 'thememe' ) . '</dd>',$calendar_contact_name, $calendar_contact_phone, $calendar_contact_email) ?>
 		</dl>
 		<?php 
 		if(!empty($calendar_note)):

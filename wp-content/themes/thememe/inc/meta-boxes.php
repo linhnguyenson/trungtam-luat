@@ -74,25 +74,35 @@ function _custom_meta_boxes() {
       'priority'    => 'high',
 
       'fields'      => array(
-
+        
         array(
           'id'          => 'calendar_date_start',
-          'label'       => __( 'Start Date ', 'thememe' ),
+          'label'       => __( 'Đăng kí từ ngày ', 'thememe' ),
           'type'        => 'date-picker',
         ),
         array(
           'id'          => 'calendar_date_end',
-          'label'       => __( 'End Date', 'thememe' ),
+          'label'       => __( 'Đăng ký kết thúc', 'thememe' ),
+          'type'        => 'date-picker',
+        ),
+        array(
+          'id'          => 'calendar_date',
+          'label'       => __( 'Ngày Khai giảng', 'thememe' ),
           'type'        => 'date-picker',
         ),
         array(
           'id'          => 'calendar_location',
-          'label'       => __( 'Location', 'thememe' ),
+          'label'       => __( 'Địa điểm', 'thememe' ),
           'type'        => 'text',
         ),
         array(
           'id'          => 'calendar_price',
           'label'       => __( 'Price', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'calendar_price_sell',
+          'label'       => __( 'Sell off', 'thememe' ),
           'type'        => 'text',
         ),
         array(

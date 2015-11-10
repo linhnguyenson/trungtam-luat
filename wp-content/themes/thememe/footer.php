@@ -26,8 +26,19 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
-		$('[data-toggle="tooltip"]').tooltip({htmt:true});
+		function resize_full_height() {
+			$(".inside-full-height").each(function (index, element) {
+				$(element).height($(element).parent().height());
+			});
+		}
+
+		resize_full_height();
+
+        $(window).on("resize", function() {
+			resize_full_height();
+		});
 	});
-</script>	
+</script>
+
 </body>
 </html>
