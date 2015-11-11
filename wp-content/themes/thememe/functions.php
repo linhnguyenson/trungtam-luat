@@ -234,6 +234,7 @@ function event_listing_func($atts, $content="") {
 
 	$args = array(
 			'post_type'=> 'calendar',
+			'posts_per_page'=> '5',
 			'tax_query' => array(
 					array(
 							'taxonomy' => 'calendartype',
@@ -244,10 +245,7 @@ function event_listing_func($atts, $content="") {
 	);
 	query_posts( $args );
 
-	$shortcode = "<div class='event-tab'>
-					<span class='event-group-title'>
-						<a href='$term_link' class=''><span>$term->name</span> </a>
-					</span>
+	$shortcode = "<div class='event-tab-list'>
 					<div class='event-list'>
 						<ul>%s</ul>
 					</div>
@@ -261,7 +259,7 @@ function event_listing_func($atts, $content="") {
 		$calendar_date = strtotime($openingday_term);
 		$date = date('d', $calendar_date);
 		$month = date('m', $calendar_date);
-		$all_event .= "<li><span><span class='event-date'>$date</span><span class='event-month'>$month</span></span><span><a href='$postlink'>$posttitle</a></span></li>";
+		$all_event .= "<li><span class='time-block'><span class='event-date'>$date</span><span class='event-month'>$month</span></span><span class='title'><a href='$postlink'>$posttitle</a></span></li>";
 	endwhile;
 	$shortcode = sprintf($shortcode, $all_event);
 

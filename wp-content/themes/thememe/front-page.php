@@ -37,12 +37,8 @@ get_header(); ?>
 				<?php  $cat = get_category(ot_get_option('home_cat_1'));?>
 				<?php echo do_shortcode("[catbox slug=".$cat->slug." /]");?>
 			</div>
-			<div class="col-sm-hafl-9 col-sm-height col-sm-top">
-				<?php echo do_shortcode("[eventlist slug='sinh-vien' /]") ?>
-			</div>
-			<div class="col-sm-3 col-sm-height col-sm-top">
-				
-				
+			<div class="col-sm-hafl-9-sub col-sm-height col-sm-top">
+				<?php echo get_template_part( 'template-parts/section', 'calendar' ); ?>
 			</div>
 		</div>
 	</div>	
