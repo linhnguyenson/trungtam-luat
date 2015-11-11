@@ -463,13 +463,13 @@ table ul{padding-left: 20px;}
 
 .event-list ul{list-style: none; padding-left: 0;}
 .event-list ul li{margin-bottom: 10px;}
-.event-list ul li .title{display: inline-block; vertical-align: middle; height: 100%; font-weight: bold;}
+.event-list ul li .title{display: inline-block; vertical-align: middle; height: 100%; font-weight: bold; font-size: 16px;}
 .time-block{
-	width: 50px; border-radius: 50%;
+	width: 60px; height: 60px; border-radius: 50%;
 	display: inline-block;  vertical-align: middle; background-color: #ecf0f1; padding: 5px 8px; line-height: 1.1; 
 	text-align: center; margin-right: 20px;}
-.time-block .event-date{font-size: 13px; font-weight: 300; display: block;}
-.time-block .event-month{font-size: 24px; font-weight: 800; display: block;}
+.time-block .event-month{font-size: 12px; font-weight: 600; text-transform: uppercase; display: block;}
+.time-block .event-date{font-size: 24px; font-weight: 800; display: block;}
 
 /*--------------------------------------------------------------
 ## Comment

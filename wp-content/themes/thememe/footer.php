@@ -40,6 +40,8 @@
         $(window).on("resize", function() {
 			resize_full_height();
 		});
+
+		 $('[data-toggle="tooltip"]').tooltip();
 	});
 </script>
 
