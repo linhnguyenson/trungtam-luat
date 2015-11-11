@@ -134,7 +134,39 @@ function _custom_meta_boxes() {
       )
 
     ),
+    
+    // gallery
+     array(
 
+      'id'          => 'listing_settings',
+
+      'title'       => 'More Settings',
+
+      'pages' => array('gallery'),
+
+      'context'     => 'normal',
+
+      'priority'    => 'high',
+
+      'fields'      => array(
+
+         array(
+
+          'label'       => 'Gallery',
+
+          'id'          => 'gallery',
+
+          'type'        => 'gallery',
+
+          'desc'        => '',
+
+          'std'         => '',
+
+        )
+
+      )
+
+    ),
   );
 
 

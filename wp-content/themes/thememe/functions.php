@@ -44,6 +44,8 @@ function thememe_setup() {
 	add_image_size( 'thumb-full', 750, 375, true );
 	add_image_size( 'thumb-post', 150, 100, true );
 	add_image_size( 'thumb-blog', 284, 192, true );
+	add_image_size( 'thumb-gallery-full', 1024, 768, true );
+	add_image_size( 'thumb-gallery-medium', 800, 560, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
