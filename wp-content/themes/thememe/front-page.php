@@ -38,7 +38,7 @@ get_header(); ?>
 				<?php echo do_shortcode("[catbox slug=".$cat->slug." /]");?>
 			</div>
 			<div class="col-sm-hafl-9 col-sm-height col-sm-top">
-				
+				<?php echo do_shortcode("[eventlist slug='sinh-vien' /]") ?>
 			</div>
 			<div class="col-sm-3 col-sm-height col-sm-top">
 				

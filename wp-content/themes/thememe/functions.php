@@ -224,3 +224,50 @@ function category_box_func($atts, $content="") {
 }
 add_shortcode( 'catbox', 'category_box_func' );
 
+/*Add shortcode to display events*/
+function event_listing_func($atts, $content="") {
+	extract(shortcode_atts( array(
+			'slug' => '',
+	), $atts ));
+	$term = get_term_by( 'slug', $slug, 'calendartype');
+	$term_link = get_term_link( $term);
+
+	$args = array(
+			'post_type'=> 'calendar',
+			'tax_query' => array(
+					array(
+							'taxonomy' => 'calendartype',
+							'field'    => 'slug',
+							'terms'    => $slug,
+					),
+			),
+	);
+	query_posts( $args );
+
+	$shortcode = "<div class='event-tab'>
+					<span class='event-group-title'>
+						<a href='$term_link' class=''><span>$term->name</span> </a>
+					</span>
+					<div class='event-list'>
+						<ul>%s</ul>
+					</div>
+				</div>";
+	$all_event = "";
+	while ( have_posts() ) : the_post();
+		$postid = get_the_ID();
+		$openingday_term = get_post_meta($postid, 'calendar_date', true);
+		$postlink = get_permalink();
+		$posttitle = get_the_title();
+		$calendar_date = strtotime($openingday_term);
+		$date = date('d', $calendar_date);
+		$month = date('m', $calendar_date);
+		$all_event .= "<li><span><span class='event-date'>$date</span><span class='event-month'>$month</span></span><span><a href='$postlink'>$posttitle</a></span></li>";
+	endwhile;
+	$shortcode = sprintf($shortcode, $all_event);
+
+	wp_reset_query();
+	return do_shortcode($shortcode);
+}
+
+add_shortcode( 'eventlist', 'event_listing_func' );
+
