@@ -5,7 +5,7 @@
 			<?php
 			$prev_post = get_previous_post();
 			if (!empty( $prev_post )): ?>
-				<span class="nav-label"><i class="fa fa-long-arrow-left"></i> <span><?php _e('Previous Article' );?></span></span>
+				<span class="nav-label"><i class="fa fa-long-arrow-left"></i> <span><?php _e('Trước' );?></span></span>
 			  	<h4><a href="<?php echo get_permalink( $prev_post->ID ); ?>"><?php echo $prev_post->post_title; ?></a></h4>
 			<?php endif; ?>
 		</div>
@@ -13,14 +13,18 @@
 			<?php
 			$next_post = get_next_post();
 			if (!empty( $next_post )): ?>
-				<span class="nav-label"><span><?php _e('Next Article' );?></span> <i class="fa fa-long-arrow-right"></i></span>
+				<span class="nav-label"><span><?php _e('Tiếp' );?></span> <i class="fa fa-long-arrow-right"></i></span>
 			  	<h4><a href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo $next_post->post_title; ?></a></h4>
 			<?php endif; ?>
 		</div>
 	</div>
 
 </div>
+<?php 
 
+$post_type=get_post_type( get_the_ID() );
+if($post_type=='post'){
+?>
 <div class="related-posts">
 	<h3>Related posts</h3>
 	
@@ -123,6 +127,7 @@
 
 	</div>
 </div>
+<?php } ?>
 
 
 

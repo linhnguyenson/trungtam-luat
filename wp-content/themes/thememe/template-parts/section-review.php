@@ -10,7 +10,7 @@
 		// The Loop
 		if ( $the_query->have_posts() ) {?>
 
-			<div id="carousel-review" class="carousel slide" data-ride="carousel">
+			<div id="carousel-review" class="carousel-custom-js carousel slide" data-ride="carousel">
 		
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
@@ -90,29 +90,4 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	jQuery(function($) {
-		var slideByClick = false;
-		$('#carousel-review').on('slid.bs.carousel', function () {
-			if(slideByClick) {
-				slideByClick = false;
-				return true;
-			}
-			$holder = $( ".carouse-clone ol li.active" );
-			$holder.next( "li" ).addClass("active");
-			if($holder.is(':last-child'))
-			{
-				$holder.removeClass("active");
-				$(".carouse-clone ol li:first").addClass("active");
-			}
-			$holder.removeClass("active");
-		});
 
-		$('.carouse-clone ol.carousel-indicators  li').on("click",function(){
-			slideByClick = true;
-			$('.carouse-clone ol.carousel-indicators li.active').removeClass("active");
-			$(this).addClass("active");
-		});
-
-	});
-</script>

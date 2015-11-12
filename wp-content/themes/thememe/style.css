@@ -85,7 +85,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .box-content .box-content-header:after{left: 22px; bottom: -7px; z-index: 2;  border-width: 7px 7.5px 0; border-color: #19b5fe transparent transparent;}
 .box-content .box-content-header .heading-title{margin: 0; color: #fff; font-size: 16px; text-transform: uppercase;}
 
-.box-content .box-content-body{padding: 10px 15px;}
+.box-content .box-content-body{padding: 20px;}
 
 
 .box-content.box-content-has-footer .box-content-body{padding-bottom: 42px;}
@@ -354,6 +354,14 @@ body{background-color: #ecf0f1; color: #333;}
 --------------------------------------------------------------*/
 #carousel-review  .carousel-control .icon-prev, #carousel-review  .carousel-control .icon-next, #carousel-review  .carousel-control .glyphicon-chevron-left, #carousel-review  .carousel-control .glyphicon-chevron-right{top: 65px;}
 
+/*--------------------------------------------------------------
+## Gallery
+--------------------------------------------------------------*/
+#carousel-gallery .review-thumb{margin-bottom: 20px;}
+#carousel-gallery .review-thumb:hover{-webkit-box-shadow: 0 0 3px 1px rgba(0,0,0,0.5); box-shadow: 0 0 3px 1px rgba(0,0,0,0.5);}
+#carousel-gallery .carousel-control .glyphicon-chevron-left, #carousel-gallery .carousel-control .glyphicon-chevron-right, #carousel-gallery .carousel-control .icon-prev, .carousel-control .icon-next{margin-top: -25px;}
+#carousel-gallery .carousel-control .glyphicon-chevron-right, #carousel-gallery .carousel-control .icon-next{margin-right: -30px;}
+#carousel-gallery .carousel-control .glyphicon-chevron-left, #carousel-gallery .carousel-control .icon-prev{margin-left: -30px;}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

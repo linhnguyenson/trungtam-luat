@@ -67,12 +67,12 @@ get_header(); ?>
 		<div class="col-sm-9">
 			<div class="row-sm-expand">
 				<div class="row row-sm-height">
-					<div class="col-sm-9 col-sm-height col-sm-top">
+					<div class="col-sm-6 col-sm-height col-sm-top">
 						<?php  $cat = get_category(ot_get_option('home_cat_4'));?>
 						<?php echo do_shortcode("[catbox slug=".$cat->slug." /]");?>
 					</div>
-					<div class="col-sm-9 col-sm-height col-sm-top">
-						
+					<div class="col-sm-6 col-sm-height col-sm-top">
+						<?php echo get_template_part( 'template-parts/section', 'gallery' ); ?>
 					</div>
 				</div>
 			</div>	
