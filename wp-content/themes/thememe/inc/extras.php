@@ -86,7 +86,20 @@ function breadcrumbs() {
 			$post_type=get_post_type( get_the_ID() );
 			if($post_type!='post'){
 				
-				echo '<li><a href="'.get_post_type_archive_link( $post_type ).'">'.$post_type.'</a></li>';
+				switch ($post_type) {
+					case 'calendar':
+						echo '<li><a href="/khoa-hoc">Khóa học</a></li>';
+						break;
+					case 'gallery':
+						echo '<li><a href="/hinh-anh-hoat-dong/">Hình ảnh hoạt động</a></li>';
+						break;
+
+					default:
+						
+						break;
+				}
+
+				
 				
 			}else{
 				echo '<li>';

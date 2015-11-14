@@ -52,7 +52,7 @@ p, .cat-group .lcp_catlist .post-date,
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .text-brand-primary { color: #41218e; }
-
+hr {border-top-color:  #dedede;}
 
 /*--------------------------------------------------------------
 # Helper Class
@@ -379,7 +379,7 @@ body{background-color: #ecf0f1; color: #333;}
 .entry-meta > span{display: inline-block; margin-right: 10px;}
 .cat-links ul{list-style: none; margin: 0; padding: 0;}
 .cat-links ul li{display: inline-block;}
-.cat-links a{color: #fff; padding: 2px 8px; border-radius: 2px; background-color: #19B5FE; margin-right: 5px; font-size: 10px;}
+.cat-links a{color: #fff; padding: 2px 8px; border-radius: 2px; background-color: #19B5FE; margin-right: 5px; margin-bottom: 4px; font-size: 10px;}
 .cat-links a:hover{background-color: #2C3E50; text-decoration: none;}
 .in-term{display: inline-block; margin-left: 10px;}
 
@@ -480,6 +480,16 @@ table ul{padding-left: 20px;}
 .time-block .event-month{font-size: 12px; font-weight: 600; text-transform: uppercase; display: block;}
 .time-block .event-date{font-size: 24px; font-weight: 800; display: block;}
 
+a.thumbnail{border-radius: 0; border-color: #dedede;}
+a.thumbnail:hover, a.thumbnail:focus, a.thumbnail:active{-webkit-box-shadow: 0 0 2px 0px rgba(0,0,0,0.2);box-shadow: 0 0 2px 0px rgba(0,0,0,0.2);  border-color: #dedede;}
+
+.gallery-item{position: relative; margin-bottom: 20px; padding: 4px; border:1px solid #dedede;}
+.gallery-item:hover{-webkit-box-shadow: 0 0 2px 0px rgba(0,0,0,0.2);box-shadow: 0 0 2px 0px rgba(0,0,0,0.2);}
+.gallery-item .gallery-thumb{background-position: center; background-size: cover; background-repeat: no-repeat;}
+.gallery-item .gallery-info{color: #fff; position: absolute; padding: 8px 10px;  bottom: 4px; right: 4px; left: 4px; z-index: 1; background-color: rgba(44,62,80,0.75); border-top: 2px solid rgba(25,181,254,0.75);}
+.gallery-item .gallery-info h3{margin-top: 0; font-size: 14px;}
+.meta-gallery{font-size: 11px; text-transform: uppercase;}
+.meta-gallery span.number-gallery{ margin-right: 5px; display: inline-block;}
 /*--------------------------------------------------------------
 ## Comment
 --------------------------------------------------------------*/

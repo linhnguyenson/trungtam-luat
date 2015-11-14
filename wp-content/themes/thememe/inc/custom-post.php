@@ -165,3 +165,25 @@ $gallery_args = array(
 );
 register_post_type('gallery', $gallery_args);
 
+add_action( 'init', 'update_my_custom_type', 99 );
+ 
+/**
+ * update_my_custom_type
+ *
+ * @author  Joe Sexton <joe@webtipblog.com>
+ */
+function update_my_custom_type() {
+    global $wp_post_types;
+ 
+    if ( post_type_exists( 'gallery' ) ) {
+ 
+        // exclude from search results
+        $wp_post_types['gallery']->exclude_from_search = true;
+    }
+
+    if ( post_type_exists( 'reviews' ) ) {
+ 
+        // exclude from search results
+        $wp_post_types['reviews']->exclude_from_search = true;
+    }
+}

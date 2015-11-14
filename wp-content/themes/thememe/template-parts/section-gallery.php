@@ -21,14 +21,28 @@
 						<?php 
 							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
 							$url = $thumb['0']; 
+							$galleries_data = get_post_meta( get_the_ID(), 'gallery', true );
+							$photos=explode(',', $galleries_data);
+
 						?>
 						<?php if($i%4==0){?>
 							<div class="item <?php echo $i==0?' active':''; ?>">
 								<div class="row">
 						<?php } ?>			
 									<div class="col-xs-6">
-										<a href="<?php the_permalink();?>"><div class="item-inner review-thumb" style="background-image:url('<?php echo $url; ?>')">
-											<img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="100%">						
+										<a href="<?php the_permalink();?>">
+										<div class="gallery-item">
+											<div class="item-inner gallery-thumb" style="background-image:url('<?php echo $url; ?>')">
+												<img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="100%">				
+											</div>
+
+											<div class="gallery-info">
+												<?php the_title( '<h3 class="gallery-title">', '</h3>' ); ?>
+												<div class="meta-gallery">
+													<span class="number-gallery"><i class="fa fa-file-image-o"></i> <?php echo count($photos); ?></span>
+													<span class="posted-on">Đăng ngày <?php echo get_the_time(); ?></span>
+												</div>
+											</div>
 										</div></a>
 									</div>
 						<?php 
@@ -88,7 +102,7 @@
 				</div>
 			</div>
 			<div class="col-xs-6 text-right">
-				<a class="readmore" href="/giang-vien-tu-van-vien/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
+				<a class="readmore" href="/hinh-anh-hoat-dong/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
 			</div>
 		</div>
 	</div>

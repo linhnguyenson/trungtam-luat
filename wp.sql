@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2015 at 05:12 PM
--- Server version: 10.0.17-MariaDB
--- PHP Version: 5.6.14
+-- Generation Time: Nov 14, 2015 at 06:31 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `wp`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `pma__bookmark`
 --
 
-CREATE TABLE `pma__bookmark` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `pma__bookmark` (
+`id` int(11) NOT NULL,
   `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -40,7 +40,7 @@ CREATE TABLE `pma__bookmark` (
 -- Table structure for table `pma__central_columns`
 --
 
-CREATE TABLE `pma__central_columns` (
+CREATE TABLE IF NOT EXISTS `pma__central_columns` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -57,8 +57,8 @@ CREATE TABLE `pma__central_columns` (
 -- Table structure for table `pma__column_info`
 --
 
-CREATE TABLE `pma__column_info` (
-  `id` int(5) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pma__column_info` (
+`id` int(5) unsigned NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -76,7 +76,7 @@ CREATE TABLE `pma__column_info` (
 -- Table structure for table `pma__designer_settings`
 --
 
-CREATE TABLE `pma__designer_settings` (
+CREATE TABLE IF NOT EXISTS `pma__designer_settings` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `settings_data` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
@@ -87,8 +87,8 @@ CREATE TABLE `pma__designer_settings` (
 -- Table structure for table `pma__export_templates`
 --
 
-CREATE TABLE `pma__export_templates` (
-  `id` int(5) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pma__export_templates` (
+`id` int(5) unsigned NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
   `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE `pma__export_templates` (
 -- Table structure for table `pma__favorite`
 --
 
-CREATE TABLE `pma__favorite` (
+CREATE TABLE IF NOT EXISTS `pma__favorite` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
@@ -112,8 +112,8 @@ CREATE TABLE `pma__favorite` (
 -- Table structure for table `pma__history`
 --
 
-CREATE TABLE `pma__history` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pma__history` (
+`id` bigint(20) unsigned NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -127,7 +127,7 @@ CREATE TABLE `pma__history` (
 -- Table structure for table `pma__navigationhiding`
 --
 
-CREATE TABLE `pma__navigationhiding` (
+CREATE TABLE IF NOT EXISTS `pma__navigationhiding` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -141,9 +141,9 @@ CREATE TABLE `pma__navigationhiding` (
 -- Table structure for table `pma__pdf_pages`
 --
 
-CREATE TABLE `pma__pdf_pages` (
+CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `page_nr` int(10) UNSIGNED NOT NULL,
+`page_nr` int(10) unsigned NOT NULL,
   `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
 
@@ -153,7 +153,7 @@ CREATE TABLE `pma__pdf_pages` (
 -- Table structure for table `pma__recent`
 --
 
-CREATE TABLE `pma__recent` (
+CREATE TABLE IF NOT EXISTS `pma__recent` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
@@ -164,7 +164,7 @@ CREATE TABLE `pma__recent` (
 -- Table structure for table `pma__relation`
 --
 
-CREATE TABLE `pma__relation` (
+CREATE TABLE IF NOT EXISTS `pma__relation` (
   `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -179,8 +179,8 @@ CREATE TABLE `pma__relation` (
 -- Table structure for table `pma__savedsearches`
 --
 
-CREATE TABLE `pma__savedsearches` (
-  `id` int(5) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `pma__savedsearches` (
+`id` int(5) unsigned NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -193,12 +193,12 @@ CREATE TABLE `pma__savedsearches` (
 -- Table structure for table `pma__table_coords`
 --
 
-CREATE TABLE `pma__table_coords` (
+CREATE TABLE IF NOT EXISTS `pma__table_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float UNSIGNED NOT NULL DEFAULT '0',
-  `y` float UNSIGNED NOT NULL DEFAULT '0'
+  `x` float unsigned NOT NULL DEFAULT '0',
+  `y` float unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
 
 -- --------------------------------------------------------
@@ -207,7 +207,7 @@ CREATE TABLE `pma__table_coords` (
 -- Table structure for table `pma__table_info`
 --
 
-CREATE TABLE `pma__table_info` (
+CREATE TABLE IF NOT EXISTS `pma__table_info` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
@@ -219,7 +219,7 @@ CREATE TABLE `pma__table_info` (
 -- Table structure for table `pma__table_uiprefs`
 --
 
-CREATE TABLE `pma__table_uiprefs` (
+CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -233,17 +233,17 @@ CREATE TABLE `pma__table_uiprefs` (
 -- Table structure for table `pma__tracking`
 --
 
-CREATE TABLE `pma__tracking` (
+CREATE TABLE IF NOT EXISTS `pma__tracking` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL,
+  `version` int(10) unsigned NOT NULL,
   `date_created` datetime NOT NULL,
   `date_updated` datetime NOT NULL,
   `schema_snapshot` text COLLATE utf8_bin NOT NULL,
   `schema_sql` text COLLATE utf8_bin,
   `data_sql` longtext COLLATE utf8_bin,
   `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT '1'
+  `tracking_active` int(1) unsigned NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
 
 -- --------------------------------------------------------
@@ -252,7 +252,7 @@ CREATE TABLE `pma__tracking` (
 -- Table structure for table `pma__userconfig`
 --
 
-CREATE TABLE `pma__userconfig` (
+CREATE TABLE IF NOT EXISTS `pma__userconfig` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `config_data` text COLLATE utf8_bin NOT NULL
@@ -264,7 +264,7 @@ CREATE TABLE `pma__userconfig` (
 -- Table structure for table `pma__usergroups`
 --
 
-CREATE TABLE `pma__usergroups` (
+CREATE TABLE IF NOT EXISTS `pma__usergroups` (
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
   `tab` varchar(64) COLLATE utf8_bin NOT NULL,
   `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
@@ -276,7 +276,7 @@ CREATE TABLE `pma__usergroups` (
 -- Table structure for table `pma__users`
 --
 
-CREATE TABLE `pma__users` (
+CREATE TABLE IF NOT EXISTS `pma__users` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
@@ -287,12 +287,12 @@ CREATE TABLE `pma__users` (
 -- Table structure for table `wp_commentmeta`
 --
 
-CREATE TABLE `wp_commentmeta` (
-  `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
+`meta_id` bigint(20) unsigned NOT NULL,
+  `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -300,9 +300,9 @@ CREATE TABLE `wp_commentmeta` (
 -- Table structure for table `wp_comments`
 --
 
-CREATE TABLE `wp_comments` (
-  `comment_ID` bigint(20) UNSIGNED NOT NULL,
-  `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_comments` (
+`comment_ID` bigint(20) unsigned NOT NULL,
+  `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
   `comment_author` tinytext NOT NULL,
   `comment_author_email` varchar(100) NOT NULL DEFAULT '',
   `comment_author_url` varchar(200) NOT NULL DEFAULT '',
@@ -314,9 +314,9 @@ CREATE TABLE `wp_comments` (
   `comment_approved` varchar(20) NOT NULL DEFAULT '1',
   `comment_agent` varchar(255) NOT NULL DEFAULT '',
   `comment_type` varchar(20) NOT NULL DEFAULT '',
-  `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_comments`
@@ -333,15 +333,15 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 -- Table structure for table `wp_links`
 --
 
-CREATE TABLE `wp_links` (
-  `link_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_links` (
+`link_id` bigint(20) unsigned NOT NULL,
   `link_url` varchar(255) NOT NULL DEFAULT '',
   `link_name` varchar(255) NOT NULL DEFAULT '',
   `link_image` varchar(255) NOT NULL DEFAULT '',
   `link_target` varchar(25) NOT NULL DEFAULT '',
   `link_description` varchar(255) NOT NULL DEFAULT '',
   `link_visible` varchar(20) NOT NULL DEFAULT 'Y',
-  `link_owner` bigint(20) UNSIGNED NOT NULL DEFAULT '1',
+  `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1',
   `link_rating` int(11) NOT NULL DEFAULT '0',
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) NOT NULL DEFAULT '',
@@ -355,8 +355,8 @@ CREATE TABLE `wp_links` (
 -- Table structure for table `wp_ngg_album`
 --
 
-CREATE TABLE `wp_ngg_album` (
-  `id` bigint(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_ngg_album` (
+`id` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `previewpic` bigint(20) NOT NULL DEFAULT '0',
@@ -372,8 +372,8 @@ CREATE TABLE `wp_ngg_album` (
 -- Table structure for table `wp_ngg_gallery`
 --
 
-CREATE TABLE `wp_ngg_gallery` (
-  `gid` bigint(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_ngg_gallery` (
+`gid` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `path` mediumtext,
@@ -383,7 +383,7 @@ CREATE TABLE `wp_ngg_gallery` (
   `previewpic` bigint(20) NOT NULL DEFAULT '0',
   `author` bigint(20) NOT NULL DEFAULT '0',
   `extras_post_id` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_ngg_gallery`
@@ -398,8 +398,8 @@ INSERT INTO `wp_ngg_gallery` (`gid`, `name`, `slug`, `path`, `title`, `galdesc`,
 -- Table structure for table `wp_ngg_pictures`
 --
 
-CREATE TABLE `wp_ngg_pictures` (
-  `pid` bigint(20) NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_ngg_pictures` (
+`pid` bigint(20) NOT NULL,
   `image_slug` varchar(255) NOT NULL,
   `post_id` bigint(20) NOT NULL DEFAULT '0',
   `galleryid` bigint(20) NOT NULL DEFAULT '0',
@@ -412,7 +412,7 @@ CREATE TABLE `wp_ngg_pictures` (
   `meta_data` longtext,
   `extras_post_id` bigint(20) NOT NULL DEFAULT '0',
   `updated_at` bigint(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_ngg_pictures`
@@ -429,12 +429,12 @@ INSERT INTO `wp_ngg_pictures` (`pid`, `image_slug`, `post_id`, `galleryid`, `fil
 -- Table structure for table `wp_options`
 --
 
-CREATE TABLE `wp_options` (
-  `option_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_options` (
+`option_id` bigint(20) unsigned NOT NULL,
   `option_name` varchar(64) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
   `autoload` varchar(20) NOT NULL DEFAULT 'yes'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2048 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_options`
@@ -598,7 +598,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (191, 'drag-drop-file-types', 'a:4:{i:0;s:3:"jpg";i:1;s:4:"jpeg";i:2;s:3:"png";i:3;s:3:"gif";}', 'yes'),
 (192, 'drag-drop-page-reload', '0', 'yes'),
 (1398, '_site_transient_timeout_browser_d345f0fc2588ba33770d312d084b0dfc', '1444010205', 'yes'),
-(842, '_transient_random_seed', '9c5248b4e8bb0b26bfe51aebd942fd45', 'yes'),
+(842, '_transient_random_seed', 'd917d8eda98902860d912ad96560e831', 'yes'),
 (334, 'ngg_transient_groups', 'a:4:{s:9:"__counter";i:4;s:3:"MVC";a:2:{s:2:"id";i:2;s:7:"enabled";b:1;}s:27:"displayed_gallery_rendering";a:2:{s:2:"id";i:3;s:7:"enabled";b:1;}s:19:"displayed_galleries";a:2:{s:2:"id";i:4;s:7:"enabled";b:1;}}', 'yes'),
 (1889, 'category_children', 'a:2:{i:19;a:3:{i:0;i:8;i:1;i:9;i:2;i:10;}i:11;a:1:{i:0;i:12;}}', 'yes'),
 (955, 'db_upgraded', '', 'yes'),
@@ -629,8 +629,8 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (2034, '_transient_timeout_feed_mod_b9388c83948825c1edaef0d856b7b109', '1447559942', 'no'),
 (2035, '_transient_feed_mod_b9388c83948825c1edaef0d856b7b109', '1447516742', 'no'),
 (2039, '_transient_dash_88ae138922fe95674369b1cb3d215a2b', '<div class="rss-widget"><ul><li><a class=''rsswidget'' href=''https://wordpress.org/news/2015/11/wordpress-4-4-beta-4/''>WordPress 4.4 Beta 4</a> <span class="rss-date">12 November, 2015</span><div class="rssSummary">WordPress 4.4 Beta 4 is now available! This software is still in development, so we don’t recommend you run it on a production site. Consider setting up a test site just to play with the new version. To test WordPress 4.4, try the WordPress Beta Tester plugin (you’ll want “bleeding edge nightlies”). Or you can [&hellip;]</div></li></ul></div><div class="rss-widget"><p><strong>RSS Error</strong>: WP HTTP Error: Operation timed out after 9875 milliseconds with 40683 out of 178135 bytes received</p></div><div class="rss-widget"><ul><li class=''dashboard-news-plugin''><span>Popular Plugin:</span> <a href=''https://wordpress.org/plugins/updraftplus/'' class=''dashboard-news-plugin-link''>UpdraftPlus Backup and Restoration</a>&nbsp;<span>(<a href=''plugin-install.php?tab=plugin-information&amp;plugin=updraftplus&amp;_wpnonce=131a0e7924&amp;TB_iframe=true&amp;width=600&amp;height=800'' class=''thickbox'' title=''UpdraftPlus Backup and Restoration''>Install</a>)</span></li></ul></div>', 'no'),
-(2013, '_transient_is_multi_author', '0', 'yes'),
-(2014, '_transient_thememe_categories', '2', 'yes'),
+(2047, '_transient_thememe_categories', '2', 'yes'),
+(2046, '_transient_is_multi_author', '0', 'yes'),
 (2016, 'rewrite_rules', 'a:115:{s:35:"reviews/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:45:"reviews/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:65:"reviews/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"reviews/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"reviews/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:28:"reviews/([^/]+)/trackback/?$";s:34:"index.php?reviews=$matches[1]&tb=1";s:36:"reviews/([^/]+)/page/?([0-9]{1,})/?$";s:47:"index.php?reviews=$matches[1]&paged=$matches[2]";s:43:"reviews/([^/]+)/comment-page-([0-9]{1,})/?$";s:47:"index.php?reviews=$matches[1]&cpage=$matches[2]";s:28:"reviews/([^/]+)(/[0-9]+)?/?$";s:46:"index.php?reviews=$matches[1]&page=$matches[2]";s:24:"reviews/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:34:"reviews/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:54:"reviews/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"reviews/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"reviews/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:36:"calendar/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:46:"calendar/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:66:"calendar/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"calendar/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:61:"calendar/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:29:"calendar/([^/]+)/trackback/?$";s:35:"index.php?calendar=$matches[1]&tb=1";s:37:"calendar/([^/]+)/page/?([0-9]{1,})/?$";s:48:"index.php?calendar=$matches[1]&paged=$matches[2]";s:44:"calendar/([^/]+)/comment-page-([0-9]{1,})/?$";s:48:"index.php?calendar=$matches[1]&cpage=$matches[2]";s:29:"calendar/([^/]+)(/[0-9]+)?/?$";s:47:"index.php?calendar=$matches[1]&page=$matches[2]";s:25:"calendar/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:35:"calendar/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:55:"calendar/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:50:"calendar/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:50:"calendar/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:35:"gallery/[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:45:"gallery/[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:65:"gallery/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"gallery/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:60:"gallery/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:28:"gallery/([^/]+)/trackback/?$";s:34:"index.php?gallery=$matches[1]&tb=1";s:36:"gallery/([^/]+)/page/?([0-9]{1,})/?$";s:47:"index.php?gallery=$matches[1]&paged=$matches[2]";s:43:"gallery/([^/]+)/comment-page-([0-9]{1,})/?$";s:47:"index.php?gallery=$matches[1]&cpage=$matches[2]";s:28:"gallery/([^/]+)(/[0-9]+)?/?$";s:46:"index.php?gallery=$matches[1]&page=$matches[2]";s:24:"gallery/[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:34:"gallery/[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:54:"gallery/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"gallery/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:49:"gallery/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:47:"category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:42:"category/(.+?)/(feed|rdf|rss|rss2|atom)/?$";s:52:"index.php?category_name=$matches[1]&feed=$matches[2]";s:35:"category/(.+?)/page/?([0-9]{1,})/?$";s:53:"index.php?category_name=$matches[1]&paged=$matches[2]";s:17:"category/(.+?)/?$";s:35:"index.php?category_name=$matches[1]";s:44:"tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:39:"tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?tag=$matches[1]&feed=$matches[2]";s:32:"tag/([^/]+)/page/?([0-9]{1,})/?$";s:43:"index.php?tag=$matches[1]&paged=$matches[2]";s:14:"tag/([^/]+)/?$";s:25:"index.php?tag=$matches[1]";s:45:"type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:40:"type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?post_format=$matches[1]&feed=$matches[2]";s:33:"type/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?post_format=$matches[1]&paged=$matches[2]";s:15:"type/([^/]+)/?$";s:33:"index.php?post_format=$matches[1]";s:53:"calendartype/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?calendartype=$matches[1]&feed=$matches[2]";s:48:"calendartype/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:51:"index.php?calendartype=$matches[1]&feed=$matches[2]";s:41:"calendartype/([^/]+)/page/?([0-9]{1,})/?$";s:52:"index.php?calendartype=$matches[1]&paged=$matches[2]";s:23:"calendartype/([^/]+)/?$";s:34:"index.php?calendartype=$matches[1]";s:12:"robots\\.txt$";s:18:"index.php?robots=1";s:48:".*wp-(atom|rdf|rss|rss2|feed|commentsrss2)\\.php$";s:18:"index.php?feed=old";s:20:".*wp-app\\.php(/.*)?$";s:19:"index.php?error=403";s:18:".*wp-register.php$";s:23:"index.php?register=true";s:32:"feed/(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:27:"(feed|rdf|rss|rss2|atom)/?$";s:27:"index.php?&feed=$matches[1]";s:20:"page/?([0-9]{1,})/?$";s:28:"index.php?&paged=$matches[1]";s:27:"comment-page-([0-9]{1,})/?$";s:40:"index.php?&page_id=187&cpage=$matches[1]";s:41:"comments/feed/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:36:"comments/(feed|rdf|rss|rss2|atom)/?$";s:42:"index.php?&feed=$matches[1]&withcomments=1";s:44:"search/(.+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:39:"search/(.+)/(feed|rdf|rss|rss2|atom)/?$";s:40:"index.php?s=$matches[1]&feed=$matches[2]";s:32:"search/(.+)/page/?([0-9]{1,})/?$";s:41:"index.php?s=$matches[1]&paged=$matches[2]";s:14:"search/(.+)/?$";s:23:"index.php?s=$matches[1]";s:47:"author/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:42:"author/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:50:"index.php?author_name=$matches[1]&feed=$matches[2]";s:35:"author/([^/]+)/page/?([0-9]{1,})/?$";s:51:"index.php?author_name=$matches[1]&paged=$matches[2]";s:17:"author/([^/]+)/?$";s:33:"index.php?author_name=$matches[1]";s:69:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:64:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:80:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]";s:57:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:81:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]";s:39:"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$";s:63:"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]";s:56:"([0-9]{4})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:51:"([0-9]{4})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$";s:64:"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]";s:44:"([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$";s:65:"index.php?year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]";s:26:"([0-9]{4})/([0-9]{1,2})/?$";s:47:"index.php?year=$matches[1]&monthnum=$matches[2]";s:43:"([0-9]{4})/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:38:"([0-9]{4})/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?year=$matches[1]&feed=$matches[2]";s:31:"([0-9]{4})/page/?([0-9]{1,})/?$";s:44:"index.php?year=$matches[1]&paged=$matches[2]";s:13:"([0-9]{4})/?$";s:26:"index.php?year=$matches[1]";s:27:".?.+?/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:".?.+?/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:".?.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:".?.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"(.?.+?)/trackback/?$";s:35:"index.php?pagename=$matches[1]&tb=1";s:40:"(.?.+?)/feed/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:35:"(.?.+?)/(feed|rdf|rss|rss2|atom)/?$";s:47:"index.php?pagename=$matches[1]&feed=$matches[2]";s:28:"(.?.+?)/page/?([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&paged=$matches[2]";s:35:"(.?.+?)/comment-page-([0-9]{1,})/?$";s:48:"index.php?pagename=$matches[1]&cpage=$matches[2]";s:20:"(.?.+?)(/[0-9]+)?/?$";s:47:"index.php?pagename=$matches[1]&page=$matches[2]";s:27:"[^/]+/attachment/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:37:"[^/]+/attachment/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:57:"[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:52:"[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";s:20:"([^/]+)/trackback/?$";s:31:"index.php?name=$matches[1]&tb=1";s:40:"([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:35:"([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:43:"index.php?name=$matches[1]&feed=$matches[2]";s:28:"([^/]+)/page/?([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&paged=$matches[2]";s:35:"([^/]+)/comment-page-([0-9]{1,})/?$";s:44:"index.php?name=$matches[1]&cpage=$matches[2]";s:20:"([^/]+)(/[0-9]+)?/?$";s:43:"index.php?name=$matches[1]&page=$matches[2]";s:16:"[^/]+/([^/]+)/?$";s:32:"index.php?attachment=$matches[1]";s:26:"[^/]+/([^/]+)/trackback/?$";s:37:"index.php?attachment=$matches[1]&tb=1";s:46:"[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$";s:49:"index.php?attachment=$matches[1]&feed=$matches[2]";s:41:"[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$";s:50:"index.php?attachment=$matches[1]&cpage=$matches[2]";}', 'yes'),
 (2043, 'widget_execphp', 'a:4:{i:2;a:3:{s:5:"title";s:0:"";s:4:"text";s:71:"<?php echo get_template_part( ''template-parts/section'', ''recents'' ); ?>";s:6:"filter";b:0;}i:3;a:3:{s:5:"title";s:0:"";s:4:"text";s:70:"<?php echo get_template_part( ''template-parts/section'', ''review'' ); ?>";s:6:"filter";b:0;}i:6;a:3:{s:5:"title";s:0:"";s:4:"text";s:120:"<div class="col-md-3" style="float:right;">\r\n<?php echo get_template_part( ''template-parts/section'', ''ads'' ); ?>\r\n</div>";s:6:"filter";b:0;}s:12:"_multiwidget";i:1;}', 'yes'),
 (1919, '_transient_timeout_feed_mod_0d102f2a1f4d6bc90eb8c6ffe18e56ed', '1447129408', 'no'),
@@ -643,7 +643,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (1651, 'theme_mods_twentyfifteen', 'a:1:{s:16:"sidebars_widgets";a:2:{s:4:"time";i:1446312940;s:4:"data";a:2:{s:19:"wp_inactive_widgets";a:4:{i:0;s:6:"text-2";i:1;s:6:"text-3";i:2;s:6:"text-4";i:3;s:10:"nav_menu-3";}s:9:"sidebar-1";a:5:{i:0;s:14:"recent-posts-2";i:1;s:17:"recent-comments-2";i:2;s:10:"archives-2";i:3;s:12:"categories-2";i:4;s:6:"meta-2";}}}}', 'yes'),
 (1941, 'calendartype_children', 'a:0:{}', 'yes'),
 (2024, '_site_transient_timeout_browser_a92d8832ceed418bc832e3fecb5d5ce1', '1448121519', 'yes'),
-(2025, '_site_transient_browser_a92d8832ceed418bc832e3fecb5d5ce1', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:7:"Firefox";s:7:"version";s:4:"42.0";s:10:"update_url";s:23:"http://www.firefox.com/";s:7:"img_src";s:50:"http://s.wordpress.org/images/browsers/firefox.png";s:11:"img_src_ssl";s:49:"https://wordpress.org/images/browsers/firefox.png";s:15:"current_version";s:2:"16";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes');
+(2025, '_site_transient_browser_a92d8832ceed418bc832e3fecb5d5ce1', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:7:"Firefox";s:7:"version";s:4:"42.0";s:10:"update_url";s:23:"http://www.firefox.com/";s:7:"img_src";s:50:"http://s.wordpress.org/images/browsers/firefox.png";s:11:"img_src_ssl";s:49:"https://wordpress.org/images/browsers/firefox.png";s:15:"current_version";s:2:"16";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
+(2044, '_site_transient_timeout_browser_4910e34ab899e1f04ce17d9586e216ff', '1448123904', 'yes'),
+(2045, '_site_transient_browser_4910e34ab899e1f04ce17d9586e216ff', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"46.0.2490.86";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -651,12 +653,12 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 -- Table structure for table `wp_postmeta`
 --
 
-CREATE TABLE `wp_postmeta` (
-  `meta_id` bigint(20) UNSIGNED NOT NULL,
-  `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_postmeta` (
+`meta_id` bigint(20) unsigned NOT NULL,
+  `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=1153 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -1237,7 +1239,10 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1145, 296, '_edit_lock', '1447263000:1'),
 (1146, 296, '_thumbnail_id', '292'),
 (1147, 296, 'gallery', '289,290,291,292'),
-(1149, 296, '_dp_original', '293');
+(1149, 296, '_dp_original', '293'),
+(1150, 297, '_edit_last', '1'),
+(1151, 297, '_edit_lock', '1447518985:1'),
+(1152, 297, '_wp_page_template', 'page-gallery.php');
 
 -- --------------------------------------------------------
 
@@ -1245,9 +1250,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 -- Table structure for table `wp_posts`
 --
 
-CREATE TABLE `wp_posts` (
-  `ID` bigint(20) UNSIGNED NOT NULL,
-  `post_author` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_posts` (
+`ID` bigint(20) unsigned NOT NULL,
+  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content` longtext NOT NULL,
@@ -1263,13 +1268,13 @@ CREATE TABLE `wp_posts` (
   `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content_filtered` longtext NOT NULL,
-  `post_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `post_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `guid` varchar(255) NOT NULL DEFAULT '',
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=299 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1338,9 +1343,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (228, 1, '2015-11-04 15:03:16', '2015-11-04 15:03:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-04 15:03:16', '2015-11-04 15:03:16', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
 (229, 1, '2015-11-04 16:02:36', '2015-11-04 16:02:36', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'publish', 'open', 'open', '', 'lorem-ipsum-dolor-sit-amet', '', '', '2015-11-08 06:10:14', '2015-11-08 06:10:14', '', 0, 'http://wordpress.dev.com/?p=229', 0, 'post', '', 0),
 (230, 1, '2015-11-04 16:02:36', '2015-11-04 16:02:36', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:02:36', '2015-11-04 16:02:36', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
-(231, 1, '2015-11-04 16:10:12', '2015-11-04 16:10:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.<!--more-->\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:10:12', '2015-11-04 16:10:12', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
-(232, 1, '2015-11-04 16:16:08', '2015-11-04 16:16:08', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:16:08', '2015-11-04 16:16:08', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0);
+(231, 1, '2015-11-04 16:10:12', '2015-11-04 16:10:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.<!--more-->\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:10:12', '2015-11-04 16:10:12', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
+(232, 1, '2015-11-04 16:16:08', '2015-11-04 16:16:08', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:16:08', '2015-11-04 16:16:08', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
 (233, 1, '2015-11-05 16:15:25', '2015-11-05 16:15:25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum', '', 'publish', 'open', 'open', '', 'lorem-ipsum', '', '', '2015-11-08 06:10:14', '2015-11-08 06:10:14', '', 0, 'http://wordpress.dev.com/?p=233', 0, 'post', '', 0),
 (234, 1, '2015-11-05 16:15:26', '2015-11-05 16:15:26', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum', '', 'inherit', 'closed', 'closed', '', '233-revision-v1', '', '', '2015-11-05 16:15:26', '2015-11-05 16:15:26', '', 233, 'http://wordpress.dev.com/233-revision-v1/', 0, 'revision', '', 0),
 (235, 1, '2015-11-06 13:57:07', '2015-11-06 13:57:07', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'publish', 'open', 'open', '', 'lorem-ipsum-dolor-sit-amet-2', '', '', '2015-11-08 06:10:14', '2015-11-08 06:10:14', '', 0, 'http://wordpress.dev.com/?p=235', 0, 'post', '', 0),
@@ -1392,7 +1397,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (293, 1, '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 'Album Lớp Luật Doanh Nghiệp', '', 'publish', 'closed', 'closed', '', 'album-lop-luat-doanh-nghiep-5', '', '', '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 0, 'http://wordpress.dev.com/?post_type=gallery&#038;p=293', 0, 'gallery', '', 0),
 (294, 1, '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 'Album Lớp Luật Doanh Nghiệp', '', 'publish', 'closed', 'closed', '', 'album-lop-luat-doanh-nghiep-4', '', '', '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 0, 'http://wordpress.dev.com/?post_type=gallery&#038;p=294', 0, 'gallery', '', 0),
 (295, 1, '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 'Album Lớp Luật Doanh Nghiệp', '', 'publish', 'closed', 'closed', '', 'album-lop-luat-doanh-nghiep-3', '', '', '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 0, 'http://wordpress.dev.com/?post_type=gallery&#038;p=295', 0, 'gallery', '', 0),
-(296, 1, '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 'Album Lớp Luật Doanh Nghiệp', '', 'publish', 'closed', 'closed', '', 'album-lop-luat-doanh-nghiep-2', '', '', '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 0, 'http://wordpress.dev.com/?post_type=gallery&#038;p=296', 0, 'gallery', '', 0);
+(296, 1, '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 'Album Lớp Luật Doanh Nghiệp', '', 'publish', 'closed', 'closed', '', 'album-lop-luat-doanh-nghiep-2', '', '', '2015-11-11 17:32:49', '2015-11-11 17:32:49', '', 0, 'http://wordpress.dev.com/?post_type=gallery&#038;p=296', 0, 'gallery', '', 0),
+(297, 1, '2015-11-14 16:38:47', '2015-11-14 16:38:47', '', 'Hình ảnh hoạt động', '', 'publish', 'closed', 'closed', '', 'hinh-anh-hoat-dong', '', '', '2015-11-14 16:38:47', '2015-11-14 16:38:47', '', 0, 'http://wordpress.dev.com/?page_id=297', 0, 'page', '', 0),
+(298, 1, '2015-11-14 16:38:47', '2015-11-14 16:38:47', '', 'Hình ảnh hoạt động', '', 'inherit', 'closed', 'closed', '', '297-revision-v1', '', '', '2015-11-14 16:38:47', '2015-11-14 16:38:47', '', 297, 'http://wordpress.dev.com/297-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -1400,12 +1407,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 -- Table structure for table `wp_terms`
 --
 
-CREATE TABLE `wp_terms` (
-  `term_id` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_terms` (
+`term_id` bigint(20) unsigned NOT NULL,
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_terms`
@@ -1438,9 +1445,9 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 -- Table structure for table `wp_term_relationships`
 --
 
-CREATE TABLE `wp_term_relationships` (
-  `object_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
-  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
+  `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `term_order` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
@@ -1543,14 +1550,14 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 -- Table structure for table `wp_term_taxonomy`
 --
 
-CREATE TABLE `wp_term_taxonomy` (
-  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL,
-  `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
+`term_taxonomy_id` bigint(20) unsigned NOT NULL,
+  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) NOT NULL DEFAULT '',
   `description` longtext NOT NULL,
-  `parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
@@ -1583,12 +1590,12 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 -- Table structure for table `wp_usermeta`
 --
 
-CREATE TABLE `wp_usermeta` (
-  `umeta_id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+CREATE TABLE IF NOT EXISTS `wp_usermeta` (
+`umeta_id` bigint(20) unsigned NOT NULL,
+  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -1608,7 +1615,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (11, 1, 'wp_user_level', '10'),
 (12, 1, 'dismissed_wp_pointers', 'wp360_locks,wp390_widgets,wp410_dfw'),
 (13, 1, 'show_welcome_panel', '1'),
-(32, 1, 'session_tokens', 'a:1:{s:64:"fd0676aee7cf2b68699e120ece3b5a1f54574d6cfba7d25a86a546a7de1d18a5";a:4:{s:10:"expiration";i:1447689517;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:73:"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0";s:5:"login";i:1447516717;}}'),
+(32, 1, 'session_tokens', 'a:2:{s:64:"fd0676aee7cf2b68699e120ece3b5a1f54574d6cfba7d25a86a546a7de1d18a5";a:4:{s:10:"expiration";i:1447689517;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:73:"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0";s:5:"login";i:1447516717;}s:64:"aaae209f1cef6d9113ec1fb1fe3398eb3f9c9c5c0dd37ad0cbb5ad0bf8add771";a:4:{s:10:"expiration";i:1447691903;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";s:5:"login";i:1447519103;}}'),
 (15, 1, 'wp_dashboard_quick_press_last_post_id', '281'),
 (16, 1, 'wp_user-settings', 'libraryContent=browse&editor=html'),
 (17, 1, 'wp_user-settings-time', '1447263136'),
@@ -1633,8 +1640,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 -- Table structure for table `wp_users`
 --
 
-CREATE TABLE `wp_users` (
-  `ID` bigint(20) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `wp_users` (
+`ID` bigint(20) unsigned NOT NULL,
   `user_login` varchar(60) NOT NULL DEFAULT '',
   `user_pass` varchar(64) NOT NULL DEFAULT '',
   `user_nicename` varchar(50) NOT NULL DEFAULT '',
@@ -1644,7 +1651,7 @@ CREATE TABLE `wp_users` (
   `user_activation_key` varchar(60) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
   `display_name` varchar(250) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_users`
@@ -1661,232 +1668,199 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 -- Indexes for table `pma__bookmark`
 --
 ALTER TABLE `pma__bookmark`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pma__central_columns`
 --
 ALTER TABLE `pma__central_columns`
-  ADD PRIMARY KEY (`db_name`,`col_name`);
+ ADD PRIMARY KEY (`db_name`,`col_name`);
 
 --
 -- Indexes for table `pma__column_info`
 --
 ALTER TABLE `pma__column_info`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
 
 --
 -- Indexes for table `pma__designer_settings`
 --
 ALTER TABLE `pma__designer_settings`
-  ADD PRIMARY KEY (`username`);
+ ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__export_templates`
 --
 ALTER TABLE `pma__export_templates`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
 
 --
 -- Indexes for table `pma__favorite`
 --
 ALTER TABLE `pma__favorite`
-  ADD PRIMARY KEY (`username`);
+ ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__history`
 --
 ALTER TABLE `pma__history`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
+ ADD PRIMARY KEY (`id`), ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
 
 --
 -- Indexes for table `pma__navigationhiding`
 --
 ALTER TABLE `pma__navigationhiding`
-  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
+ ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__pdf_pages`
 --
 ALTER TABLE `pma__pdf_pages`
-  ADD PRIMARY KEY (`page_nr`),
-  ADD KEY `db_name` (`db_name`);
+ ADD PRIMARY KEY (`page_nr`), ADD KEY `db_name` (`db_name`);
 
 --
 -- Indexes for table `pma__recent`
 --
 ALTER TABLE `pma__recent`
-  ADD PRIMARY KEY (`username`);
+ ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__relation`
 --
 ALTER TABLE `pma__relation`
-  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
-  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
+ ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`), ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
 
 --
 -- Indexes for table `pma__savedsearches`
 --
 ALTER TABLE `pma__savedsearches`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
 
 --
 -- Indexes for table `pma__table_coords`
 --
 ALTER TABLE `pma__table_coords`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
+ ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
 
 --
 -- Indexes for table `pma__table_info`
 --
 ALTER TABLE `pma__table_info`
-  ADD PRIMARY KEY (`db_name`,`table_name`);
+ ADD PRIMARY KEY (`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__table_uiprefs`
 --
 ALTER TABLE `pma__table_uiprefs`
-  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
+ ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__tracking`
 --
 ALTER TABLE `pma__tracking`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
+ ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
 
 --
 -- Indexes for table `pma__userconfig`
 --
 ALTER TABLE `pma__userconfig`
-  ADD PRIMARY KEY (`username`);
+ ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__usergroups`
 --
 ALTER TABLE `pma__usergroups`
-  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
+ ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
 
 --
 -- Indexes for table `pma__users`
 --
 ALTER TABLE `pma__users`
-  ADD PRIMARY KEY (`username`,`usergroup`);
+ ADD PRIMARY KEY (`username`,`usergroup`);
 
 --
 -- Indexes for table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
-  ADD PRIMARY KEY (`meta_id`),
-  ADD KEY `comment_id` (`comment_id`),
-  ADD KEY `meta_key` (`meta_key`(191));
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `comment_id` (`comment_id`), ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_comments`
 --
 ALTER TABLE `wp_comments`
-  ADD PRIMARY KEY (`comment_ID`),
-  ADD KEY `comment_post_ID` (`comment_post_ID`),
-  ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
-  ADD KEY `comment_date_gmt` (`comment_date_gmt`),
-  ADD KEY `comment_parent` (`comment_parent`),
-  ADD KEY `comment_author_email` (`comment_author_email`(10));
+ ADD PRIMARY KEY (`comment_ID`), ADD KEY `comment_post_ID` (`comment_post_ID`), ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`), ADD KEY `comment_date_gmt` (`comment_date_gmt`), ADD KEY `comment_parent` (`comment_parent`), ADD KEY `comment_author_email` (`comment_author_email`(10));
 
 --
 -- Indexes for table `wp_links`
 --
 ALTER TABLE `wp_links`
-  ADD PRIMARY KEY (`link_id`),
-  ADD KEY `link_visible` (`link_visible`);
+ ADD PRIMARY KEY (`link_id`), ADD KEY `link_visible` (`link_visible`);
 
 --
 -- Indexes for table `wp_ngg_album`
 --
 ALTER TABLE `wp_ngg_album`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `extras_post_id_key` (`extras_post_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_ngg_gallery`
 --
 ALTER TABLE `wp_ngg_gallery`
-  ADD PRIMARY KEY (`gid`),
-  ADD KEY `extras_post_id_key` (`extras_post_id`);
+ ADD PRIMARY KEY (`gid`), ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_ngg_pictures`
 --
 ALTER TABLE `wp_ngg_pictures`
-  ADD PRIMARY KEY (`pid`),
-  ADD KEY `extras_post_id_key` (`extras_post_id`);
+ ADD PRIMARY KEY (`pid`), ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  ADD PRIMARY KEY (`option_id`),
-  ADD UNIQUE KEY `option_name` (`option_name`);
+ ADD PRIMARY KEY (`option_id`), ADD UNIQUE KEY `option_name` (`option_name`);
 
 --
 -- Indexes for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  ADD PRIMARY KEY (`meta_id`),
-  ADD KEY `post_id` (`post_id`),
-  ADD KEY `meta_key` (`meta_key`(191));
+ ADD PRIMARY KEY (`meta_id`), ADD KEY `post_id` (`post_id`), ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `post_name` (`post_name`(191)),
-  ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
-  ADD KEY `post_parent` (`post_parent`),
-  ADD KEY `post_author` (`post_author`);
+ ADD PRIMARY KEY (`ID`), ADD KEY `post_name` (`post_name`(191)), ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`), ADD KEY `post_parent` (`post_parent`), ADD KEY `post_author` (`post_author`);
 
 --
 -- Indexes for table `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  ADD PRIMARY KEY (`term_id`),
-  ADD KEY `slug` (`slug`(191)),
-  ADD KEY `name` (`name`(191));
+ ADD PRIMARY KEY (`term_id`), ADD KEY `slug` (`slug`(191)), ADD KEY `name` (`name`(191));
 
 --
 -- Indexes for table `wp_term_relationships`
 --
 ALTER TABLE `wp_term_relationships`
-  ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`),
-  ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
+ ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`), ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
 
 --
 -- Indexes for table `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  ADD PRIMARY KEY (`term_taxonomy_id`),
-  ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
-  ADD KEY `taxonomy` (`taxonomy`);
+ ADD PRIMARY KEY (`term_taxonomy_id`), ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`), ADD KEY `taxonomy` (`taxonomy`);
 
 --
 -- Indexes for table `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  ADD PRIMARY KEY (`umeta_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `meta_key` (`meta_key`(191));
+ ADD PRIMARY KEY (`umeta_id`), ADD KEY `user_id` (`user_id`), ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_users`
 --
 ALTER TABLE `wp_users`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `user_login_key` (`user_login`),
-  ADD KEY `user_nicename` (`user_nicename`);
+ ADD PRIMARY KEY (`ID`), ADD KEY `user_login_key` (`user_login`), ADD KEY `user_nicename` (`user_nicename`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1896,97 +1870,97 @@ ALTER TABLE `wp_users`
 -- AUTO_INCREMENT for table `pma__bookmark`
 --
 ALTER TABLE `pma__bookmark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__column_info`
 --
 ALTER TABLE `pma__column_info`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__export_templates`
 --
 ALTER TABLE `pma__export_templates`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__history`
 --
 ALTER TABLE `pma__history`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__pdf_pages`
 --
 ALTER TABLE `pma__pdf_pages`
-  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__savedsearches`
 --
 ALTER TABLE `pma__savedsearches`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=159;
 --
 -- AUTO_INCREMENT for table `wp_comments`
 --
 ALTER TABLE `wp_comments`
-  MODIFY `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `wp_links`
 --
 ALTER TABLE `wp_links`
-  MODIFY `link_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_ngg_album`
 --
 ALTER TABLE `wp_ngg_album`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_ngg_gallery`
 --
 ALTER TABLE `wp_ngg_gallery`
-  MODIFY `gid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+MODIFY `gid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `wp_ngg_pictures`
 --
 ALTER TABLE `wp_ngg_pictures`
-  MODIFY `pid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+MODIFY `pid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2044;
+MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2048;
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1150;
+MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1153;
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=297;
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=299;
 --
 -- AUTO_INCREMENT for table `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `wp_users`
 --
 ALTER TABLE `wp_users`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

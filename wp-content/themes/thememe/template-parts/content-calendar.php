@@ -11,6 +11,7 @@
 
 <?php
 $now  = new DateTime( "now" );
+$calendar_date = new DateTime(get_post_meta( get_the_ID(), 'calendar_date', true ));
 $calendar_date_start = new DateTime(get_post_meta( get_the_ID(), 'calendar_date_start', true ));
 $calendar_date_end = new DateTime(get_post_meta( get_the_ID(), 'calendar_date_end', true ));
 $calendar_location = get_post_meta( get_the_ID(), 'calendar_location', true );
@@ -80,6 +81,7 @@ if($calendar_attachment){
 		
 			<dl class="dl-horizontal calendar-detail">
 			  	<?php printf( '<dt>' . esc_html__( 'Thời gian đăng ký', 'thememe' ) . '</dt><dd>' . esc_html__( '%1s - %2s', 'thememe' ) . '</dd>',$calendar_date_start->format('d/m/Y'),$calendar_date_end->format('d/m/Y')) ?>
+				<?php printf( '<dt>' . esc_html__( 'Ngày Khai giảng', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_date->format('d/m/Y')) ?>
 				<?php printf( '<dt>' . esc_html__( 'Địa điểm', 'thememe' ) . '</dt><dd>' . esc_html__( '%s', 'thememe' ) . '</dd>',$calendar_location) ?>
 				<?php printf( '<dt>' . esc_html__( 'Học phí', 'thememe' ) . '</dt><dd>' . esc_html__( '%s VNĐ', 'thememe' ) . '</dd>',$calendar_price) ?>
 				<?php printf( '<dt>' . esc_html__( 'Liên hệ', 'thememe' ) . '</dt><dd><span><i class="fa fa-user"></i></span> ' . esc_html__( '%1s', 'thememe' ) . '</dd><dd><span><i class="fa fa-phone"></i></span>' . esc_html__( '%2s', 'thememe' ) . '</dd><dd><span><i class="fa fa-envelope"></i></span>' . esc_html__( '%3s', 'thememe' ) . '</dd>',$calendar_contact_name, $calendar_contact_phone, $calendar_contact_email) ?>
