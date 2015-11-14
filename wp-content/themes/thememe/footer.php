@@ -46,7 +46,7 @@
 		$("a[rel^='prettyPhoto']").prettyPhoto();
 
 
-		var slideByClick = false;
+/*		var slideByClick = false;
 		$('.carousel-custom-js').on('slid.bs.carousel', function () {
 			if(slideByClick) {
 				slideByClick = false;
@@ -66,7 +66,33 @@
 			slideByClick = true;
 			$('.carouse-clone ol.carousel-indicators li.active').removeClass("active");
 			$(this).addClass("active");
-		});
+		});*/
+
+		setUpCarouselIndicator("#carousel-review", ".carousel-clone");
+		setUpCarouselIndicator("#carousel-gallery", ".carousel-gallery-clone");
+
+		function setUpCarouselIndicator(carouselId, carouselIndicatorClass) {
+			var slideByClick = false;
+			$(carouselId).on('slid.bs.carousel', function () {
+				if(slideByClick) {
+					slideByClick = false;
+					return true;
+				}
+				$holder = $( carouselIndicatorClass + " ol li.active" );
+				$holder.next( "li" ).addClass("active");
+				if($holder.is(':last-child')) {
+					$holder.removeClass("active");
+					$(carouselIndicatorClass + " ol li:first").addClass("active");
+				}
+				$holder.removeClass("active");
+			});
+
+			$(carouselIndicatorClass + " ol.carousel-indicators  li").on("click",function(){
+				slideByClick = true;
+				$(carouselIndicatorClass + " ol.carousel-indicators li.active").removeClass("active");
+				$(this).addClass("active");
+			});
+		};
 	});
 </script>
 

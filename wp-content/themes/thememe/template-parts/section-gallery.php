@@ -79,9 +79,9 @@
 	<div class="content-footer">
 		<div class="row">
 			<div class="col-xs-6">
-				<div class="carouse carouse-clone">
+				<div class="carouse carousel-gallery-clone">
 					<ol class="carousel-indicators">
-						<?php for ($j=0; $j < $i; $j++) { ?>
+						<?php for ($j=0; $j < $i/4; $j++) { ?>
 							<li data-target="#carousel-gallery" data-slide-to="<?php echo $j; ?>" <?php echo $j==0?'class="active"':''; ?>></li>
 						<?php }?> 
 					</ol>

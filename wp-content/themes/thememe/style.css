@@ -108,7 +108,8 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .carousel-indicators li{border: none; background-color: rgba(226,226,226,0.75);}
 .carousel-indicators .active{background-color: #19b5fe;}
 .carousel .item-inner{background-size: cover; background-repeat: no-repeat; background-position: center;}
-.carouse.carouse-clone .carousel-indicators{position: static; margin: 0; width: 100%; text-align: left;}
+.carouse.carousel-clone .carousel-indicators {position: static; margin: 0; width: 100%; text-align: left;}
+.carouse.carousel-gallery-clone .carousel-indicators {position: static; margin: 0; width: 100%; text-align: left;}
 
 /*--------------------------------------------------------------
 ## Tooltip
@@ -133,7 +134,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 800;}
 .tab-custom .nav-tabs>li>a{border:none;}
 .tab-custom .nav-tabs>li>a, .tab-custom .nav-tabs>li>a:hover, .tab-custom .nav-tabs>li>a:focus,
 .tab-custom .nav-tabs>li.active>a, .tab-custom .nav-tabs>li.active>a:hover, .tab-custom .nav-tabs>li.active>a:focus{background-color: transparent;color: #fff; border: none;}
-.tab-custom .nav-tabs>li.active>a:{position: relative;}
+.tab-custom .nav-tabs>li.active>a{position: relative;}
 .tab-custom .nav-tabs>li.active>a:before{content: ""; position: absolute; bottom: 0; left: 15px; right: 15px; height: 4px; background-color: #19b5fe;}
 .tab-custom .nav-tabs>li.active>a:after {content: ""; position: absolute; left: 32px; bottom: -6px; z-index: 2; border-width: 6px 5px 0;  border-style: solid; border-color: #19b5fe transparent transparent;}
 .tab-custom .nav-tabs>li>a:hover{background-color: rgba(255,255,255,0.2);}

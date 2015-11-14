@@ -76,7 +76,7 @@
 	<div class="content-footer">
 		<div class="row">
 			<div class="col-xs-6">
-				<div class="carouse carouse-clone">
+				<div class="carouse carousel-clone">
 					<ol class="carousel-indicators">
 						<?php for ($j=0; $j < $i; $j++) { ?>
 							<li data-target="#carousel-review" data-slide-to="<?php echo $j; ?>" <?php echo $j==0?'class="active"':''; ?>></li>
