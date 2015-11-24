@@ -237,7 +237,7 @@ function event_listing_func($atts, $content="") {
 	), $atts ));
 	$term = get_term_by( 'slug', $slug, 'calendartype');
 	$term_link = get_term_link( $term);
-
+	$today = date("Y-m-d");
 	$args = array(
 			'post_type'=> 'calendar',
 			'posts_per_page'=> '5',
@@ -251,6 +251,15 @@ function event_listing_func($atts, $content="") {
 							'terms'    => $slug,
 					),
 			),
+			'meta_query' => array(
+		        array(
+		           'key' => 'calendar_date',
+		           'meta-value' => $value,
+		           'value' => $today,
+		           'compare' => '>=',
+		           'type' => 'CHAR'// you can change it to datetime also
+		       )
+		    )
 	);
 	query_posts( $args );
 

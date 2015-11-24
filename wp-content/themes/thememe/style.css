@@ -382,7 +382,8 @@ body{background-color: #ecf0f1; color: #333;}
 .cat-links a{color: #fff; padding: 2px 8px; border-radius: 2px; background-color: #19B5FE; margin-right: 5px; margin-bottom: 4px; font-size: 10px;}
 .cat-links a:hover{background-color: #2C3E50; text-decoration: none;}
 .in-term{display: inline-block; margin-left: 10px;}
-
+.meta-date{display: inline-block; margin-left: 10px;}
+.meta-date span{color: #2c3e50;}
 .entry-footer{padding-top: 20px;}
 .tags-links{font-size: 11px; text-transform: uppercase; display: block; margin-bottom: 10px; }
 .tags-links >*{display: inline-block; padding: 4px 15px; margin-right: 10px;}

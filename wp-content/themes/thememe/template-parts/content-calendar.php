@@ -53,7 +53,9 @@ if($calendar_attachment){
 		
 	}
 	
-
+	if ($calendar_date!='') {
+		$label .=' <span class="meta-date">Khai giảng: <span>'.$calendar_date->format('d/m/Y').'</span></span>';
+	}
 
 ?>
 
