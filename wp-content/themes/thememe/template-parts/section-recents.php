@@ -1,7 +1,7 @@
 <div class="box-content-header"><h2 class="widget-title heading-title">Recent Posts</h2></div>
 <div class="box-content-body">
 <?php 
-	$num = 6;
+	$num = 5;
 	$args = array('post_type' => 'post' ,  'posts_per_page' => $num);
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
