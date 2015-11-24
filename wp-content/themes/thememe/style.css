@@ -433,7 +433,7 @@ table ul{padding-left: 20px;}
 .cat-group .lcp_catlist{padding-left: 0; list-style: none; clear: both; overflow: hidden;}
 .cat-group .lcp_catlist .post-date{color: #999; font-style: italic; font-size: 11px; display: block; margin: 5px 0 10px;}
 .cat-group .lcp_catlist .excerpt{font-size: 13px;}
-.cat-group .lcp_catlist:first-child li{padding-left: 130px; position: relative;}
+.cat-group .lcp_catlist:first-child li.has-thumb{padding-left: 130px; position: relative;}
 .cat-group .lcp_catlist:first-child li img{position: absolute; width: 120px; height: auto; left: 0; top: 0;}
 .cat-group .lcp_catlist:first-child li .featured_title{font-size: 16px; font-weight: 700; display: block;}
 .cat-group .lcp_catlist:last-child li{position: relative; padding-left: 12px;}
@@ -455,6 +455,11 @@ table ul{padding-left: 20px;}
 .review .review-body .entry{color: #999; padding: 10px 10px 0; position: relative;}
 .review .review-body .entry:before{content: "\f10d"; font-family: 'FontAwesome'; position: absolute; font-size: 20px; color: #eee; top: -10px; left: 0}
 .page-template-page-reviews .review{margin: 10px 0;}
+
+.review-left{background-color: #efefef; padding-bottom: 20px; border-bottom: 2px solid #2C3E50}
+.review-contact{margin-top: 10px; margin-bottom: 10px; padding: 0 10px;}
+.review-contact label{float: left; font-size: 12px; margin-top: 4px; margin-right: 10px; text-transform: uppercase; font-weight: 400;}
+
 
 .calendar-detail{line-height: 1.6;}
 .calendar-detail dd span{display: inline-block; margin-right: 8px; font-size: 12px; color: #999;}

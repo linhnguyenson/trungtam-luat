@@ -29,7 +29,11 @@ function _custom_meta_boxes() {
       'priority'    => 'high',
 
       'fields'      => array(
-
+        array(
+          'id'          => 'reviews_intro',
+          'label'       => __( 'Giới thiệu vắn tắt', 'thememe' ),
+          'type'        => 'textarea',
+        ),
         array(
           'id'          => 'reviews_email',
           'label'       => __( 'Email', 'thememe' ),
