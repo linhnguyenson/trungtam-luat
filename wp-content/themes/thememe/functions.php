@@ -217,7 +217,7 @@ function category_box_func($atts, $content="") {
 	$shortcode = "<div class='inside-full-height box-content box-content-has-footer'>
 					<div class='box-content-header'><h2 class='widget-title heading-title'>$cat->cat_name</h2></div>
 					<div class='box-content-body cat-group'>
-						[catlist name=$slug date=yes dateformat='d/m/Y h:i A' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=p excerpt_class=excerpt excerpt_size=15 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' /]
+						[catlist name=$slug date=yes dateformat='d/m/Y h:i A' date_tag=span date_class=post-date numberposts=1 excerpt=yes excerpt_tag=p excerpt_class=excerpt excerpt_size=15 thumbnail=yes thumbnail_size=single-post-thumbnail thumbnail_class=post_thumbnail title_class='featured_title' template=catlist-template/]
 						[catlist name=$slug offset=1 date=yes dateformat=d/m/Y date_tag=span date_class=post-date numberposts=4 /]
 					</div>
 					<div class='content-footer text-right'>
