@@ -1,4 +1,4 @@
-<div class="box-content-header"><h2 class="widget-title heading-title">Recent Posts</h2></div>
+<div class="box-content-header"><h2 class="widget-title heading-title">Bài viết mới</h2></div>
 <div class="box-content-body">
 <?php 
 	$num = 5;
