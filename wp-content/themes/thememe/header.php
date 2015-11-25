@@ -53,35 +53,36 @@
 				
 			</div>
 		</div>
-
-		<div class="site-branding">
-			<div class="container">
-				<?php 
-					$logo = (ot_get_option('logo')!='')?ot_get_option('logo'):get_template_directory_uri().'/skins/img/logo.png';
-					$banner = (ot_get_option('banner')!='')?ot_get_option('banner'):get_template_directory_uri().'/skins/img/banner.png';
-				?>
-				<div class="banner">
-					<img src="<?php echo $banner; ?>">
-				</div>
-				<div class="logo hidden-sm hidden-xs">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>"></a>
-				</div>
-			</div>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="container">
-				<button class="menu-toggle btn btn btn-default btn-sm" aria-controls="primary-menu" aria-expanded="false"><i class="glyphicon glyphicon-menu-hamburger"></i> <span class="hidden"><?php esc_html_e( 'Primary Menu', 'thememe' ); ?></span></button>
-				<div class="row">
-					<div class="col-md-6">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary-left', 'menu_id' => 'primary-menu-left' ) ); ?>
+		<div class="site-bottom">
+			<div class="site-branding">
+				<div class="container">
+					<?php 
+						$logo = (ot_get_option('logo')!='')?ot_get_option('logo'):get_template_directory_uri().'/skins/img/logo.png';
+						$banner = (ot_get_option('banner')!='')?ot_get_option('banner'):get_template_directory_uri().'/skins/img/banner.png';
+					?>
+					<div class="banner">
+						<img src="<?php echo $banner; ?>">
 					</div>
-					<div class="col-md-6">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary-right', 'menu_id' => 'primary-menu-right' ) ); ?>
+					<div class="logo hidden-sm hidden-xs">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>"></a>
 					</div>
 				</div>
-			</div>
-		</nav><!-- #site-navigation -->
+			</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="container">
+					<button class="menu-toggle btn btn btn-default btn-sm" aria-controls="primary-menu" aria-expanded="false"><i class="glyphicon glyphicon-menu-hamburger"></i> <span class="hidden"><?php esc_html_e( 'Primary Menu', 'thememe' ); ?></span></button>
+					<div class="row">
+						<div class="col-md-6 menu-area menu-left">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary-left', 'menu_id' => 'primary-menu-left' ) ); ?>
+						</div>
+						<div class="col-md-6 menu-area menu-right">
+							<?php wp_nav_menu( array( 'theme_location' => 'primary-right', 'menu_id' => 'primary-menu-right' ) ); ?>
+						</div>
+					</div>
+				</div>
+			</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
