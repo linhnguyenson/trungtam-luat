@@ -321,7 +321,7 @@ body{background-color: #ecf0f1; color: #333;}
 .site-top .search-form .form-control:-ms-input-placeholder{color: #fff;}
 .site-top .search-form .btn{border-radius: 0; text-indent: -9999px; width: 28px; background-image: url(skins/img/icon-search.png); background-repeat: no-repeat; background-position: center;}
 
-.site-branding{position: relative; background-color: #19b5fe; border-bottom: 3px solid #ecf0f1}
+.site-branding{position: relative; background-color: #e74c3c; border-bottom: 3px solid #ecf0f1}
 .site-branding .banner{text-align: center; padding: 15px 0  48px;}
 .site-branding .banner img{max-width: 50%;}
 .site-branding .logo{display: inline-block; position: absolute; text-align: center; width: 238px; left: 50%; margin-left: -119px; bottom: -55px; padding-bottom: 8px; background-image: url(skins/img/bg-logo.png); background-repeat: no-repeat; background-position: 190px center; background-position: center 46px;}
