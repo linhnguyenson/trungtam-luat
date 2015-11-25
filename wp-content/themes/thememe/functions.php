@@ -125,7 +125,7 @@ function thememe_scripts() {
 
 	wp_enqueue_style( 'thememe-css-font-serif', 'https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic&subset=latin,vietnamese','', false );
 
-	wp_enqueue_style( 'thememe-css-font-san-serif', '','https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,600,700,800,400italic&subset=latin,vietnamese', false );
+	wp_enqueue_style( 'thememe-css-font-san-serif', 'https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,600,700,800,400italic&subset=latin,vietnamese', '', false );
 
 	wp_enqueue_style( 'thememe-css-bootstrap', get_template_directory_uri() . '/skins/css/bootstrap.min.css','3.3.5', false );
 
