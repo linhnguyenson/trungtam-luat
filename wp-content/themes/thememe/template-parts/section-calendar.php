@@ -1,9 +1,8 @@
 <div class="inside-full-height box-content box-content-has-footer">
 	<div class="tab-custom">
 		<ul class="nav nav-tabs" role="tablist">
-		    <li role="label"><span>Khóa học cho</span></li>
-		    <li role="presentation" class="active"><a href="#doanhnghiep" aria-controls="doanhnghiep" role="tab" data-toggle="tab">Cơ quan doanh nghiệp</a></li>
-		    <li role="presentation"><a href="#sinhvien" aria-controls="sinhvien" role="tab" data-toggle="tab">Sinh viên</a></li>  
+		    <li role="presentation" class="active"><a href="#doanhnghiep" aria-controls="doanhnghiep" role="tab" data-toggle="tab">Khóa học Cơ quan doanh nghiệp</a></li>
+		    <li role="presentation"><a href="#sinhvien" aria-controls="sinhvien" role="tab" data-toggle="tab">Khóa học Sinh viên</a></li>  
 		</ul>
 		<!-- Tab panes -->
 		<div class="tab-content">

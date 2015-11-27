@@ -113,6 +113,15 @@ function thememe_widgets_init() {
 		'before_title'  => '<div class="box-content-header"><h2 class="widget-title heading-title">',
 		'after_title'   => '</h2></div><div class="box-content-body">',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'thememe' ),
+		'id'            => 'sidebar-2',
+		'description'   => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 }
 add_action( 'widgets_init', 'thememe_widgets_init' );
 

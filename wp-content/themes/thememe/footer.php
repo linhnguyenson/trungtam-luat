@@ -16,7 +16,15 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<div class="container">
-				<?php echo (ot_get_option('footer')!='')?ot_get_option('footer'):'Copyright © 2013 Trung Tâm tư vấn pháp luật và đào tạo ngắn hạn. All rights reserved. ';?>
+				<div class="row">
+					<div class="col-sm-8">
+						<?php echo (ot_get_option('footer')!='')?ot_get_option('footer'):'Copyright © 2013 Trung Tâm tư vấn pháp luật và đào tạo ngắn hạn. All rights reserved. ';?>
+					</div>
+					<div class="col-sm-4">
+						<?php get_sidebar('footer');?>
+					</div>
+				</div>
+				
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
