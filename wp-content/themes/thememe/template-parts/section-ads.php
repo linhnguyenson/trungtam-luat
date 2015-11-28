@@ -1,4 +1,20 @@
 <?php 
+	$links_data = ot_get_option( 'links' );
+	
+	if(!empty($links_data)){ ?>
+
+		<select id="other-links" class="selectpicker" data-style="btn-success">
+			<option value="none">Đơn vị trực thuộc</option>
+			<?php foreach ($links_data as $key => $value) {
+			?>
+			<option value="<?php echo $value['url']?>"><?php echo $value['title']; ?></option>
+
+			<?php } //end foreach ?>
+		</select>
+
+<?php }//end if?>
+<div class="space-20"></div>
+<?php 
 	$ads_data = ot_get_option( 'ads' );
 	
 	if(!empty($ads_data)){ ?>
@@ -26,3 +42,6 @@
 		</ul>
 
 <?php }//end if?>
+
+
+

@@ -62,6 +62,7 @@ hr {border-top-color:  #dedede;}
 .alignleft { display: inline; float: left; margin-right: 1.5em; }
 .alignright { display: inline; float: right; margin-left: 1.5em; }
 .aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
+.space-20{height: 20px;}
 .img-full{width: 100%;}
 /*--------------------------------------------------------------
 # Elements
@@ -138,6 +139,20 @@ hr {border-top-color:  #dedede;}
 .tab-custom .nav-tabs>li.active>a:before{content: ""; position: absolute; bottom: 0; left: 15px; right: 15px; height: 4px; background-color: #F22613;}
 .tab-custom .nav-tabs>li.active>a:after {content: ""; position: absolute; left: 32px; bottom: -6px; z-index: 2; border-width: 6px 5px 0;  border-style: solid; border-color: #F22613 transparent transparent;}
 .tab-custom .nav-tabs>li>a:hover{background-color: rgba(255,255,255,0.2);}
+
+/*--------------------------------------------------------------
+## bxslider
+--------------------------------------------------------------*/
+.bx-wrapper .bx-pager.bx-default-pager a{background-color: rgba(226,226,226,0.75);}
+.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background-color: #F22613;}
+
+
+/*--------------------------------------------------------------
+## select
+--------------------------------------------------------------*/
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){width: 100%;}
+
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/

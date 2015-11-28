@@ -75,14 +75,15 @@ get_header(); ?>
 						<?php echo get_template_part( 'template-parts/section', 'gallery' ); ?>
 					</div>
 				</div>
-			</div>	
+			</div>
+			<?php echo get_template_part( 'template-parts/section', 'partners' ); ?>	
 		</div>
 		<div class="col-sm-3">
 			<?php echo get_template_part( 'template-parts/section', 'ads' ); ?>			
 		</div>
 	</div>
-	
 </section>
+
 
 
 <?php get_footer(); ?>

@@ -109,6 +109,43 @@ function custom_theme_options() {
         )
       ),
 
+      array(
+        'id'          => 'links',
+        'label'       => __('Other Links','thememe'),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'general',
+        'settings'    => array( 
+          array(
+            'id'          => 'url',
+            'label'       => 'Link',
+            'type'        => 'text',
+          )
+        )
+      ),
+
+      array(
+        'id'          => 'partner',
+        'label'       => __('Partners','thememe'),
+        'desc'        => '',
+        'std'         => '',
+        'type'        => 'list-item',
+        'section'     => 'general',
+        'settings'    => array( 
+          array(
+            'id'          => 'partner_link',
+            'label'       => 'Link',
+            'type'        => 'text',
+          ),
+          array(
+            'id'          => 'partner_image',
+            'label'       => __('Image','thememe'),
+            'type'        => 'upload',
+          )
+        )
+      ),
+
       //Home
       array(
         'id'          => 'home_slider',

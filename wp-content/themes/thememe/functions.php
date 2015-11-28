@@ -138,15 +138,23 @@ function thememe_scripts() {
 
 	wp_enqueue_style( 'thememe-css-bootstrap', get_template_directory_uri() . '/skins/css/bootstrap.min.css','3.3.5', false );
 
+	wp_enqueue_style( 'thememe-css-bootstrap-select', get_template_directory_uri() . '/skins/css/bootstrap-select.min.css','3.3.5', false );
+
 	wp_enqueue_style( 'thememe-css-prettyphoto', get_template_directory_uri() . '/skins/prettyPhoto/css/prettyPhoto.css','3.1.6', false );
+
+	wp_enqueue_style( 'thememe-css-bxslider', get_template_directory_uri() . '/skins/bxslider/jquery.bxslider.css','4.1.2', false );
 
 	wp_enqueue_style( 'thememe-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'thememe-js-bootstrap', get_template_directory_uri() . '/skins/js/bootstrap.min.js', array(), '3.3.5', true );
 
+	wp_enqueue_script( 'thememe-js-bootstrap-select', get_template_directory_uri() . '/skins/js/bootstrap-select.min.js', array(), '3.3.5', true );
+
 	wp_enqueue_script( 'thememe-navigation', get_template_directory_uri() . '/skins/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'thememe-js-prettyphoto', get_template_directory_uri() . '/skins/prettyPhoto/js/jquery.prettyPhoto.js', array(), '3.1.6', true );
+
+	wp_enqueue_script( 'thememe-js-bxslider', get_template_directory_uri() . '/skins/bxslider/jquery.bxslider.min.js', array(), '4.1.2', true );
 
 
 	
