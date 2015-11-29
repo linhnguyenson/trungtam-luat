@@ -99,7 +99,20 @@ hr {border-top-color:  #dedede;}
 .box-content .readmore{font-size: 12px; text-transform: uppercase; color: #999; font-weight: 700; }
 .box-content .readmore:hover{color: #00B16A;text-decoration: none;}
 .box-content .readmore span{color: #00B16A; font-size: 14px;}
+/*--------------------------------------------------------------
+## box color
+--------------------------------------------------------------*/
+.box-color{padding: 10px; margin-bottom: 10px; box-shadow: 0 0px 2px rgba(0,0,0,.15); -webkit-box-shadow: 0 0px 2px rgba(0,0,0,.15); color: #fff;}
+.box-color a{color: #fff;}
+.box-color .box-header{margin-bottom: 5px;}
+.box-color .box-header span{font-size: 25px;}
+.box-color .box-header h4{display: inline;}
+.box-color .box-body ul{margin: 0; padding: 0; list-style: none;}
 
+
+.box-color.box-cyan{background-color: #22A7F0;}
+.box-color.box-pink{background-color: #F64747;}
+.box-color.box-purple{background-color: #9A12B3;}
 /*--------------------------------------------------------------
 ## Carousel
 --------------------------------------------------------------*/
@@ -143,6 +156,7 @@ hr {border-top-color:  #dedede;}
 /*--------------------------------------------------------------
 ## bxslider
 --------------------------------------------------------------*/
+.bx-wrapper .bx-viewport{background-color: transparent; box-shadow: none; border: none; left: 0;}
 .bx-wrapper .bx-pager.bx-default-pager a{background-color: rgba(226,226,226,0.75);}
 .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background-color: #F22613;}
 
@@ -181,7 +195,7 @@ hr {border-top-color:  #dedede;}
 	.main-navigation ul { display: block; }
 	.main-navigation li { float: left; position: relative; }
 
-	.main-navigation ul ul { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); background-color: #000333; float: left; position: absolute; top: 100%; left: -999em; z-index: 99999; }
+	.main-navigation ul ul { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); background-color: #00B16A; float: left; position: absolute; top: 100%; left: -999em; z-index: 99999; }
 	.main-navigation ul ul ul { left: -999em; top: 0; }
 	.main-navigation ul ul a { width: 200px; padding: 5px 10px; text-transform: capitalize; font-weight: normal;}
 
@@ -189,7 +203,7 @@ hr {border-top-color:  #dedede;}
 	.main-navigation ul li.focus > ul { left: auto; }
 	.main-navigation ul ul li:hover > ul,
 	.main-navigation ul ul li.focus > ul { left: 100%; }
-	.main-navigation ul ul li:hover a{background-color: #00B16A;}
+	.main-navigation ul ul li:hover a{background-color: #02d37c;}
 	.main-navigation #primary-menu-right{margin-left: 88px;}
 	.main-navigation #primary-menu-right li{float:left;}
 }

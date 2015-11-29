@@ -88,6 +88,15 @@
 		  	slideMargin: 10
 		});
 
+		$('.box-body.has-slider ul').bxSlider({
+		    mode: 'fade',
+		    controls: false,
+		    auto: true,
+		    speed: 2000,
+		    pager: false,
+		    useCSS: true,
+		    easing: 'ease-in',
+  		});
 
 		$( "#other-links" ).change(function() {
 		 	var url=($(this).val());
