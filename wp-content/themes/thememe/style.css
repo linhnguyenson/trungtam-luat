@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 body,
 .more-link{font-family: 'Open Sans', sans-serif;}
-p, .cat-group .lcp_catlist .post-date,
+p, 
 .list-post li span.post-date{font-family: 'Noto Serif', serif;}
 
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 700;}
@@ -359,7 +359,7 @@ box-shadow: 0 0 3px 1px rgba(0,0,0,0.4);}
 # Widgets
 --------------------------------------------------------------*/
 .widget{margin-bottom: 20px;}
-
+#execphp-2{background-color: transparent; box-shadow: none;}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -460,7 +460,9 @@ table ul{padding-left: 20px;}
 .cat-group .lcp_catlist .excerpt{font-size: 13px;}
 .cat-group .lcp_catlist:first-child li.has-thumb{padding-left: 130px; position: relative;}
 .cat-group .lcp_catlist:first-child li img{position: absolute; width: 120px; height: auto; left: 0; top: 0;}
-.cat-group .lcp_catlist:first-child li .featured_title{font-size: 16px; font-weight: 700; display: block;}
+.cat-group .lcp_catlist:first-child li{color: #999;font-style: italic;font-size: 11px;}
+.cat-group .lcp_catlist:first-child li .lcp_excerpt{color: #333; font-style: normal; font-size: 13px;}
+.cat-group .lcp_catlist:first-child li .lcp_post{font-size: 16px; font-weight: 700; display: block; font-style: normal;}
 .cat-group .lcp_catlist:last-child li{position: relative; padding-left: 12px;}
 .cat-group .lcp_catlist:last-child li:before{position: absolute; content: "\f04b"; font-family: 'FontAwesome'; color: #999; left: 0; top: 6px; font-size: 6px;}
 .cat-group .lcp_catlist:last-child a{display: block; font-weight: 700;}
