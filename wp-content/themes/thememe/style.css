@@ -339,11 +339,7 @@ box-shadow: 0 0 3px 1px rgba(0,0,0,0.4);}
 .site-top a:hover{text-decoration: none;}
 .site-top .list-icon-item{margin: 5px 0px;}
 
-.site-top .search-form .form-control{border-radius: 0; border-color: #fff; background-color: #fff; color: #424242; box-shadow: none; font-style: italic;}
-.site-top .search-form .form-control::-webkit-input-placeholder{color: #fff;}
-.site-top .search-form .form-control:-moz-placeholder{color: #fff;}/* Firefox 18- */
-.site-top .search-form .form-control::-moz-placeholder{color: #fff;}/* Firefox 19+ */
-.site-top .search-form .form-control:-ms-input-placeholder{color: #fff;}
+.site-top .search-form .form-control{border-radius: 0; border-color: #fff; box-shadow: none; font-style: italic;}
 .site-top .search-form .btn{
 	border-radius: 0; text-indent: -9999px; width: 28px; border-color: #F22613;
 	background-color: #F22613; 
