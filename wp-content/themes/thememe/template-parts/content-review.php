@@ -49,6 +49,9 @@
 					<div class="review-contact">
 						<label>Liên hệ</label><?php echo $contact;?>
 					</div>
+					<div class="entry">
+					<p> <?php echo $content; ?> </p>
+					</div>
 				</div>
 			</div>
 			<div class="col-sm-8">

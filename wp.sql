@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2015 at 08:48 AM
--- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- Generation Time: Nov 29, 2015 at 10:47 AM
+-- Server version: 10.0.17-MariaDB
+-- PHP Version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `wp`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `pma__bookmark`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__bookmark` (
-`id` int(11) NOT NULL,
+CREATE TABLE `pma__bookmark` (
+  `id` int(11) NOT NULL,
   `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `pma__bookmark` (
 -- Table structure for table `pma__central_columns`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__central_columns` (
+CREATE TABLE `pma__central_columns` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `pma__central_columns` (
 -- Table structure for table `pma__column_info`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__column_info` (
-`id` int(5) unsigned NOT NULL,
+CREATE TABLE `pma__column_info` (
+  `id` int(5) UNSIGNED NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `pma__column_info` (
 -- Table structure for table `pma__designer_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__designer_settings` (
+CREATE TABLE `pma__designer_settings` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `settings_data` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
@@ -87,8 +87,8 @@ CREATE TABLE IF NOT EXISTS `pma__designer_settings` (
 -- Table structure for table `pma__export_templates`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__export_templates` (
-`id` int(5) unsigned NOT NULL,
+CREATE TABLE `pma__export_templates` (
+  `id` int(5) UNSIGNED NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
   `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `pma__export_templates` (
 -- Table structure for table `pma__favorite`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__favorite` (
+CREATE TABLE `pma__favorite` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
@@ -112,8 +112,8 @@ CREATE TABLE IF NOT EXISTS `pma__favorite` (
 -- Table structure for table `pma__history`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__history` (
-`id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `pma__history` (
+  `id` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `pma__history` (
 -- Table structure for table `pma__navigationhiding`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__navigationhiding` (
+CREATE TABLE `pma__navigationhiding` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -141,9 +141,9 @@ CREATE TABLE IF NOT EXISTS `pma__navigationhiding` (
 -- Table structure for table `pma__pdf_pages`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
+CREATE TABLE `pma__pdf_pages` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-`page_nr` int(10) unsigned NOT NULL,
+  `page_nr` int(10) UNSIGNED NOT NULL,
   `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
 
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `pma__pdf_pages` (
 -- Table structure for table `pma__recent`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__recent` (
+CREATE TABLE `pma__recent` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `tables` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `pma__recent` (
 -- Table structure for table `pma__relation`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__relation` (
+CREATE TABLE `pma__relation` (
   `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -179,8 +179,8 @@ CREATE TABLE IF NOT EXISTS `pma__relation` (
 -- Table structure for table `pma__savedsearches`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__savedsearches` (
-`id` int(5) unsigned NOT NULL,
+CREATE TABLE `pma__savedsearches` (
+  `id` int(5) UNSIGNED NOT NULL,
   `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
@@ -193,12 +193,12 @@ CREATE TABLE IF NOT EXISTS `pma__savedsearches` (
 -- Table structure for table `pma__table_coords`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__table_coords` (
+CREATE TABLE `pma__table_coords` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float unsigned NOT NULL DEFAULT '0',
-  `y` float unsigned NOT NULL DEFAULT '0'
+  `x` float UNSIGNED NOT NULL DEFAULT '0',
+  `y` float UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
 
 -- --------------------------------------------------------
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `pma__table_coords` (
 -- Table structure for table `pma__table_info`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__table_info` (
+CREATE TABLE `pma__table_info` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
   `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `pma__table_info` (
 -- Table structure for table `pma__table_uiprefs`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
+CREATE TABLE `pma__table_uiprefs` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
@@ -233,17 +233,17 @@ CREATE TABLE IF NOT EXISTS `pma__table_uiprefs` (
 -- Table structure for table `pma__tracking`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__tracking` (
+CREATE TABLE `pma__tracking` (
   `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
   `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) unsigned NOT NULL,
+  `version` int(10) UNSIGNED NOT NULL,
   `date_created` datetime NOT NULL,
   `date_updated` datetime NOT NULL,
   `schema_snapshot` text COLLATE utf8_bin NOT NULL,
   `schema_sql` text COLLATE utf8_bin,
   `data_sql` longtext COLLATE utf8_bin,
   `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) unsigned NOT NULL DEFAULT '1'
+  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
 
 -- --------------------------------------------------------
@@ -252,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `pma__tracking` (
 -- Table structure for table `pma__userconfig`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__userconfig` (
+CREATE TABLE `pma__userconfig` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `config_data` text COLLATE utf8_bin NOT NULL
@@ -264,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `pma__userconfig` (
 -- Table structure for table `pma__usergroups`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__usergroups` (
+CREATE TABLE `pma__usergroups` (
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
   `tab` varchar(64) COLLATE utf8_bin NOT NULL,
   `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
@@ -276,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `pma__usergroups` (
 -- Table structure for table `pma__users`
 --
 
-CREATE TABLE IF NOT EXISTS `pma__users` (
+CREATE TABLE `pma__users` (
   `username` varchar(64) COLLATE utf8_bin NOT NULL,
   `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
@@ -287,12 +287,12 @@ CREATE TABLE IF NOT EXISTS `pma__users` (
 -- Table structure for table `wp_commentmeta`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
-`meta_id` bigint(20) unsigned NOT NULL,
-  `comment_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_commentmeta` (
+  `meta_id` bigint(20) UNSIGNED NOT NULL,
+  `comment_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM AUTO_INCREMENT=159 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -300,9 +300,9 @@ CREATE TABLE IF NOT EXISTS `wp_commentmeta` (
 -- Table structure for table `wp_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_comments` (
-`comment_ID` bigint(20) unsigned NOT NULL,
-  `comment_post_ID` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_comments` (
+  `comment_ID` bigint(20) UNSIGNED NOT NULL,
+  `comment_post_ID` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `comment_author` tinytext NOT NULL,
   `comment_author_email` varchar(100) NOT NULL DEFAULT '',
   `comment_author_url` varchar(200) NOT NULL DEFAULT '',
@@ -314,9 +314,9 @@ CREATE TABLE IF NOT EXISTS `wp_comments` (
   `comment_approved` varchar(20) NOT NULL DEFAULT '1',
   `comment_agent` varchar(255) NOT NULL DEFAULT '',
   `comment_type` varchar(20) NOT NULL DEFAULT '',
-  `comment_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
+  `comment_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_comments`
@@ -333,15 +333,15 @@ INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `c
 -- Table structure for table `wp_links`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_links` (
-`link_id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `wp_links` (
+  `link_id` bigint(20) UNSIGNED NOT NULL,
   `link_url` varchar(255) NOT NULL DEFAULT '',
   `link_name` varchar(255) NOT NULL DEFAULT '',
   `link_image` varchar(255) NOT NULL DEFAULT '',
   `link_target` varchar(25) NOT NULL DEFAULT '',
   `link_description` varchar(255) NOT NULL DEFAULT '',
   `link_visible` varchar(20) NOT NULL DEFAULT 'Y',
-  `link_owner` bigint(20) unsigned NOT NULL DEFAULT '1',
+  `link_owner` bigint(20) UNSIGNED NOT NULL DEFAULT '1',
   `link_rating` int(11) NOT NULL DEFAULT '0',
   `link_updated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `link_rel` varchar(255) NOT NULL DEFAULT '',
@@ -355,8 +355,8 @@ CREATE TABLE IF NOT EXISTS `wp_links` (
 -- Table structure for table `wp_ngg_album`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_ngg_album` (
-`id` bigint(20) NOT NULL,
+CREATE TABLE `wp_ngg_album` (
+  `id` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `previewpic` bigint(20) NOT NULL DEFAULT '0',
@@ -372,8 +372,8 @@ CREATE TABLE IF NOT EXISTS `wp_ngg_album` (
 -- Table structure for table `wp_ngg_gallery`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_ngg_gallery` (
-`gid` bigint(20) NOT NULL,
+CREATE TABLE `wp_ngg_gallery` (
+  `gid` bigint(20) NOT NULL,
   `name` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `path` mediumtext,
@@ -383,7 +383,7 @@ CREATE TABLE IF NOT EXISTS `wp_ngg_gallery` (
   `previewpic` bigint(20) NOT NULL DEFAULT '0',
   `author` bigint(20) NOT NULL DEFAULT '0',
   `extras_post_id` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_ngg_gallery`
@@ -398,8 +398,8 @@ INSERT INTO `wp_ngg_gallery` (`gid`, `name`, `slug`, `path`, `title`, `galdesc`,
 -- Table structure for table `wp_ngg_pictures`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_ngg_pictures` (
-`pid` bigint(20) NOT NULL,
+CREATE TABLE `wp_ngg_pictures` (
+  `pid` bigint(20) NOT NULL,
   `image_slug` varchar(255) NOT NULL,
   `post_id` bigint(20) NOT NULL DEFAULT '0',
   `galleryid` bigint(20) NOT NULL DEFAULT '0',
@@ -412,7 +412,7 @@ CREATE TABLE IF NOT EXISTS `wp_ngg_pictures` (
   `meta_data` longtext,
   `extras_post_id` bigint(20) NOT NULL DEFAULT '0',
   `updated_at` bigint(20) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_ngg_pictures`
@@ -429,12 +429,12 @@ INSERT INTO `wp_ngg_pictures` (`pid`, `image_slug`, `post_id`, `galleryid`, `fil
 -- Table structure for table `wp_options`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_options` (
-`option_id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `wp_options` (
+  `option_id` bigint(20) UNSIGNED NOT NULL,
   `option_name` varchar(64) NOT NULL DEFAULT '',
   `option_value` longtext NOT NULL,
   `autoload` varchar(20) NOT NULL DEFAULT 'yes'
-) ENGINE=MyISAM AUTO_INCREMENT=2227 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_options`
@@ -536,10 +536,10 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (93, 'widget_archives', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (94, 'widget_meta', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (95, 'sidebars_widgets', 'a:4:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:3:{i:0;s:9:"execphp-2";i:1;s:9:"execphp-3";i:2;s:9:"execphp-6";}s:9:"sidebar-2";a:1:{i:0;s:18:"powr_hit_counter-2";}s:13:"array_version";i:3;}', 'yes'),
-(97, 'cron', 'a:6:{i:1448783400;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448802700;a:1:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448821384;a:2:{s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448864595;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1448865341;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(97, 'cron', 'a:6:{i:1448802700;a:1:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448821384;a:2:{s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448826600;a:1:{s:20:"wp_maybe_auto_update";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1448864595;a:1:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1448865341;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (1336, '_site_transient_browser_04e824a1fe36fb81c49e490c7c3306dc', 'a:9:{s:8:"platform";s:9:"Macintosh";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"45.0.2454.99";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
-(2199, '_site_transient_timeout_theme_roots', '1448780481', 'yes'),
-(2200, '_site_transient_theme_roots', 'a:2:{s:7:"thememe";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";}', 'yes'),
+(2229, '_site_transient_timeout_theme_roots', '1448789615', 'yes'),
+(2230, '_site_transient_theme_roots', 'a:2:{s:7:"thememe";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";}', 'yes'),
 (1481, '_site_transient_timeout_browser_c95da34a699e4cfc425ec3290c4c59a5', '1444655816', 'yes'),
 (1482, '_site_transient_browser_c95da34a699e4cfc425ec3290c4c59a5', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"45.0.2454.101";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
 (1399, '_site_transient_browser_d345f0fc2588ba33770d312d084b0dfc', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:13:"45.0.2454.101";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
@@ -554,10 +554,10 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (1105, 'widget_calendar', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 (1106, 'widget_pages', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
 (1107, 'widget_tag_cloud', 'a:2:{i:1;a:0:{}s:12:"_multiwidget";i:1;}', 'yes'),
-(1537, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1448778688;s:7:"checked";a:2:{s:7:"thememe";s:5:"1.0.0";s:13:"twentyfifteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
+(1537, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1448787832;s:7:"checked";a:2:{s:7:"thememe";s:5:"1.0.0";s:13:"twentyfifteen";s:3:"1.3";}s:8:"response";a:0:{}s:12:"translations";a:0:{}}', 'yes'),
 (1985, '_site_transient_timeout_browser_71e9d81c5317fe08cbeebb649a300dff', '1447854308', 'yes'),
 (1986, '_site_transient_browser_71e9d81c5317fe08cbeebb649a300dff', 'a:9:{s:8:"platform";s:7:"Windows";s:4:"name";s:6:"Chrome";s:7:"version";s:12:"46.0.2490.80";s:10:"update_url";s:28:"http://www.google.com/chrome";s:7:"img_src";s:49:"http://s.wordpress.org/images/browsers/chrome.png";s:11:"img_src_ssl";s:48:"https://wordpress.org/images/browsers/chrome.png";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;}', 'yes'),
-(1449, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1448778688;s:15:"version_checked";s:5:"4.3.1";s:12:"translations";a:0:{}}', 'yes'),
+(1449, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:6:"locale";s:5:"en_US";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:59:"https://downloads.wordpress.org/release/wordpress-4.3.1.zip";s:10:"no_content";s:70:"https://downloads.wordpress.org/release/wordpress-4.3.1-no-content.zip";s:11:"new_bundled";s:71:"https://downloads.wordpress.org/release/wordpress-4.3.1-new-bundled.zip";s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.3.1";s:7:"version";s:5:"4.3.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.1";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1448787828;s:15:"version_checked";s:5:"4.3.1";s:12:"translations";a:0:{}}', 'yes'),
 (1451, 'can_compress_scripts', '0', 'yes'),
 (1187, 'wpcf7', 'a:1:{s:7:"version";s:3:"4.3";}', 'yes'),
 (1442, 'da_license_key_status', 'valid', 'yes'),
@@ -597,7 +597,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (191, 'drag-drop-file-types', 'a:4:{i:0;s:3:"jpg";i:1;s:4:"jpeg";i:2;s:3:"png";i:3;s:3:"gif";}', 'yes'),
 (192, 'drag-drop-page-reload', '0', 'yes'),
 (1398, '_site_transient_timeout_browser_d345f0fc2588ba33770d312d084b0dfc', '1444010205', 'yes'),
-(842, '_transient_random_seed', '11921e4df1da282b8eb33f2fb7a2a3ac', 'yes'),
+(842, '_transient_random_seed', '10459bb0ffcac978186978d1f582f1f6', 'yes'),
 (334, 'ngg_transient_groups', 'a:4:{s:9:"__counter";i:4;s:3:"MVC";a:2:{s:2:"id";i:2;s:7:"enabled";b:1;}s:27:"displayed_gallery_rendering";a:2:{s:2:"id";i:3;s:7:"enabled";b:1;}s:19:"displayed_galleries";a:2:{s:2:"id";i:4;s:7:"enabled";b:1;}}', 'yes'),
 (2223, 'category_children', 'a:3:{i:19;a:3:{i:0;i:8;i:1;i:9;i:2;i:10;}i:11;a:1:{i:0;i:12;}i:12;a:2:{i:0;i:22;i:1;i:23;}}', 'yes'),
 (955, 'db_upgraded', '', 'yes'),
@@ -610,7 +610,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (2213, '_transient_feed_b9388c83948825c1edaef0d856b7b109', 'a:4:{s:5:"child";a:1:{s:0:"";a:1:{s:3:"rss";a:1:{i:0;a:6:{s:4:"data";s:3:"\n	\n";s:7:"attribs";a:1:{s:0:"";a:1:{s:7:"version";s:3:"2.0";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:1:{s:0:"";a:1:{s:7:"channel";a:1:{i:0;a:6:{s:4:"data";s:117:"\n		\n		\n		\n		\n		\n		\n				\n\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n		\n\n	";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:7:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:34:"WordPress Plugins » View: Popular";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:45:"https://wordpress.org/plugins/browse/popular/";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:34:"WordPress Plugins » View: Popular";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:8:"language";a:1:{i:0;a:5:{s:4:"data";s:5:"en-US";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sun, 29 Nov 2015 06:36:27 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:9:"generator";a:1:{i:0;a:5:{s:4:"data";s:25:"http://bbpress.org/?v=1.1";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"item";a:30:{i:0;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:14:"W3 Total Cache";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:56:"https://wordpress.org/plugins/w3-total-cache/#post-12073";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 29 Jul 2009 18:46:31 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"12073@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:132:"Easy Web Performance Optimization (WPO) using caching: browser, page, object, database, minify and content delivery network support.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:16:"Frederick Townes";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:1;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:33:"WooCommerce - excelling eCommerce";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:53:"https://wordpress.org/plugins/woocommerce/#post-29860";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 05 Sep 2011 08:13:36 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"29860@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:97:"WooCommerce is a powerful, extendable eCommerce plugin that helps you sell anything. Beautifully.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"WooThemes";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:2;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:19:"Google XML Sitemaps";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:64:"https://wordpress.org/plugins/google-sitemap-generator/#post-132";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Mar 2007 22:31:32 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:34:"132@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:105:"This plugin will generate a special XML sitemap which will help search engines to better index your blog.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Arne Brachhold";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:3;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:7:"Akismet";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:46:"https://wordpress.org/plugins/akismet/#post-15";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Mar 2007 22:11:30 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:33:"15@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:98:"Akismet checks your comments against the Akismet Web service to see if they look like spam or not.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Matt Mullenweg";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:4;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:9:"Yoast SEO";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:54:"https://wordpress.org/plugins/wordpress-seo/#post-8321";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 01 Jan 2009 20:34:44 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"8321@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:114:"Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using Yoast SEO plugin.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Joost de Valk";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:5;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"Hello Dolly";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:52:"https://wordpress.org/plugins/hello-dolly/#post-5790";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 29 May 2008 22:11:34 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"5790@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:150:"This is not just a plugin, it symbolizes the hope and enthusiasm of an entire generation summed up in two words sung most famously by Louis Armstrong.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Matt Mullenweg";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:6;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:14:"WP Super Cache";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://wordpress.org/plugins/wp-super-cache/#post-2572";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 05 Nov 2007 11:40:04 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2572@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:73:"A very fast caching engine for WordPress that produces static html files.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:16:"Donncha O Caoimh";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:7;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:24:"Jetpack by WordPress.com";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:49:"https://wordpress.org/plugins/jetpack/#post-23862";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 20 Jan 2011 02:21:38 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"23862@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:27:"Your WordPress, Simplified.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Tim Moore";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:8;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:16:"TinyMCE Advanced";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:57:"https://wordpress.org/plugins/tinymce-advanced/#post-2082";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 27 Jun 2007 15:00:26 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2082@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:71:"Enables the advanced features of TinyMCE, the WordPress WYSIWYG editor.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Andrew Ozz";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:9;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"Wordfence Security";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:51:"https://wordpress.org/plugins/wordfence/#post-29832";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sun, 04 Sep 2011 03:13:51 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"29832@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:138:"The Wordfence WordPress security plugin provides free enterprise-class WordPress security, protecting your website from hacks and malware.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Wordfence";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:10;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"WP-PageNavi";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:51:"https://wordpress.org/plugins/wp-pagenavi/#post-363";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 09 Mar 2007 23:17:57 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:34:"363@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:49:"Adds a more advanced paging navigation interface.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:11:"Lester Chan";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:11;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"WordPress Importer";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:60:"https://wordpress.org/plugins/wordpress-importer/#post-18101";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 20 May 2010 17:42:45 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"18101@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:101:"Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"Brian Colinger";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:12;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:21:"Regenerate Thumbnails";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:62:"https://wordpress.org/plugins/regenerate-thumbnails/#post-6743";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sat, 23 Aug 2008 14:38:58 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"6743@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:76:"Allows you to regenerate your thumbnails after changing the thumbnail sizes.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:25:"Alex Mills (Viper007Bond)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:13;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:25:"Google Analytics by Yoast";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:71:"https://wordpress.org/plugins/google-analytics-for-wordpress/#post-2316";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 14 Sep 2007 12:15:27 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2316@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:124:"Track your WordPress site easily with the latest tracking codes and lots added data for search result pages and error pages.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Joost de Valk";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:14;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:19:"All in One SEO Pack";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:59:"https://wordpress.org/plugins/all-in-one-seo-pack/#post-753";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 30 Mar 2007 20:08:18 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:34:"753@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:126:"All in One SEO Pack is a WordPress SEO plugin to automatically optimize your WordPress blog for Search Engines such as Google.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:8:"uberdose";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:15;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:22:"Advanced Custom Fields";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:64:"https://wordpress.org/plugins/advanced-custom-fields/#post-25254";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 17 Mar 2011 04:07:30 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"25254@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:68:"Customise WordPress with powerful, professional and intuitive fields";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:12:"elliotcondon";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:16;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:14:"Contact Form 7";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://wordpress.org/plugins/contact-form-7/#post-2141";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 02 Aug 2007 12:45:03 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2141@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:54:"Just another contact form plugin. Simple but flexible.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:16:"Takayuki Miyoshi";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:17;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:15:"NextGEN Gallery";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:56:"https://wordpress.org/plugins/nextgen-gallery/#post-1169";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 23 Apr 2007 20:08:06 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"1169@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:121:"The most popular WordPress gallery plugin and one of the most popular plugins of all time with over 13 million downloads.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Alex Rabe";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:18;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:21:"Really Simple CAPTCHA";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:62:"https://wordpress.org/plugins/really-simple-captcha/#post-9542";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 09 Mar 2009 02:17:35 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"9542@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:138:"Really Simple CAPTCHA is a CAPTCHA module intended to be called from other plugins. It is originally created for my Contact Form 7 plugin.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:16:"Takayuki Miyoshi";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:19;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:14:"Duplicate Post";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:55:"https://wordpress.org/plugins/duplicate-post/#post-2646";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Wed, 05 Dec 2007 17:40:03 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:35:"2646@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:22:"Clone posts and pages.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:4:"Lopo";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:20;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:16:"Disable Comments";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:58:"https://wordpress.org/plugins/disable-comments/#post-26907";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 27 May 2011 04:42:58 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"26907@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:134:"Allows administrators to globally disable comments on their site. Comments can be disabled according to post type. Multisite friendly.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Samir Shah";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:21;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:18:"WP Multibyte Patch";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:60:"https://wordpress.org/plugins/wp-multibyte-patch/#post-28395";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 14 Jul 2011 12:22:53 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"28395@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:71:"Multibyte functionality enhancement for the WordPress Japanese package.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"plugin-master";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:22;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:27:"Black Studio TinyMCE Widget";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:69:"https://wordpress.org/plugins/black-studio-tinymce-widget/#post-31973";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 10 Nov 2011 15:06:14 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"31973@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:39:"The visual editor widget for Wordpress.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:12:"Marco Chiesi";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:23;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:46:"iThemes Security (formerly Better WP Security)";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:60:"https://wordpress.org/plugins/better-wp-security/#post-21738";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Fri, 22 Oct 2010 22:06:05 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"21738@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:150:"Protect your WordPress site by hiding vital areas of your site, protecting access to important files, preventing brute-force login attempts, detecting";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:13:"Chris Wiegman";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:24;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:26:"Page Builder by SiteOrigin";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:59:"https://wordpress.org/plugins/siteorigin-panels/#post-51888";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 11 Apr 2013 10:36:42 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"51888@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:111:"Build responsive page layouts using the widgets you know and love using this simple drag and drop page builder.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:11:"Greg Priday";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:25;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:33:"Google Analytics Dashboard for WP";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:75:"https://wordpress.org/plugins/google-analytics-dashboard-for-wp/#post-50539";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Sun, 10 Mar 2013 17:07:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"50539@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:127:"Displays Google Analytics reports in your WordPress Dashboard. Inserts the latest Google Analytics tracking code in your pages.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Alin Marcu";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:26;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:11:"Meta Slider";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:51:"https://wordpress.org/plugins/ml-slider/#post-49521";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 14 Feb 2013 16:56:31 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"49521@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:145:"Easy to use WordPress slider plugin. Create SEO optimised responsive slideshows with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:11:"Matcha Labs";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:27;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:30:"Clef Two-Factor Authentication";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:48:"https://wordpress.org/plugins/wpclef/#post-47509";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Thu, 27 Dec 2012 01:25:57 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"47509@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:138:"Modern two-factor that people love to use: strong authentication without passwords or tokens; single sign on/off; magical user experience.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:9:"Dave Ross";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:28;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:34:"UpdraftPlus Backup and Restoration";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:53:"https://wordpress.org/plugins/updraftplus/#post-38058";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 21 May 2012 15:14:11 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"38058@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:148:"Backup and restoration made easy. Complete backups; manual or scheduled (backup to S3, Dropbox, Google Drive, Rackspace, FTP, SFTP, email + others).";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:14:"David Anderson";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}i:29;a:6:{s:4:"data";s:30:"\n			\n			\n			\n			\n			\n			\n					";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";s:5:"child";a:2:{s:0:"";a:5:{s:5:"title";a:1:{i:0;a:5:{s:4:"data";s:10:"Duplicator";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:52:"https://wordpress.org/plugins/duplicator/#post-26607";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:7:"pubDate";a:1:{i:0;a:5:{s:4:"data";s:31:"Mon, 16 May 2011 12:15:41 +0000";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:4:"guid";a:1:{i:0;a:5:{s:4:"data";s:36:"26607@https://wordpress.org/plugins/";s:7:"attribs";a:1:{s:0:"";a:1:{s:11:"isPermaLink";s:5:"false";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}s:11:"description";a:1:{i:0;a:5:{s:4:"data";s:88:"Duplicate, clone, backup, move and transfer an entire site from one location to another.";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}s:32:"http://purl.org/dc/elements/1.1/";a:1:{s:7:"creator";a:1:{i:0;a:5:{s:4:"data";s:10:"Cory Lamle";s:7:"attribs";a:0:{}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}s:27:"http://www.w3.org/2005/Atom";a:1:{s:4:"link";a:1:{i:0;a:5:{s:4:"data";s:0:"";s:7:"attribs";a:1:{s:0:"";a:3:{s:4:"href";s:46:"https://wordpress.org/plugins/rss/view/popular";s:3:"rel";s:4:"self";s:4:"type";s:19:"application/rss+xml";}}s:8:"xml_base";s:0:"";s:17:"xml_base_explicit";b:0;s:8:"xml_lang";s:0:"";}}}}}}}}}}}}s:4:"type";i:128;s:7:"headers";a:12:{s:6:"server";s:5:"nginx";s:4:"date";s:29:"Sun, 29 Nov 2015 07:01:44 GMT";s:12:"content-type";s:23:"text/xml; charset=UTF-8";s:10:"connection";s:5:"close";s:4:"vary";s:15:"Accept-Encoding";s:25:"strict-transport-security";s:11:"max-age=360";s:7:"expires";s:29:"Sun, 29 Nov 2015 07:11:27 GMT";s:13:"cache-control";s:0:"";s:6:"pragma";s:0:"";s:13:"last-modified";s:31:"Sun, 29 Nov 2015 06:36:27 +0000";s:15:"x-frame-options";s:10:"SAMEORIGIN";s:4:"x-nc";s:11:"HIT lax 249";}s:5:"build";s:14:"20150928010730";}', 'no'),
 (1414, '_transient_timeout_dash_4077549d03da2e451c8b5f002294ff51', '1443448609', 'no'),
-(2216, '_transient_timeout_plugin_slugs', '1448866909', 'no'),
+(2216, '_transient_timeout_plugin_slugs', '1448876398', 'no'),
 (2217, '_transient_plugin_slugs', 'a:9:{i:0;s:19:"akismet/akismet.php";i:1;s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";i:2;s:33:"duplicate-post/duplicate-post.php";i:3;s:9:"hello.php";i:4;s:43:"list-category-posts/list-category-posts.php";i:5;s:27:"php-code-widget/execphp.php";i:6;s:37:"powr-hit-counter/powr-hit-counter.php";i:7;s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";i:8;s:29:"wp-mail-smtp/wp_mail_smtp.php";}', 'no'),
 (1443, 'da_license_key', '61f0e34d871d3ed328540a6fcb4770a9', 'yes'),
 (1500, 'theme_mods_thememe', 'a:3:{i:0;b:0;s:18:"nav_menu_locations";a:3:{s:7:"primary";i:4;s:12:"primary-left";i:4;s:13:"primary-right";i:13;}s:19:"ot_set_google_fonts";a:0:{}}', 'yes'),
@@ -651,7 +651,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
 (2210, '_transient_timeout_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1448823703', 'no'),
 (2211, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1448780503', 'no'),
-(2202, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1448780508;s:7:"checked";a:9:{s:19:"akismet/akismet.php";s:5:"3.1.4";s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";s:7:"4.5.3.3";s:33:"duplicate-post/duplicate-post.php";s:3:"2.6";s:9:"hello.php";s:3:"1.6";s:43:"list-category-posts/list-category-posts.php";s:4:"0.66";s:27:"php-code-widget/execphp.php";s:3:"2.3";s:37:"powr-hit-counter/powr-hit-counter.php";s:3:"1.4";s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";s:5:"6.1.2";s:29:"wp-mail-smtp/wp_mail_smtp.php";s:5:"0.9.5";}s:8:"response";a:2:{s:19:"akismet/akismet.php";O:8:"stdClass":8:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.1.5";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.1.5.zip";s:14:"upgrade_notice";s:78:"Version 3.1.5 contains security fixes and is highly recommended for all users.";s:10:"autoupdate";b:1;}s:43:"list-category-posts/list-category-posts.php";O:8:"stdClass":6:{s:2:"id";s:4:"4362";s:4:"slug";s:19:"list-category-posts";s:6:"plugin";s:43:"list-category-posts/list-category-posts.php";s:11:"new_version";s:4:"0.67";s:3:"url";s:50:"https://wordpress.org/plugins/list-category-posts/";s:7:"package";s:67:"https://downloads.wordpress.org/plugin/list-category-posts.0.67.zip";}}s:12:"translations";a:0:{}s:9:"no_update";a:7:{s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";O:8:"stdClass":6:{s:2:"id";s:5:"11120";s:4:"slug";s:22:"ckeditor-for-wordpress";s:6:"plugin";s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";s:11:"new_version";s:7:"4.5.3.3";s:3:"url";s:53:"https://wordpress.org/plugins/ckeditor-for-wordpress/";s:7:"package";s:65:"https://downloads.wordpress.org/plugin/ckeditor-for-wordpress.zip";}s:33:"duplicate-post/duplicate-post.php";O:8:"stdClass":7:{s:2:"id";s:4:"1295";s:4:"slug";s:14:"duplicate-post";s:6:"plugin";s:33:"duplicate-post/duplicate-post.php";s:11:"new_version";s:3:"2.6";s:3:"url";s:45:"https://wordpress.org/plugins/duplicate-post/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/duplicate-post.2.6.zip";s:14:"upgrade_notice";s:90:"PHP 5.4 (Strict Standards) compatible + Fixed possible XSS and SQL injections + other bugs";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:27:"php-code-widget/execphp.php";O:8:"stdClass":6:{s:2:"id";s:4:"2464";s:4:"slug";s:15:"php-code-widget";s:6:"plugin";s:27:"php-code-widget/execphp.php";s:11:"new_version";s:3:"2.3";s:3:"url";s:46:"https://wordpress.org/plugins/php-code-widget/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/php-code-widget.2.3.zip";}s:37:"powr-hit-counter/powr-hit-counter.php";O:8:"stdClass":7:{s:2:"id";s:5:"49854";s:4:"slug";s:16:"powr-hit-counter";s:6:"plugin";s:37:"powr-hit-counter/powr-hit-counter.php";s:11:"new_version";s:3:"1.4";s:3:"url";s:47:"https://wordpress.org/plugins/powr-hit-counter/";s:7:"package";s:59:"https://downloads.wordpress.org/plugin/powr-hit-counter.zip";s:14:"upgrade_notice";s:49:"Improved functionality within the wp text editor.";}s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";O:8:"stdClass":6:{s:2:"id";s:5:"39087";s:4:"slug";s:26:"simple-share-buttons-adder";s:6:"plugin";s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";s:11:"new_version";s:5:"6.1.2";s:3:"url";s:57:"https://wordpress.org/plugins/simple-share-buttons-adder/";s:7:"package";s:69:"https://downloads.wordpress.org/plugin/simple-share-buttons-adder.zip";}s:29:"wp-mail-smtp/wp_mail_smtp.php";O:8:"stdClass":7:{s:2:"id";s:3:"951";s:4:"slug";s:12:"wp-mail-smtp";s:6:"plugin";s:29:"wp-mail-smtp/wp_mail_smtp.php";s:11:"new_version";s:5:"0.9.5";s:3:"url";s:43:"https://wordpress.org/plugins/wp-mail-smtp/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/wp-mail-smtp.0.9.5.zip";s:14:"upgrade_notice";s:38:"Minor security fix, hat tip JD Grimes.";}}}', 'yes'),
+(2231, '_site_transient_update_plugins', 'O:8:"stdClass":5:{s:12:"last_checked";i:1448788685;s:7:"checked";a:9:{s:19:"akismet/akismet.php";s:5:"3.1.4";s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";s:7:"4.5.3.3";s:33:"duplicate-post/duplicate-post.php";s:3:"2.6";s:9:"hello.php";s:3:"1.6";s:43:"list-category-posts/list-category-posts.php";s:4:"0.66";s:27:"php-code-widget/execphp.php";s:3:"2.3";s:37:"powr-hit-counter/powr-hit-counter.php";s:3:"1.4";s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";s:5:"6.1.2";s:29:"wp-mail-smtp/wp_mail_smtp.php";s:5:"0.9.5";}s:8:"response";a:2:{s:19:"akismet/akismet.php";O:8:"stdClass":8:{s:2:"id";s:2:"15";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"3.1.5";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.3.1.5.zip";s:14:"upgrade_notice";s:78:"Version 3.1.5 contains security fixes and is highly recommended for all users.";s:10:"autoupdate";b:1;}s:43:"list-category-posts/list-category-posts.php";O:8:"stdClass":6:{s:2:"id";s:4:"4362";s:4:"slug";s:19:"list-category-posts";s:6:"plugin";s:43:"list-category-posts/list-category-posts.php";s:11:"new_version";s:4:"0.67";s:3:"url";s:50:"https://wordpress.org/plugins/list-category-posts/";s:7:"package";s:67:"https://downloads.wordpress.org/plugin/list-category-posts.0.67.zip";}}s:12:"translations";a:0:{}s:9:"no_update";a:7:{s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";O:8:"stdClass":6:{s:2:"id";s:5:"11120";s:4:"slug";s:22:"ckeditor-for-wordpress";s:6:"plugin";s:45:"ckeditor-for-wordpress/ckeditor_wordpress.php";s:11:"new_version";s:7:"4.5.3.3";s:3:"url";s:53:"https://wordpress.org/plugins/ckeditor-for-wordpress/";s:7:"package";s:65:"https://downloads.wordpress.org/plugin/ckeditor-for-wordpress.zip";}s:33:"duplicate-post/duplicate-post.php";O:8:"stdClass":7:{s:2:"id";s:4:"1295";s:4:"slug";s:14:"duplicate-post";s:6:"plugin";s:33:"duplicate-post/duplicate-post.php";s:11:"new_version";s:3:"2.6";s:3:"url";s:45:"https://wordpress.org/plugins/duplicate-post/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/duplicate-post.2.6.zip";s:14:"upgrade_notice";s:90:"PHP 5.4 (Strict Standards) compatible + Fixed possible XSS and SQL injections + other bugs";}s:9:"hello.php";O:8:"stdClass":6:{s:2:"id";s:4:"3564";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";}s:27:"php-code-widget/execphp.php";O:8:"stdClass":6:{s:2:"id";s:4:"2464";s:4:"slug";s:15:"php-code-widget";s:6:"plugin";s:27:"php-code-widget/execphp.php";s:11:"new_version";s:3:"2.3";s:3:"url";s:46:"https://wordpress.org/plugins/php-code-widget/";s:7:"package";s:62:"https://downloads.wordpress.org/plugin/php-code-widget.2.3.zip";}s:37:"powr-hit-counter/powr-hit-counter.php";O:8:"stdClass":7:{s:2:"id";s:5:"49854";s:4:"slug";s:16:"powr-hit-counter";s:6:"plugin";s:37:"powr-hit-counter/powr-hit-counter.php";s:11:"new_version";s:3:"1.4";s:3:"url";s:47:"https://wordpress.org/plugins/powr-hit-counter/";s:7:"package";s:59:"https://downloads.wordpress.org/plugin/powr-hit-counter.zip";s:14:"upgrade_notice";s:49:"Improved functionality within the wp text editor.";}s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";O:8:"stdClass":6:{s:2:"id";s:5:"39087";s:4:"slug";s:26:"simple-share-buttons-adder";s:6:"plugin";s:57:"simple-share-buttons-adder/simple-share-buttons-adder.php";s:11:"new_version";s:5:"6.1.2";s:3:"url";s:57:"https://wordpress.org/plugins/simple-share-buttons-adder/";s:7:"package";s:69:"https://downloads.wordpress.org/plugin/simple-share-buttons-adder.zip";}s:29:"wp-mail-smtp/wp_mail_smtp.php";O:8:"stdClass":7:{s:2:"id";s:3:"951";s:4:"slug";s:12:"wp-mail-smtp";s:6:"plugin";s:29:"wp-mail-smtp/wp_mail_smtp.php";s:11:"new_version";s:5:"0.9.5";s:3:"url";s:43:"https://wordpress.org/plugins/wp-mail-smtp/";s:7:"package";s:61:"https://downloads.wordpress.org/plugin/wp-mail-smtp.0.9.5.zip";s:14:"upgrade_notice";s:38:"Minor security fix, hat tip JD Grimes.";}}}', 'yes'),
 (2143, 'mail_from', 'daotaonganhanluathue@gmail.com', 'yes'),
 (2144, 'mail_from_name', 'daotaonganhanluathue', 'yes'),
 (2145, 'mailer', 'smtp', 'yes'),
@@ -665,8 +665,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (2163, 'widget_powr_hit_counter', 'a:2:{i:2;a:1:{s:5:"label";s:20:"wordpress_1448646685";}s:12:"_multiwidget";i:1;}', 'yes'),
 (2162, 'ckeditor_wordpress', 'a:6:{s:10:"appearance";a:10:{s:4:"skin";s:5:"moono";s:7:"uicolor";s:7:"default";s:12:"uicolor_user";s:0:"";s:13:"default_state";s:1:"t";s:13:"excerpt_state";s:1:"f";s:12:"post_toolbar";s:13:"WordpressFull";s:18:"post_editor_height";i:300;s:14:"comment_editor";s:1:"t";s:15:"comment_toolbar";s:14:"WordpressBasic";s:21:"comment_editor_height";i:160;}s:6:"upload";a:6:{s:7:"browser";s:8:"disabled";s:4:"type";s:6:"native";s:14:"user_file_path";s:19:"wp-content/uploads/";s:17:"files_allowed_ext";s:202:"7z,aiff,asf,avi,bmp,csv,doc,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,zip";s:18:"images_allowed_ext";s:20:"bmp,gif,jpeg,jpg,png";s:17:"flash_allowed_ext";s:7:"swf,flv";}s:8:"ckfinder";a:11:{s:13:"file_max_size";s:2:"8M";s:12:"images_width";s:4:"1200";s:13:"images_height";s:4:"1600";s:14:"images_quality";s:2:"80";s:16:"thumbnails_width";s:3:"100";s:17:"thumbnails_height";s:3:"100";s:18:"thumbnails_quality";s:2:"80";s:18:"thumbnails_enabled";s:1:"t";s:24:"thumbnails_direct_access";s:1:"f";s:12:"license_name";s:0:"";s:11:"license_key";s:0:"";}s:3:"css";a:4:{s:4:"mode";s:7:"default";s:4:"path";s:0:"";s:6:"styles";s:7:"default";s:10:"style_path";s:0:"";}s:8:"advanced";a:10:{s:11:"load_method";s:11:"ckeditor.js";s:12:"load_timeout";i:0;s:20:"native_spell_checker";s:1:"t";s:17:"scayt_autoStartup";s:1:"f";s:8:"entities";s:1:"t";s:8:"p_indent";s:1:"t";s:19:"p_break_before_open";s:1:"t";s:18:"p_break_after_open";s:1:"t";s:20:"p_break_before_close";s:1:"t";s:19:"p_break_after_close";s:1:"t";}s:7:"plugins";a:5:{s:8:"autogrow";s:1:"f";s:11:"tableresize";s:1:"f";s:9:"wpgallery";s:1:"t";s:5:"scayt";s:1:"t";s:3:"wsc";s:1:"t";}}', 'yes'),
 (2164, 'powr_token', 'KbldyBcy7X1448646698', 'yes'),
-(2225, '_transient_is_multi_author', '0', 'yes'),
-(2226, '_transient_thememe_categories', '2', 'yes');
+(2234, '_transient_is_multi_author', '0', 'yes');
 
 -- --------------------------------------------------------
 
@@ -674,12 +673,12 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 -- Table structure for table `wp_postmeta`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_postmeta` (
-`meta_id` bigint(20) unsigned NOT NULL,
-  `post_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_postmeta` (
+  `meta_id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM AUTO_INCREMENT=1219 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_postmeta`
@@ -690,7 +689,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (169, 58, '_edit_last', '1'),
 (170, 58, '_edit_lock', '1443445042:1'),
 (642, 191, '_edit_last', '1'),
-(641, 189, '_edit_lock', '1447255880:1'),
+(641, 189, '_edit_lock', '1448790342:1'),
 (640, 189, '_edit_last', '1'),
 (639, 187, '_edit_lock', '1444053849:1'),
 (1178, 318, '_menu_item_xfn', ''),
@@ -972,7 +971,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (798, 222, '_EventDuration', '5302800'),
 (799, 222, '_EventVenueID', '212'),
 (797, 222, '_EventEndDateUTC', '2016-01-01 17:00:00'),
-(915, 258, '_edit_lock', '1448380014:1'),
+(915, 258, '_edit_lock', '1448788725:1'),
 (916, 258, '_thumbnail_id', '226'),
 (917, 258, 'reviews_email', '#'),
 (775, 212, '_VenueStateProvince', ''),
@@ -1049,7 +1048,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (924, 259, 'reviews_linkedin', '#'),
 (923, 259, 'reviews_fb', '#'),
 (922, 259, 'reviews_email', '#'),
-(921, 259, '_edit_lock', '1446384994:1'),
+(921, 259, '_edit_lock', '1448788744:1'),
 (926, 259, 'reviews_youtube', '#'),
 (927, 259, '_thumbnail_id', '224'),
 (928, 259, '_dp_original', '223'),
@@ -1066,7 +1065,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (939, 261, 'reviews_fb', '#'),
 (941, 261, '_dp_original', '258'),
 (942, 262, '_edit_last', '1'),
-(943, 262, '_edit_lock', '1446982752:1'),
+(943, 262, '_edit_lock', '1448788391:1'),
 (944, 262, '_wp_page_template', 'page-reviews.php'),
 (1153, 191, '_wp_page_template', 'default'),
 (946, 267, '_wp_attached_file', '2015/11/Book1.xlsx'),
@@ -1279,7 +1278,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1209, 326, '_wp_attached_file', '2015/06/p2.jpg'),
 (1210, 326, '_wp_attachment_metadata', 'a:5:{s:5:"width";i:300;s:6:"height";i:300;s:4:"file";s:14:"2015/06/p2.jpg";s:5:"sizes";a:3:{s:9:"thumbnail";a:4:{s:4:"file";s:14:"p2-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:10:"thumb-post";a:4:{s:4:"file";s:14:"p2-150x100.jpg";s:5:"width";i:150;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:10:"thumb-blog";a:4:{s:4:"file";s:14:"p2-284x192.jpg";s:5:"width";i:284;s:6:"height";i:192;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:11:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";s:11:"orientation";i:0;}}'),
 (1211, 327, '_edit_last', '1'),
-(1212, 327, '_edit_lock', '1448780583:1');
+(1212, 327, '_edit_lock', '1448780583:1'),
+(1219, 258, 'reviews_intro', 'Lorem ipsum dolor sit amet consectetur t amet consectetur'),
+(1220, 259, 'reviews_intro', 'Lorem ipsum dolor sit amet consectetur t amet consectetur');
 
 -- --------------------------------------------------------
 
@@ -1287,9 +1288,9 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 -- Table structure for table `wp_posts`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_posts` (
-`ID` bigint(20) unsigned NOT NULL,
-  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_posts` (
+  `ID` bigint(20) UNSIGNED NOT NULL,
+  `post_author` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content` longtext NOT NULL,
@@ -1305,13 +1306,13 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
   `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `post_content_filtered` longtext NOT NULL,
-  `post_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `post_parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `guid` varchar(255) NOT NULL DEFAULT '',
   `menu_order` int(11) NOT NULL DEFAULT '0',
   `post_type` varchar(20) NOT NULL DEFAULT 'post',
   `post_mime_type` varchar(100) NOT NULL DEFAULT '',
   `comment_count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=329 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_posts`
@@ -1325,7 +1326,8 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (185, 1, '2015-10-05 13:55:13', '2015-10-05 13:55:13', '', 'logo', '', 'inherit', 'open', 'closed', '', 'logo', '', '', '2015-10-05 13:55:13', '2015-10-05 13:55:13', '', 4, 'http://wordpress.dev.com/wp-content/uploads/2015/06/logo.png', 0, 'attachment', 'image/png', 0),
 (187, 1, '2015-10-05 14:06:21', '2015-10-05 14:06:21', '', 'Trang chủ', '', 'publish', 'closed', 'closed', '', 'trang-chu', '', '', '2015-10-05 14:06:21', '2015-10-05 14:06:21', '', 0, 'http://wordpress.dev.com/?page_id=187', 0, 'page', '', 0),
 (188, 1, '2015-10-05 14:06:21', '2015-10-05 14:06:21', '', 'Trang chủ', '', 'inherit', 'closed', 'closed', '', '187-revision-v1', '', '', '2015-10-05 14:06:21', '2015-10-05 14:06:21', '', 187, 'http://wordpress.dev.com/187-revision-v1/', 0, 'revision', '', 0),
-(189, 1, '2015-10-05 14:06:50', '2015-10-05 14:06:50', '[contact-form-7 id="150" title="Contact form 1"]\r\n<div class="embed-responsive embed-responsive-16by9">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255888314" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'publish', 'closed', 'closed', '', 'lien-he', '', '', '2015-11-11 15:32:43', '2015-11-11 15:32:43', '', 0, 'http://wordpress.dev.com/?page_id=189', 0, 'page', '', 0),
+(189, 1, '2015-10-05 14:06:50', '2015-10-05 14:06:50', '<p>\r\n	[contact-form-7 id="150" title="Contact form 1"]\r\n</p>\r\n\r\n<div class="embed-responsive embed-responsive-16by9">\r\n	<iframe allowfullscreen="" class="embed-responsive-item" frameborder="0" height="400" src="https://www.google.com/maps/embed/v1/place?q=%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20lu%E1%BA%ADt%20hu%E1%BA%BF&key=AIzaSyCYyTQwjoNQphhJMNcLi5dY7y_1PF5WeE0" style="border:0" width="800"></iframe>\r\n</div>\r\n', 'Liên hệ', '', 'publish', 'closed', 'closed', '', 'lien-he', '', '', '2015-11-29 09:45:41', '2015-11-29 09:45:41', '', 0, 'http://wordpress.dev.com/?page_id=189', 0, 'page', '', 0),
+(330, 1, '2015-11-29 09:45:41', '2015-11-29 09:45:41', '<p>\r\n	[contact-form-7 id="150" title="Contact form 1"]\r\n</p>\r\n\r\n<div class="embed-responsive embed-responsive-16by9">\r\n	<iframe allowfullscreen="" class="embed-responsive-item" frameborder="0" height="400" src="https://www.google.com/maps/embed/v1/place?q=%C4%90%E1%BA%A1i%20h%E1%BB%8Dc%20lu%E1%BA%ADt%20hu%E1%BA%BF&key=AIzaSyCYyTQwjoNQphhJMNcLi5dY7y_1PF5WeE0" style="border:0" width="800"></iframe>\r\n</div>\r\n', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-29 09:45:41', '2015-11-29 09:45:41', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
 (190, 1, '2015-10-05 14:06:50', '2015-10-05 14:06:50', '', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-10-05 14:06:50', '2015-10-05 14:06:50', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
 (191, 1, '2015-10-05 14:07:15', '2015-10-05 14:07:15', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h5><strong>I. CÁN BỘ TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h5><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h5>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h5><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'publish', 'closed', 'closed', '', 'gioi-thieu-trung-tam', '', '', '2015-11-24 15:37:47', '2015-11-24 15:37:47', '', 0, 'http://wordpress.dev.com/?page_id=191', 0, 'page', '', 0),
 (192, 1, '2015-10-05 14:07:15', '2015-10-05 14:07:15', '', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-10-05 14:07:15', '2015-10-05 14:07:15', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
@@ -1368,16 +1370,17 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (214, 1, '2015-10-31 17:32:23', '0000-00-00 00:00:00', '', 'Luật Kinh tế và Thương mại', '', 'draft', 'open', 'closed', '', '', '', '', '2015-10-31 17:32:23', '2015-10-31 17:32:23', '', 0, 'http://wordpress.dev.com/?post_type=tribe_events&#038;p=214', 0, 'tribe_events', '', 0),
 (261, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mr Nguyễn Văn Tuấn', '', 'publish', 'closed', 'closed', '', 'mr-nguyen-van-tuan-2', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=261', 0, 'reviews', '', 0),
 (260, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mr Nguyễn Văn Tuấn', '', 'publish', 'closed', 'closed', '', 'mr-nguyen-van-tuan-3', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=260', 0, 'reviews', '', 0),
-(259, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mrs Hoa', '', 'publish', 'closed', 'closed', '', 'mrs-hoa-2', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=259', 0, 'reviews', '', 0),
-(258, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mr Nguyễn Văn Tuấn', '', 'publish', 'closed', 'closed', '', 'mr-nguyen-van-tuan-4', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=258', 0, 'reviews', '', 0),
+(259, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 'Mrs Hoa', '', 'publish', 'closed', 'closed', '', 'mrs-hoa-2', '', '', '2015-11-29 09:21:22', '2015-11-29 09:21:22', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=259', 0, 'reviews', '', 0),
+(329, 1, '2015-11-29 09:40:54', '2015-11-29 09:40:54', '<p>\n	[contact-form-7 id="150" title="Contact form 1"]\n</p>\n\n<div class="embed-responsive embed-responsive-16by9">\n	<iframe allowfullscreen="" class="embed-responsive-item" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255888314" style="border:0" width="800"></iframe>\n</div>\n', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-autosave-v1', '', '', '2015-11-29 09:40:54', '2015-11-29 09:40:54', '', 189, 'http://wordpress.dev.com/189-autosave-v1/', 0, 'revision', '', 0),
+(258, 1, '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 'Mr Nguyễn Văn Tuấn', '', 'publish', 'closed', 'closed', '', 'mr-nguyen-van-tuan-4', '', '', '2015-11-29 09:20:10', '2015-11-29 09:20:10', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=258', 0, 'reviews', '', 0),
 (222, 1, '2015-10-31 17:49:58', '2015-10-31 17:49:58', '<div>Trung tâm Nghiên cứu, Triển khai Luật Kinh tế và Thương mại thông báo mở 02 lớp bồi dưỡng ngắn hạn về pháp luật, có cấp chứng chỉ cho người học:</div>\r\n<strong>Thông tin về khoá học</strong>\r\n<table border="1" width="97%" cellspacing="0" cellpadding="0">\r\n<tbody>\r\n<tr>\r\n<td>\r\n<div align="center"><strong>STT</strong></div></td>\r\n<td>\r\n<div align="center"><strong>LỚP</strong></div></td>\r\n<td>\r\n<div align="center"><strong>THỜI GIAN</strong></div></td>\r\n<td>\r\n<div align="center"><strong>HỌC PHÍ</strong></div></td>\r\n<td>\r\n<div align="center"><strong>MỤC TIÊU &amp; NỘI DUNG KHÓA HỌC</strong></div></td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<div><strong>1</strong></div></td>\r\n<td>\r\n<div><strong><em>Pháp luật về quản lý và soạn thảo hợp đồng</em></strong></div>\r\n<div></div></td>\r\n<td>\r\n<div><strong>4 buổi</strong></div>\r\n<div align="center"></div></td>\r\n<td>\r\n<div align="center"><strong>1.500.000 VNĐ</strong></div>\r\n<div align="center">(SV ĐHTM được giảm còn<strong>1.000.000</strong> <strong>VNĐ</strong>học phí)</div></td>\r\n<td>\r\n<ul>\r\n	<li><em>Nắm được những vấn đề chung về hợp đồng.</em></li>\r\n	<li><em>Nắm được vai trò, nghĩa vụ và trách nhiệm của hai bên trong hợp đồng</em></li>\r\n	<li><em>Quản lý được c</em><em>ác kiểu hợp đồng khác nhau</em></li>\r\n	<li><em>Nắm được kỹ năng soạn thảo các hợp đồng trong kinh doanh, thương mại</em></li>\r\n	<li><em>Phân tích vi phạm hợp đồng thương mại, giải quyết tranh chấp hợp đồng thương mại</em></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td>\r\n<div><strong>2</strong></div></td>\r\n<td>\r\n<div><strong><em>Kỹ năng đàm phán và giao kết hợp đồng</em></strong></div>\r\n<div></div></td>\r\n<td>\r\n<div><strong>4 buổi</strong></div>\r\n<div align="center"></div></td>\r\n<td>\r\n<div align="center"><strong>1.500.000 VNĐ</strong></div>\r\n<div align="center">(SV ĐHTM được giảm còn<strong>1.000.000 VNĐ</strong>học phí)</div></td>\r\n<td>\r\n<ul>\r\n	<li><em>Hiểu biết tổng quát về hợp đồng thương mại và pháp luật về hợp đồng thương mại.</em></li>\r\n	<li><em>Nắm được các nguyên tắc, hình thức, các giai đoạn của đàm phán hợp đồng.</em></li>\r\n	<li><em>Nắm được kỹ năng soạn thảo văn bản hợp đồng thương mại.</em></li>\r\n	<li><em>Rèn luyện kỹ năng  đàm phán, giải quyết  hợp đồng thương mại.</em></li>\r\n</ul>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<strong>Lịch học</strong>\r\n<ul>\r\n	<li><strong><em>Dự kiến khai giảng</em></strong><strong>:</strong> <em>Các lớp khai giảng liên tục trong các tháng 9, 10/2015</em></li>\r\n	<li><strong><em>Thời gian học cụ thể</em></strong>: Các ngày thứ 7, Chủ nhật (Sáng: 8h30’ – 11h30’/ Chiều: 13h30’ – 16h30’) hoặc theo nhu cầu của học viên.</li>\r\n	<li><strong><em>Giảng viên</em></strong><strong>:</strong> Giảng viên có kinh nghiệm và uy tín lâu năm trong giảng dạy đến từ các cơ sở đào tạo hàng đầu về Luật như Trường Đại học Luật Hà Nội; Khoa Kinh tế - Luật, Trường Đại học Thương mại và các chuyên gia đến từ các văn phòng tư vấn hoặc doanh nghiệp.</li>\r\n	<li><strong>Quyền lợi và nghĩa vụ của học viên</strong></li>\r\n</ul>\r\n<div><strong><em><u>Quyền:</u></em></strong></div>\r\n<ul>\r\n	<li>Được cấp tài liệu &amp; đi thực tế tại các doanh nghiệp hoặc tham gia giao lưu, chia sẻ kinh nghiệm với các chuyên gia về Luật trong và sau khóa học;</li>\r\n	<li>Được Trường Đại học Thương mại cấp chứng chỉ, có giá trị vô thời hạn trên toàn quốc, tăng cường tính cạnh tranh trong hồ sơ xin việc.</li>\r\n</ul>\r\n<div><strong><em><u>Nghĩa vụ:</u></em></strong></div>\r\n<ul>\r\n	<li>Chấp hành mọi nội quy, quy chế học tập của Trung tâm, Khoa và Nhà trường đề ra</li>\r\n</ul>\r\n<strong>  Đăng ký học: TRUNG TÂM NGHIÊN CỨU, TRIỂN KHAI LUẬT KINH TẾ VÀ THƯƠNG MẠI</strong>\r\n<ul>\r\n	<li><strong><em> Giám đốc Trung tâm</em></strong><strong>: ThS. Nguyễn Thị Vinh Hương</strong></li>\r\n	<li><strong><em> Điện thoại</em></strong><strong>:  04 376 43219  (Máy lẻ: 3080)  DĐ: 098.986.9878 / 0986.362.362</strong></li>\r\n	<li> <strong><em>Email</em></strong>: <strong>trungtamluat.dhtm@gmail.com</strong></li>\r\n	<li><strong><em>Địa chỉ</em></strong>: <em>Tầng 2 nhà T - Đại học Thương mại - Km9 Đường Hồ Tùng Mậu, quận Cầu Giấy, Hà Nội.</em></li>\r\n</ul>\r\n<div><strong><em> <u>Chú ý</u>: </em></strong></div>\r\n<div><strong><em>- </em>Học viên đến đăng ký yêu cầu nộp 2 ảnh 3 X 4</strong></div>\r\n<div><strong>- Sinh viên Trường Đại học Thương mại (kể cả SV đã ra trường) được giảm còn <em><u>1.000.000 VNĐ</u> </em>học phí, yêu cầu nộp kèm 01 bản phô tô thẻ sinh viên khi làm Đơn đăng ký học.</strong></div>\r\n<div><strong><em>-</em> Sinh viên đăng ký theo nhóm 3 người được giảm thêm <em><u>50.000 VNĐ/người</u></em>, nhóm 5 người được giảm thêm<em><u>70.000 VNĐ/người.</u></em></strong></div>', 'Luật Kinh tế và Thương mại', '', 'publish', 'open', 'closed', '', 'luat-kinh-te-va-thuong-mai', '', '', '2015-10-31 18:10:29', '2015-10-31 18:10:29', '', 0, 'http://wordpress.dev.com/?post_type=tribe_events&#038;p=222', 0, 'tribe_events', '', 0),
 (223, 1, '2015-11-01 13:36:48', '2015-11-01 13:36:48', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mrs Hoa', '', 'publish', 'closed', 'closed', '', 'mrs-hoa', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=223', 0, 'reviews', '', 0),
 (224, 1, '2015-11-01 13:38:18', '2015-11-01 13:38:18', '', 'nhan-vat-1.47', '', 'inherit', 'open', 'closed', '', 'nhan-vat-1-47', '', '', '2015-11-01 13:38:18', '2015-11-01 13:38:18', '', 223, 'http://wordpress.dev.com/wp-content/uploads/2015/11/nhan-vat-1.47.jpg', 0, 'attachment', 'image/jpeg', 0),
 (225, 1, '2015-11-01 13:40:18', '2015-11-01 13:40:18', 'Lorem ipsum dolor sit amet consectetur t amet consectetur', 'Mr Nguyễn Văn Tuấn', '', 'publish', 'closed', 'closed', '', 'mr-nguyen-van-tuan', '', '', '2015-11-08 07:05:34', '2015-11-08 07:05:34', '', 0, 'http://wordpress.dev.com/?post_type=reviews&#038;p=225', 0, 'reviews', '', 0),
 (226, 1, '2015-11-01 13:40:11', '2015-11-01 13:40:11', '', 'bo_giang_vien_kinh_doanh_tao_pho_soha.vn_1-61fe8', '', 'inherit', 'open', 'closed', '', 'bo_giang_vien_kinh_doanh_tao_pho_soha-vn_1-61fe8', '', '', '2015-11-01 13:40:11', '2015-11-01 13:40:11', '', 225, 'http://wordpress.dev.com/wp-content/uploads/2015/11/bo_giang_vien_kinh_doanh_tao_pho_soha.vn_1-61fe8.jpg', 0, 'attachment', 'image/jpeg', 0),
-(228, 1, '2015-11-04 15:03:16', '2015-11-04 15:03:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-04 15:03:16', '2015-11-04 15:03:16', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0);
+(228, 1, '2015-11-04 15:03:16', '2015-11-04 15:03:16', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-04 15:03:16', '2015-11-04 15:03:16', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
+(229, 1, '2015-11-04 16:02:36', '2015-11-04 16:02:36', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'publish', 'open', 'open', '', 'lorem-ipsum-dolor-sit-amet', '', '', '2015-11-08 06:10:14', '2015-11-08 06:10:14', '', 0, 'http://wordpress.dev.com/?p=229', 0, 'post', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(229, 1, '2015-11-04 16:02:36', '2015-11-04 16:02:36', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'publish', 'open', 'open', '', 'lorem-ipsum-dolor-sit-amet', '', '', '2015-11-08 06:10:14', '2015-11-08 06:10:14', '', 0, 'http://wordpress.dev.com/?p=229', 0, 'post', '', 0),
 (230, 1, '2015-11-04 16:02:36', '2015-11-04 16:02:36', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:02:36', '2015-11-04 16:02:36', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
 (231, 1, '2015-11-04 16:10:12', '2015-11-04 16:10:12', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula. Integer eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.<!--more-->\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:10:12', '2015-11-04 16:10:12', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
 (232, 1, '2015-11-04 16:16:08', '2015-11-04 16:16:08', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fringilla purus id orci mattis, sed posuere metus cursus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vitae felis consectetur, tincidunt felis dapibus, efficitur eros. Sed euismod ullamcorper elit non pulvinar. Donec lobortis mattis feugiat. Aliquam erat volutpat. Donec rutrum eu diam sit amet semper. Suspendisse luctus congue tortor, non feugiat felis ornare quis. Nullam lobortis vel diam eu vehicula.<!--more-->\r\n\r\nInteger eu velit purus. In id vehicula justo, eget pharetra dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus scelerisque sollicitudin mattis. Quisque dignissim consequat consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis odio nisl, accumsan non finibus in, dapibus eget justo.\r\n\r\nInteger at eleifend ipsum. Vivamus gravida ornare nulla, et ultricies arcu vulputate nec. Suspendisse laoreet convallis dui pellentesque porta. Mauris purus quam, convallis in orci in, semper tempus urna. Nunc varius eros tempus mi dignissim, in dignissim augue viverra. Phasellus maximus sed sapien et egestas. Donec in purus ac lacus volutpat dapibus. Duis tincidunt odio eu augue pellentesque tincidunt. Nullam nec mattis turpis, sed vehicula lorem. Nam sit amet eros ut dolor vehicula suscipit id vel libero. Suspendisse et arcu hendrerit, ultricies est ac, accumsan lectus. Fusce sed mattis urna, nec ullamcorper urna. Ut vehicula vel quam et scelerisque.', 'Lorem ipsum dolor sit amet', '', 'inherit', 'closed', 'closed', '', '229-revision-v1', '', '', '2015-11-04 16:16:08', '2015-11-04 16:16:08', '', 229, 'http://wordpress.dev.com/229-revision-v1/', 0, 'revision', '', 0),
@@ -1413,14 +1416,14 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (273, 1, '2015-11-10 17:42:24', '2015-11-10 17:42:24', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-3', '', '', '2015-11-11 13:47:14', '2015-11-11 13:47:14', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=273', 0, 'calendar', '', 0),
 (274, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-9', '', '', '2015-11-10 17:43:13', '2015-11-10 17:43:13', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=274', 0, 'calendar', '', 0),
 (275, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-8', '', '', '2015-11-11 13:47:00', '2015-11-11 13:47:00', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=275', 0, 'calendar', '', 0),
-(276, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-7', '', '', '2015-11-11 13:46:52', '2015-11-11 13:46:52', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=276', 0, 'calendar', '', 0);
-INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
+(276, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-7', '', '', '2015-11-11 13:46:52', '2015-11-11 13:46:52', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=276', 0, 'calendar', '', 0),
 (277, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit amet', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-amet-2', '', '', '2015-11-11 13:46:43', '2015-11-11 13:46:43', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=277', 0, 'calendar', '', 0),
 (278, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-6', '', '', '2015-11-11 13:46:33', '2015-11-11 13:46:33', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=278', 0, 'calendar', '', 0),
 (279, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-5', '', '', '2015-11-11 13:46:22', '2015-11-11 13:46:22', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=279', 0, 'calendar', '', 0),
 (280, 1, '2015-11-10 17:43:13', '2015-11-10 17:43:13', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur arcu vitae tortor efficitur, eu pretium mi volutpat. Sed interdum eget leo efficitur faucibus. Aenean tempus condimentum euismod. Nullam facilisis pellentesque elit, quis lobortis arcu vestibulum ut. Praesent sit amet orci justo.', 'Lorem ipsum dolor sit', '', 'publish', 'closed', 'closed', '', 'lorem-ipsum-dolor-sit-4', '', '', '2015-11-11 13:45:36', '2015-11-11 13:45:36', '', 0, 'http://wordpress.dev.com/?post_type=calendar&#038;p=280', 0, 'calendar', '', 0),
 (282, 1, '2015-11-11 15:21:54', '2015-11-11 15:21:54', '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255269589" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:21:54', '2015-11-11 15:21:54', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
-(283, 1, '2015-11-11 15:23:00', '2015-11-11 15:23:00', '<div class="embed-responsive embed-responsive-4by3">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255269589" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:23:00', '2015-11-11 15:23:00', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
+(283, 1, '2015-11-11 15:23:00', '2015-11-11 15:23:00', '<div class="embed-responsive embed-responsive-4by3">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255269589" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:23:00', '2015-11-11 15:23:00', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0);
+INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (284, 1, '2015-11-11 15:29:15', '2015-11-11 15:29:15', '[contact-form-7 id="150" title="Contact form 1"]\r\n<div class="embed-responsive embed-responsive-4by3">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255269589" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:29:15', '2015-11-11 15:29:15', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
 (285, 1, '2015-11-11 15:32:18', '2015-11-11 15:32:18', '[contact-form-7 id="150" title="Contact form 1"]\r\n<div class="embed-responsive embed-responsive-4by3">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255888314" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:32:18', '2015-11-11 15:32:18', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
 (286, 1, '2015-11-11 15:32:43', '2015-11-11 15:32:43', '[contact-form-7 id="150" title="Contact form 1"]\r\n<div class="embed-responsive embed-responsive-16by9">\r\n  <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.3924943022907!2d-118.12715688478943!3d33.87954408065329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd32bad8f4306b%3A0xc88d57048a78575e!2s17022+Bellflower+Blvd%2C+Bellflower%2C+CA+90706%2C+Hoa+K%E1%BB%B3!5e0!3m2!1svi!2s!4v1447255888314" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>', 'Liên hệ', '', 'inherit', 'closed', 'closed', '', '189-revision-v1', '', '', '2015-11-11 15:32:43', '2015-11-11 15:32:43', '', 189, 'http://wordpress.dev.com/189-revision-v1/', 0, 'revision', '', 0),
@@ -1439,9 +1442,9 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (302, 1, '2015-11-24 15:28:12', '2015-11-24 15:28:12', '<p style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></p>\r\n<p style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></p>\r\n\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<p style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></p>\r\n<strong>I. CÁN BỘ TRUNG TÂM</strong>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong>\r\n\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong>\r\n<ol>\r\n	<li>PGS.TS. Lê Thanh Sơn. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li>ThS. Lê Thị Kim Hoa, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li>ThS. Đào Mai Hường, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li>ThS. Hoàng Ngọc Thanh, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li>ThS. Võ Thị Xuân Hương, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li>ThS. Hồ Thanh Hải, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li>Nguyễn Hải Nam, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li>ThS. Luật sư Đặng Thị Ngọc Hạnh, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li>Luật sư Lê Cao, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li>ThS. Luật sư Nguyễn Văn Phước, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li>ThS. Luật sư Lê Hùng Nhân, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li>TS. Lê Thị Phúc, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>TS. Hoàng Thị Hải Yến, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>ThS. NCS. Vũ Thị Hương, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>ThS. Nguyễn Thị Thúy Hằng, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>ThS. Hoàng Đình Thanh, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>CN. Trần Cao Thành, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>Th.S Thân Văn Tài, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>CN. Đồng Thị Huyền Nga, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>CN. Dương Thị Cẩm Nhung, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>CN. Lê Thị Thìn, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li>CN. Nguyễn Hữu Khánh Linh, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:28:12', '2015-11-24 15:28:12', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
 (303, 1, '2015-11-24 15:30:46', '2015-11-24 15:30:46', '<p style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></p>\r\n<p style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></p>\r\n\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<p style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></p>\r\n<strong>I. CÁN BỘ TRUNG TÂM</strong>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong>\r\n\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:30:46', '2015-11-24 15:30:46', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
 (304, 1, '2015-11-24 15:36:22', '2015-11-24 15:36:22', '<h2 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h2>\r\n<h3 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h3>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h3><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h3>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h2 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h2>\r\n<h3><strong>I. CÁN BỘ TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h3><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h3>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h3><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:36:22', '2015-11-24 15:36:22', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
-(305, 1, '2015-11-24 15:37:04', '2015-11-24 15:37:04', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h3><strong>I. CÁN BỘ TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h3><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h3>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h3><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:37:04', '2015-11-24 15:37:04', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0);
+(305, 1, '2015-11-24 15:37:04', '2015-11-24 15:37:04', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h3><strong>I. CÁN BỘ TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h3><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h3>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h3><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:37:04', '2015-11-24 15:37:04', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
+(306, 1, '2015-11-24 15:37:27', '2015-11-24 15:37:27', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h5><strong>I. CÁN BỘ TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h3><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h3>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h3><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:37:27', '2015-11-24 15:37:27', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(306, 1, '2015-11-24 15:37:27', '2015-11-24 15:37:27', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h5><strong>I. CÁN BỘ TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h3><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h3>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h3><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h3>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:37:27', '2015-11-24 15:37:27', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
 (307, 1, '2015-11-24 15:37:47', '2015-11-24 15:37:47', '<h4 style="text-align: center;"><strong>HOẠT ĐỘNG TRUNG TÂM</strong></h4>\r\n<h5 style="text-align: left;"><strong>I. HOẠT ĐỘNG TƯ VẤN</strong></h5>\r\n<ol>\r\n	<li>Hướng dẫn giải đáp pháp luật: tư vấn soạn thảo hoặc trực tiếp soạn thảo đơn, di chúc và các giấy tờ khác liên quan đến pháp luật; tư vấn soạn thảo hoặc trực tiếp soạn thảo các hợp đồng dân sự,  kinh tế, lao động;  tư vấn về thể chế, tư vấn về đánh giá hiệu quả thực hiện các dự án về pháp luật, xóa đói giảm nghèo hoặc về thể chế tại Việt Nam.</li>\r\n	<li>Đại diện cho khách hàng tham gia tố tụng  hình sự,  dân sự, kinh tế, lao động, hành chính: Bảo vệ quyền lợi của người bị hại, nguyên đơn dân sự, bị đơn dân sự, người có quyền lợi, nghĩa vụ liên quan trong vụ án hình sự; tham gia tố tụng với tư cách là người đại diện hoặc là người bảo vệ quyền, lợi ích hợp pháp của nguyên đơn, bị đơn, người có quyền lợi, nghĩa vụ liên quan trong các vụ án về tranh chấp dân sự, kinh tế, lao động, hành chính  và các vụ việc khác theo quy định của pháp luật;</li>\r\n	<li>Đại diện ngoài tố tụng  cho khách hàng: Đại diện cho các cá nhân, tổ chức ký kết các hợp đồng dân sự, kinh tế;  đại diện cho các cá nhân tổ chức trong việc giải quyết các tranh chấp dân sự, kinh tế hành chính ( giải quyết khiếu nại các quyết định hành chính và hành vi hành chính.</li>\r\n	<li>Thực hiện trợ giúp pháp lý miễn phí cho các đối tượng chính sách theo quy định của luật trợ giúp pháp lý và các đối tượng khác.</li>\r\n	<li>Thực hiện dịch vụ pháp lý khác theo quy định của pháp luật.</li>\r\n</ol>\r\n<h5><strong>II. HOẠT ĐỘNG ĐÀO TẠO NGẮN HẠN</strong></h5>\r\n<ol>\r\n	<li>Tổ chức đào tạo cấp chứng chỉ về pháp luật cho sinh viên.\r\n<ol>\r\n	<li>Kỹ năng 1: Kỹ năng Tư vấn pháo luật gồm 5 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Kỹ năng tư vấn pháp luật;</li>\r\n	<li>Chuyên đề 2: Kỹ năng hòa giải các tranh chấp Dân sự - Hôn nhân gia đình;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tư vấn về Hợp đồng và phòng chống rủi ro trong lĩnh vực kinh doanh thương mại;</li>\r\n	<li>Chuyên đề 4: Nghiệp vụ và kỹ năng trong hoạt động công chứng và chứng thực;</li>\r\n	<li>Chuyên đề 5: Kỹ năng tìm kiếm việc làm.</li>\r\n</ul>\r\n</li>\r\n	<li>Kỹ năng 2: Kỹ năng Tranh tụng trong lĩnh vực pháp lý gồm 4 chuyên đề\r\n<ul>\r\n	<li>Chuyên đề 1: Khái quát và những yêu cầu về tranh tụng trong quá trình cải cách tư pháp ở Việt Nam;</li>\r\n	<li>Chuyên đề 2: Kỹ năng phân tích và bình luận án dân sự;</li>\r\n	<li>Chuyên đề 3: Kỹ năng tranh tụng trong vụ án hình sự;</li>\r\n	<li>Chuyên đề 4: Kỹ năng tranh tụng trong các vụ án về kinh doanh thương mại và lao động.</li>\r\n</ul>\r\n</li>\r\n</ol>\r\n</li>\r\n	<li>Tổ chức liên kết đào tạo ngắn hạn với các cơ quan, tổ chức theo thẩm quyền.</li>\r\n</ol>\r\n<h4 style="text-align: center;"><strong>CƠ CẤU TỔ CHỨC</strong></h4>\r\n<h5><strong>I. CÁN BỘ TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li>ThS.GVC. Lê Thị Hải Ngọc, Giám đốc.</li>\r\n	<li>Th.S Trần Viết Long, Phó Giám đốc.</li>\r\n	<li>CN. Nguyễn Kiều Ngân, Kế toán trưởng, kiêm Tổ trưởng Công đoàn.</li>\r\n	<li>Th.S. Nguyễn Thị Vân Anh.</li>\r\n	<li>Th.S. Nguyễn Huyền Ly.</li>\r\n</ol>\r\n<h5><strong>II. TƯ VẤN VIÊN TRUNG TÂM </strong></h5>\r\n<em>(Các tư vấn viên đã được Sở Tư pháp tỉnh Thừa Thiên Huế cấp thẻ Tư vấn viên pháp luật)</em>\r\n<ol>\r\n	<li>PGS.TS. Đoàn Đức Lương, Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>TS. Nguyễn Duy Phương, Phó Hiệu trưởng Đại học Luật Huế</li>\r\n	<li>ThS.GVC.NCS. Lê Thị Hải Ngọc, Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. Nguyễn Văn Kiệm, Trưởng phòng TC-HC Đại học Luật Huế</li>\r\n	<li>TS. Đào Mộng Điệp, Chủ tịch Công đoàn Đại học Luật Huế</li>\r\n	<li>ThS. Lê Thị Thảo, Phó Giám đốc Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn</li>\r\n	<li>ThS. NCS. Nguyễn Thị Hồng Trinh, Giảng viên Đại học Luật Huế</li>\r\n</ol>\r\n<h5><strong>III. CỘNG TÁC VIÊN TRUNG TÂM</strong></h5>\r\n<ol>\r\n	<li><strong>PGS.TS. Lê Thanh Sơn</strong>. Đại học Văn hiến Thành phố Hồ Chí Minh.</li>\r\n	<li><strong>ThS. Lê Thị Kim Hoa</strong>, Trưởng phòng Kiểm soát Thủ tục Hành chính, Cục Kiểm soát Thủ Tục Hành Chính,  Bộ Tư Pháp.</li>\r\n	<li><strong>ThS. Đào Mai Hường</strong>, Phó Chánh án TAND tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hoàng Ngọc Thanh</strong>, Giám đốc Trung tâm Tư vấn pháp luật Thuận Hóa.</li>\r\n	<li><strong>ThS. Võ Thị Xuân Hương</strong>, Giám đốc Trung tâm trợ giúp pháp lý, Sở Tư pháp tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Hồ Thanh Hải</strong>, Trưởng phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>Nguyễn Hải Nam</strong>, Phó phòng Trị an - An ninh - Ma túy, Viện kiểm sát nhân dân tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Đặng Thị Ngọc Hạnh</strong>, Giám đốc Công ty Ngọc Hạnh và cộng sự.</li>\r\n	<li><strong>Luật sư Lê Cao</strong>, Đoàn Luật sư thành phố Đà Nẵng.</li>\r\n	<li><strong>ThS. Luật sư Nguyễn Văn Phước</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>ThS. Luật sư Lê Hùng Nhân</strong>, Đoàn Luật sư tỉnh Thừa Thiên Huế.</li>\r\n	<li><strong>TS. Lê Thị Phúc</strong>, Trưởng Bộ môn Luật Đất đai - Môi trường, Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>TS. Hoàng Thị Hải Yến</strong>, Trưởng Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. NCS. Vũ Thị Hương</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Nguyễn Thị Thúy Hằng</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>ThS. Hoàng Đình Thanh</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Trần Cao Thành</strong>, CBGD Trung tâm Thực hành luật và Quan hệ doanh nghiệp, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>Th.S Thân Văn Tài</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Đồng Thị Huyền Nga</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Dương Thị Cẩm Nhung</strong>, Giảng viên Khoa Luật Hình sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Lê Thị Thìn</strong>, Giảng viên Khoa Luật Dân sự, Trường Đại học Luật - Đại học Huế.</li>\r\n	<li><strong>CN. Nguyễn Hữu Khánh Linh</strong>, Giảng viên Khoa Luật Kinh tế, Trường Đại học Luật - Đại học Huế.</li>\r\n</ol>\r\n<p style="text-align: center;"><span style="color: #ff0000;"><strong>Thời gian làm việc:  Từ thứ 2 đến thứ 6 , buổi sáng : 7h30  - 11h00; buổi chiều : 13h30 đến 17h00.\r\nĐịa chỉ liên lạc: Đường Võ Văn Kiệt, phường An Tây, thành phố Huế.\r\n*  ĐT: Văn phòng: 0543. 946993\r\nGiám đốc :  0913 421 866</strong></span></p>', 'Giới thiệu trung tâm', '', 'inherit', 'closed', 'closed', '', '191-revision-v1', '', '', '2015-11-24 15:37:47', '2015-11-24 15:37:47', '', 191, 'http://wordpress.dev.com/191-revision-v1/', 0, 'revision', '', 0),
 (308, 1, '2015-11-24 15:52:45', '2015-11-24 15:52:45', '<strong><em>Kính gửi:</em><em>\r\n</em></strong>- Ban Giám hiệu\r\n- Toàn thể Sinh viên Khóa 36.\r\n\r\nCăn cứ thông báo số 135/TB-ĐHL ngày 23 tháng  9  năm 2015 của Phó Hiệu Trưởng Trường Đại học Luật Huế về việc “<em>Mở lớp đào tạo “Kỹ năng Tư vấn pháp luật” cho Sinh viên  Khóa 36</em>” và thông báo số 14/TB – TT ĐTNH  ngày 24 tháng 9  năm  2015 của Giám đốc Trung Tâm TVPL và ĐTNH về “<em>Kế hoạch học tập lớp  Kỹ năng tư vấn pháp luật</em>”; Nhằm tạo điều kiện thuận lợi nhất cho tất cả Sinh viên K36 tham gia khóa đào tạo<strong><em> Kỹ năng Tư vấn pháp luật; </em></strong>được sự thống nhất hỗ trợ của Trường Đại học Luật, Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn thông báo nội dung chương trình, mức học phí và chính sách miễn, giảm học phí cho sinh viên K36 như sau:\r\n\r\n<strong>1.</strong> <strong>HỌC PHÍ VÀ THỜI GIAN THU HỌC PHÍ</strong>\r\n\r\n<strong>1.1. Học phí nộp</strong>\r\n<ul>\r\n	<li>200.000 đồng/01 sinh viên/01 kỹ năng</li>\r\n	<li>Lệ phí tài liệu học tập: 50.000 đồng.</li>\r\n	<li>Đối tượng sinh viên: giảm 50% học phí  Áp dụng theo danh sách của Phòng Đào tạo, Trường Đại học Luật Huế (theo Nghị định số 49/2010/NĐ-CP ngày 14/5/2010 của Chính phủ “<em>Quy định về miễn, giảm học phí, hỗ trợ chi phí học tập và cơ chế thu, sử dụng học phí đối với cơ sở giáo dục thuộc hệ thống giáo dục quốc dân từ năm học 2010 – 2011 đến năm học 2014 – 2015</em>” và Hướng dẫn số 636/HD-ĐHH ngày 07/7/2014 của Giám đốc Đại học Huế về “<em>Thực hiện miễn giảm học phí cho học sinh, sinh viên trong các trường  đại học thành viên và đơn vị thuộc Đại học Huế”</em>).</li>\r\n</ul>\r\n<strong>1.2 Thời gian thu học phí:</strong> Từ ngày ra thông báo đến hết ngày 03/10/2015 (đối với sinh viên ngành Luật Kinh tế (học đợt 1) và đến hết ngày 10/10/2015 đối với sinh viên ngành Luật học (học đợt 2)).\r\n\r\n<strong>2.CHƯƠNG TRÌNH HỌC: 01 KỸ NĂNG: </strong>Kỹ năng Tư vấn pháp luật (chuyên đề theo khung Chương trình đào tạo).\r\n\r\n<strong>3. KHAI GIẢNG VÀ LỊCH HỌC</strong>\r\n\r\n<strong>3.1</strong> <strong>Khai giảng: </strong>07h30 ngày 04 tháng 10 năm 2015 (Sáng Chủ nhật).\r\n\r\n<strong>3.2 Lịch học</strong>\r\n<ul>\r\n	<li>Đợt 1: từ 4/10 đến 20/10/2015.</li>\r\n	<li>Đợt 2: Từ ngày 23/10 đến 15/11/2015</li>\r\n</ul>\r\nLịch học cụ thể được niêm yết tại Văn phòng Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn thuộc Trường Đại học Luật Huế và <strong>Web Trường, </strong>mục: Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn – Tin tức Trung tâm.\r\n\r\n<strong> 4. ĐỊA CHỈ VÀ ĐIỆN THOẠI LIÊN HỆ</strong>\r\n\r\n<strong>4.1. Địa chỉ liên hệ:</strong> Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn (<strong>Tầng 1, Nhà Thực hành Luật</strong>)<strong>.</strong>\r\n\r\n<strong>4.2. Điện thoại liên hệ</strong><em>: </em>Thầy Thành: 0915.456.222.\r\n\r\n<strong>4.3. Học phí nộp:</strong> Cô Ngân: 0126.2626.595\r\n\r\n<span style="color: #ff0000;"><strong><em>*Lưu ý:</em></strong></span>\r\n<ul>\r\n	<li><em>Ngày khai giảng, Sinh viên K36 Luật Kinh tế (học đợt 1) đến trước 15 phút để ổn định công tác tổ chức. Sau khi khai giảng xong, học theo lịch học.  </em></li>\r\n	<li><em>Tất cả Sinh viên nộp 01 Chứng minh nhân dân photo, 01 thẻ  sinh viên photo (không cần chứng thực). Các giấy tờ trên bỏ vào một bì thư, bên ngoài ghi: họ và tên, ngày tháng năm sinh, quê quán. Lớp trưởng thu hồ sơ của lớp nộp về cho Trung tâm chậm nhất vào ngày 30/10/2015.</em></li>\r\n</ul>', 'Thông báo Về việc hỗ trợ học phí Khóa đào tạo Kỹ năng Tư vấn pháp luật cho sinh viên K36', '', 'publish', 'open', 'open', '', 'thong-bao-ve-viec-ho-tro-hoc-phi-khoa-dao-tao-ky-nang-tu-van-phap-luat-cho-sinh-vien-k36', '', '', '2015-11-24 15:52:45', '2015-11-24 15:52:45', '', 0, 'http://wordpress.dev.com/?p=308', 0, 'post', '', 0),
 (309, 1, '2015-11-24 15:52:45', '2015-11-24 15:52:45', '<strong><em>Kính gửi:</em><em>\r\n</em></strong>- Ban Giám hiệu\r\n- Toàn thể Sinh viên Khóa 36.\r\n\r\nCăn cứ thông báo số 135/TB-ĐHL ngày 23 tháng  9  năm 2015 của Phó Hiệu Trưởng Trường Đại học Luật Huế về việc “<em>Mở lớp đào tạo “Kỹ năng Tư vấn pháp luật” cho Sinh viên  Khóa 36</em>” và thông báo số 14/TB – TT ĐTNH  ngày 24 tháng 9  năm  2015 của Giám đốc Trung Tâm TVPL và ĐTNH về “<em>Kế hoạch học tập lớp  Kỹ năng tư vấn pháp luật</em>”; Nhằm tạo điều kiện thuận lợi nhất cho tất cả Sinh viên K36 tham gia khóa đào tạo<strong><em> Kỹ năng Tư vấn pháp luật; </em></strong>được sự thống nhất hỗ trợ của Trường Đại học Luật, Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn thông báo nội dung chương trình, mức học phí và chính sách miễn, giảm học phí cho sinh viên K36 như sau:\r\n\r\n<strong>1.</strong> <strong>HỌC PHÍ VÀ THỜI GIAN THU HỌC PHÍ</strong>\r\n\r\n<strong>1.1. Học phí nộp</strong>\r\n<ul>\r\n	<li>200.000 đồng/01 sinh viên/01 kỹ năng</li>\r\n	<li>Lệ phí tài liệu học tập: 50.000 đồng.</li>\r\n	<li>Đối tượng sinh viên: giảm 50% học phí  Áp dụng theo danh sách của Phòng Đào tạo, Trường Đại học Luật Huế (theo Nghị định số 49/2010/NĐ-CP ngày 14/5/2010 của Chính phủ “<em>Quy định về miễn, giảm học phí, hỗ trợ chi phí học tập và cơ chế thu, sử dụng học phí đối với cơ sở giáo dục thuộc hệ thống giáo dục quốc dân từ năm học 2010 – 2011 đến năm học 2014 – 2015</em>” và Hướng dẫn số 636/HD-ĐHH ngày 07/7/2014 của Giám đốc Đại học Huế về “<em>Thực hiện miễn giảm học phí cho học sinh, sinh viên trong các trường  đại học thành viên và đơn vị thuộc Đại học Huế”</em>).</li>\r\n</ul>\r\n<strong>1.2 Thời gian thu học phí:</strong> Từ ngày ra thông báo đến hết ngày 03/10/2015 (đối với sinh viên ngành Luật Kinh tế (học đợt 1) và đến hết ngày 10/10/2015 đối với sinh viên ngành Luật học (học đợt 2)).\r\n\r\n<strong>2.CHƯƠNG TRÌNH HỌC: 01 KỸ NĂNG: </strong>Kỹ năng Tư vấn pháp luật (chuyên đề theo khung Chương trình đào tạo).\r\n\r\n<strong>3. KHAI GIẢNG VÀ LỊCH HỌC</strong>\r\n\r\n<strong>3.1</strong> <strong>Khai giảng: </strong>07h30 ngày 04 tháng 10 năm 2015 (Sáng Chủ nhật).\r\n\r\n<strong>3.2 Lịch học</strong>\r\n<ul>\r\n	<li>Đợt 1: từ 4/10 đến 20/10/2015.</li>\r\n	<li>Đợt 2: Từ ngày 23/10 đến 15/11/2015</li>\r\n</ul>\r\nLịch học cụ thể được niêm yết tại Văn phòng Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn thuộc Trường Đại học Luật Huế và <strong>Web Trường, </strong>mục: Trung tâm Tư vấn pháp luật và Đào tạo ngắn hạn – Tin tức Trung tâm.\r\n\r\n<strong> 4. ĐỊA CHỈ VÀ ĐIỆN THOẠI LIÊN HỆ</strong>\r\n\r\n<strong>4.1. Địa chỉ liên hệ:</strong> Trung tâm Tư vấn Pháp luật và Đào tạo ngắn hạn (<strong>Tầng 1, Nhà Thực hành Luật</strong>)<strong>.</strong>\r\n\r\n<strong>4.2. Điện thoại liên hệ</strong><em>: </em>Thầy Thành: 0915.456.222.\r\n\r\n<strong>4.3. Học phí nộp:</strong> Cô Ngân: 0126.2626.595\r\n\r\n<span style="color: #ff0000;"><strong><em>*Lưu ý:</em></strong></span>\r\n<ul>\r\n	<li><em>Ngày khai giảng, Sinh viên K36 Luật Kinh tế (học đợt 1) đến trước 15 phút để ổn định công tác tổ chức. Sau khi khai giảng xong, học theo lịch học.  </em></li>\r\n	<li><em>Tất cả Sinh viên nộp 01 Chứng minh nhân dân photo, 01 thẻ  sinh viên photo (không cần chứng thực). Các giấy tờ trên bỏ vào một bì thư, bên ngoài ghi: họ và tên, ngày tháng năm sinh, quê quán. Lớp trưởng thu hồ sơ của lớp nộp về cho Trung tâm chậm nhất vào ngày 30/10/2015.</em></li>\r\n</ul>', 'Thông báo Về việc hỗ trợ học phí Khóa đào tạo Kỹ năng Tư vấn pháp luật cho sinh viên K36', '', 'inherit', 'closed', 'closed', '', '308-revision-v1', '', '', '2015-11-24 15:52:45', '2015-11-24 15:52:45', '', 308, 'http://wordpress.dev.com/308-revision-v1/', 0, 'revision', '', 0),
@@ -1465,12 +1468,12 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 -- Table structure for table `wp_terms`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_terms` (
-`term_id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `wp_terms` (
+  `term_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(200) NOT NULL DEFAULT '',
   `slug` varchar(200) NOT NULL DEFAULT '',
   `term_group` bigint(10) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_terms`
@@ -1507,9 +1510,9 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 -- Table structure for table `wp_term_relationships`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_term_relationships` (
-  `object_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `term_taxonomy_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_term_relationships` (
+  `object_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `term_order` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
@@ -1619,14 +1622,14 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 -- Table structure for table `wp_term_taxonomy`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_term_taxonomy` (
-`term_taxonomy_id` bigint(20) unsigned NOT NULL,
-  `term_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_term_taxonomy` (
+  `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL,
+  `term_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `taxonomy` varchar(32) NOT NULL DEFAULT '',
   `description` longtext NOT NULL,
-  `parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `parent` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `count` bigint(20) NOT NULL DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_term_taxonomy`
@@ -1663,12 +1666,12 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 -- Table structure for table `wp_usermeta`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_usermeta` (
-`umeta_id` bigint(20) unsigned NOT NULL,
-  `user_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `wp_usermeta` (
+  `umeta_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
   `meta_key` varchar(255) DEFAULT NULL,
   `meta_value` longtext
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_usermeta`
@@ -1689,8 +1692,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (12, 1, 'dismissed_wp_pointers', 'wp360_locks,wp390_widgets,wp410_dfw'),
 (13, 1, 'show_welcome_panel', '1'),
 (15, 1, 'wp_dashboard_quick_press_last_post_id', '299'),
-(16, 1, 'wp_user-settings', 'libraryContent=browse&editor=tinymce'),
-(17, 1, 'wp_user-settings-time', '1448462074'),
+(16, 1, 'wp_user-settings', 'libraryContent=browse&editor=html'),
+(17, 1, 'wp_user-settings-time', '1448790337'),
 (18, 1, 'managenav-menuscolumnshidden', 'a:3:{i:0;s:11:"css-classes";i:1;s:3:"xfn";i:2;s:11:"description";}'),
 (19, 1, 'metaboxhidden_nav-menus', 'a:3:{i:0;s:8:"add-post";i:1;s:12:"add-post_tag";i:2;s:15:"add-post_format";}'),
 (20, 1, 'nav_menu_recently_edited', '13'),
@@ -1705,7 +1708,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (25, 1, 'metaboxhidden_ebsih_hotspot', 'a:0:{}'),
 (28, 1, 'closedpostboxes_room', 'a:0:{}'),
 (29, 1, 'metaboxhidden_room', 'a:1:{i:0;s:7:"slugdiv";}'),
-(33, 1, 'session_tokens', 'a:2:{s:64:"046cd5a80fc55c51686fae3ff8cfdcfcb05850df41ed28818ca74f97927639d9";a:4:{s:10:"expiration";i:1448820607;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";s:5:"login";i:1448647807;}s:64:"816d2f02ded1c1049bf04594c710e6e615af0705098c27077d886ea2a9a9e066";a:4:{s:10:"expiration";i:1449926064;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";s:5:"login";i:1448716464;}}');
+(33, 1, 'session_tokens', 'a:3:{s:64:"046cd5a80fc55c51686fae3ff8cfdcfcb05850df41ed28818ca74f97927639d9";a:4:{s:10:"expiration";i:1448820607;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";s:5:"login";i:1448647807;}s:64:"816d2f02ded1c1049bf04594c710e6e615af0705098c27077d886ea2a9a9e066";a:4:{s:10:"expiration";i:1449926064;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:108:"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36";s:5:"login";i:1448716464;}s:64:"4d310ca3477f6ff211906da16f62dc05215fafac152e83645c9e292c508c50c5";a:4:{s:10:"expiration";i:1448961287;s:2:"ip";s:9:"127.0.0.1";s:2:"ua";s:72:"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0";s:5:"login";i:1448788487;}}');
 
 -- --------------------------------------------------------
 
@@ -1713,8 +1716,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 -- Table structure for table `wp_users`
 --
 
-CREATE TABLE IF NOT EXISTS `wp_users` (
-`ID` bigint(20) unsigned NOT NULL,
+CREATE TABLE `wp_users` (
+  `ID` bigint(20) UNSIGNED NOT NULL,
   `user_login` varchar(60) NOT NULL DEFAULT '',
   `user_pass` varchar(64) NOT NULL DEFAULT '',
   `user_nicename` varchar(50) NOT NULL DEFAULT '',
@@ -1724,7 +1727,7 @@ CREATE TABLE IF NOT EXISTS `wp_users` (
   `user_activation_key` varchar(60) NOT NULL DEFAULT '',
   `user_status` int(11) NOT NULL DEFAULT '0',
   `display_name` varchar(250) NOT NULL DEFAULT ''
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `wp_users`
@@ -1741,199 +1744,232 @@ INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_
 -- Indexes for table `pma__bookmark`
 --
 ALTER TABLE `pma__bookmark`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pma__central_columns`
 --
 ALTER TABLE `pma__central_columns`
- ADD PRIMARY KEY (`db_name`,`col_name`);
+  ADD PRIMARY KEY (`db_name`,`col_name`);
 
 --
 -- Indexes for table `pma__column_info`
 --
 ALTER TABLE `pma__column_info`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
 
 --
 -- Indexes for table `pma__designer_settings`
 --
 ALTER TABLE `pma__designer_settings`
- ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__export_templates`
 --
 ALTER TABLE `pma__export_templates`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
 
 --
 -- Indexes for table `pma__favorite`
 --
 ALTER TABLE `pma__favorite`
- ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__history`
 --
 ALTER TABLE `pma__history`
- ADD PRIMARY KEY (`id`), ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
 
 --
 -- Indexes for table `pma__navigationhiding`
 --
 ALTER TABLE `pma__navigationhiding`
- ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
+  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__pdf_pages`
 --
 ALTER TABLE `pma__pdf_pages`
- ADD PRIMARY KEY (`page_nr`), ADD KEY `db_name` (`db_name`);
+  ADD PRIMARY KEY (`page_nr`),
+  ADD KEY `db_name` (`db_name`);
 
 --
 -- Indexes for table `pma__recent`
 --
 ALTER TABLE `pma__recent`
- ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__relation`
 --
 ALTER TABLE `pma__relation`
- ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`), ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
+  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
+  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
 
 --
 -- Indexes for table `pma__savedsearches`
 --
 ALTER TABLE `pma__savedsearches`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
 
 --
 -- Indexes for table `pma__table_coords`
 --
 ALTER TABLE `pma__table_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
+  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
 
 --
 -- Indexes for table `pma__table_info`
 --
 ALTER TABLE `pma__table_info`
- ADD PRIMARY KEY (`db_name`,`table_name`);
+  ADD PRIMARY KEY (`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__table_uiprefs`
 --
 ALTER TABLE `pma__table_uiprefs`
- ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
+  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
 
 --
 -- Indexes for table `pma__tracking`
 --
 ALTER TABLE `pma__tracking`
- ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
+  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
 
 --
 -- Indexes for table `pma__userconfig`
 --
 ALTER TABLE `pma__userconfig`
- ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `pma__usergroups`
 --
 ALTER TABLE `pma__usergroups`
- ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
+  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
 
 --
 -- Indexes for table `pma__users`
 --
 ALTER TABLE `pma__users`
- ADD PRIMARY KEY (`username`,`usergroup`);
+  ADD PRIMARY KEY (`username`,`usergroup`);
 
 --
 -- Indexes for table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
- ADD PRIMARY KEY (`meta_id`), ADD KEY `comment_id` (`comment_id`), ADD KEY `meta_key` (`meta_key`(191));
+  ADD PRIMARY KEY (`meta_id`),
+  ADD KEY `comment_id` (`comment_id`),
+  ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_comments`
 --
 ALTER TABLE `wp_comments`
- ADD PRIMARY KEY (`comment_ID`), ADD KEY `comment_post_ID` (`comment_post_ID`), ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`), ADD KEY `comment_date_gmt` (`comment_date_gmt`), ADD KEY `comment_parent` (`comment_parent`), ADD KEY `comment_author_email` (`comment_author_email`(10));
+  ADD PRIMARY KEY (`comment_ID`),
+  ADD KEY `comment_post_ID` (`comment_post_ID`),
+  ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
+  ADD KEY `comment_date_gmt` (`comment_date_gmt`),
+  ADD KEY `comment_parent` (`comment_parent`),
+  ADD KEY `comment_author_email` (`comment_author_email`(10));
 
 --
 -- Indexes for table `wp_links`
 --
 ALTER TABLE `wp_links`
- ADD PRIMARY KEY (`link_id`), ADD KEY `link_visible` (`link_visible`);
+  ADD PRIMARY KEY (`link_id`),
+  ADD KEY `link_visible` (`link_visible`);
 
 --
 -- Indexes for table `wp_ngg_album`
 --
 ALTER TABLE `wp_ngg_album`
- ADD PRIMARY KEY (`id`), ADD KEY `extras_post_id_key` (`extras_post_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_ngg_gallery`
 --
 ALTER TABLE `wp_ngg_gallery`
- ADD PRIMARY KEY (`gid`), ADD KEY `extras_post_id_key` (`extras_post_id`);
+  ADD PRIMARY KEY (`gid`),
+  ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_ngg_pictures`
 --
 ALTER TABLE `wp_ngg_pictures`
- ADD PRIMARY KEY (`pid`), ADD KEY `extras_post_id_key` (`extras_post_id`);
+  ADD PRIMARY KEY (`pid`),
+  ADD KEY `extras_post_id_key` (`extras_post_id`);
 
 --
 -- Indexes for table `wp_options`
 --
 ALTER TABLE `wp_options`
- ADD PRIMARY KEY (`option_id`), ADD UNIQUE KEY `option_name` (`option_name`);
+  ADD PRIMARY KEY (`option_id`),
+  ADD UNIQUE KEY `option_name` (`option_name`);
 
 --
 -- Indexes for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
- ADD PRIMARY KEY (`meta_id`), ADD KEY `post_id` (`post_id`), ADD KEY `meta_key` (`meta_key`(191));
+  ADD PRIMARY KEY (`meta_id`),
+  ADD KEY `post_id` (`post_id`),
+  ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
- ADD PRIMARY KEY (`ID`), ADD KEY `post_name` (`post_name`(191)), ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`), ADD KEY `post_parent` (`post_parent`), ADD KEY `post_author` (`post_author`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `post_name` (`post_name`(191)),
+  ADD KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
+  ADD KEY `post_parent` (`post_parent`),
+  ADD KEY `post_author` (`post_author`);
 
 --
 -- Indexes for table `wp_terms`
 --
 ALTER TABLE `wp_terms`
- ADD PRIMARY KEY (`term_id`), ADD KEY `slug` (`slug`(191)), ADD KEY `name` (`name`(191));
+  ADD PRIMARY KEY (`term_id`),
+  ADD KEY `slug` (`slug`(191)),
+  ADD KEY `name` (`name`(191));
 
 --
 -- Indexes for table `wp_term_relationships`
 --
 ALTER TABLE `wp_term_relationships`
- ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`), ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
+  ADD PRIMARY KEY (`object_id`,`term_taxonomy_id`),
+  ADD KEY `term_taxonomy_id` (`term_taxonomy_id`);
 
 --
 -- Indexes for table `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
- ADD PRIMARY KEY (`term_taxonomy_id`), ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`), ADD KEY `taxonomy` (`taxonomy`);
+  ADD PRIMARY KEY (`term_taxonomy_id`),
+  ADD UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
+  ADD KEY `taxonomy` (`taxonomy`);
 
 --
 -- Indexes for table `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
- ADD PRIMARY KEY (`umeta_id`), ADD KEY `user_id` (`user_id`), ADD KEY `meta_key` (`meta_key`(191));
+  ADD PRIMARY KEY (`umeta_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `meta_key` (`meta_key`(191));
 
 --
 -- Indexes for table `wp_users`
 --
 ALTER TABLE `wp_users`
- ADD PRIMARY KEY (`ID`), ADD KEY `user_login_key` (`user_login`), ADD KEY `user_nicename` (`user_nicename`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `user_login_key` (`user_login`),
+  ADD KEY `user_nicename` (`user_nicename`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1943,97 +1979,97 @@ ALTER TABLE `wp_users`
 -- AUTO_INCREMENT for table `pma__bookmark`
 --
 ALTER TABLE `pma__bookmark`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__column_info`
 --
 ALTER TABLE `pma__column_info`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__export_templates`
 --
 ALTER TABLE `pma__export_templates`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__history`
 --
 ALTER TABLE `pma__history`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__pdf_pages`
 --
 ALTER TABLE `pma__pdf_pages`
-MODIFY `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `pma__savedsearches`
 --
 ALTER TABLE `pma__savedsearches`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
-MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=159;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 --
 -- AUTO_INCREMENT for table `wp_comments`
 --
 ALTER TABLE `wp_comments`
-MODIFY `comment_ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
+  MODIFY `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `wp_links`
 --
 ALTER TABLE `wp_links`
-MODIFY `link_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `link_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_ngg_album`
 --
 ALTER TABLE `wp_ngg_album`
-MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `wp_ngg_gallery`
 --
 ALTER TABLE `wp_ngg_gallery`
-MODIFY `gid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `gid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `wp_ngg_pictures`
 --
 ALTER TABLE `wp_ngg_pictures`
-MODIFY `pid` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `pid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-MODIFY `option_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2227;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2235;
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-MODIFY `meta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1219;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1221;
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=329;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=331;
 --
 -- AUTO_INCREMENT for table `wp_terms`
 --
 ALTER TABLE `wp_terms`
-MODIFY `term_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-MODIFY `term_taxonomy_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-MODIFY `umeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `wp_users`
 --
 ALTER TABLE `wp_users`
-MODIFY `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

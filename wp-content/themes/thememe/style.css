@@ -484,6 +484,7 @@ table ul{padding-left: 20px;}
 .page-template-page-reviews .review{margin: 10px 0;}
 
 .review-left{background-color: #efefef; padding-bottom: 20px; border-bottom: 2px solid #2C3E50}
+.review-left .entry {padding: 10px;}
 .review-contact{margin-top: 10px; margin-bottom: 10px; padding: 0 10px;}
 .review-contact label{float: left; font-size: 12px; margin-top: 4px; margin-right: 10px; text-transform: uppercase; font-weight: 400;}
 

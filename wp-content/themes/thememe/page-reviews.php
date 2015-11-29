@@ -34,17 +34,20 @@ get_header(); ?>
 					$contact_linkedin = get_post_meta( get_the_ID(), 'reviews_linkedin', true );
 					$contact_google_plus = get_post_meta( get_the_ID(), 'reviews_google_plus', true );
 					$contact_youtube = get_post_meta( get_the_ID(), 'reviews_youtube', true );
+					$content = get_post_meta( get_the_ID(), 'reviews_intro', true );
 					?>
 					<div class="col-sm-3">
 						<div class="review">
 							<div class="item-inner review-thumb" style="background-image:url('<?php echo $url; ?>')">
-								<img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130">				
+								<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130"></a>
 							</div>
 
 							<div class="review-body text-center">
-								<h4 class="title"><?php the_title();?></h4>
+								<h4 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
 								<div class="entry">
-									<?php the_content();?>
+									<?php //the_content();
+										echo $content;
+									?>
 								</div>
 								<?php 
 								if(!empty($contact_email)||!empty($contact_fb)||!empty($contact_linkedin)||!empty($contact_google_plus)||!empty($contact_youtube)):

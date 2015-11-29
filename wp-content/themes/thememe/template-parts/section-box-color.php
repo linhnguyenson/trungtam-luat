@@ -19,7 +19,7 @@
 <div id="new-message" class="box-color box-purple">
 	<div class="box-header">
 		<span><i class="fa fa-bell"></i></span>
-		<h4>THÔNG BÁO MỚI</h4>
+		<h4>TIN THỨC SỰ KIỆN</h4>
 	</div>
 	<div class="box-body has-slider">
 		<?php echo do_shortcode('[catlist id=25 numberposts=5]');?>
