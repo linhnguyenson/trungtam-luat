@@ -116,7 +116,7 @@ hr {border-top-color:  #dedede;}
 /*--------------------------------------------------------------
 ## Carousel
 --------------------------------------------------------------*/
-.carousel-control{color: #F22613; opacity: 1; text-shadow: none;}
+.carousel-control{color: #F22613; opacity: 1; text-shadow: none; filter:none !important;}
 .carousel-control:hover, .carousel-control:focus, .carousel-control:active{color: #F22613; text-shadow: 1px 0 2px rgba(0,0,0,0.5); }
 .carousel-control.left, .carousel-control.right{background-image: none;}
 .carousel-indicators li{border: none; background-color: rgba(226,226,226,0.75);}
@@ -156,7 +156,7 @@ hr {border-top-color:  #dedede;}
 /*--------------------------------------------------------------
 ## bxslider
 --------------------------------------------------------------*/
-.bx-wrapper .bx-viewport{background-color: transparent; box-shadow: none; border: none; left: 0;}
+.bx-wrapper .bx-viewport{background-color: transparent !important; box-shadow: none !important; border: none !important; left: 0 !important;}
 .bx-wrapper .bx-pager.bx-default-pager a{background-color: rgba(226,226,226,0.75);}
 .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{background-color: #F22613;}
 
@@ -164,6 +164,7 @@ hr {border-top-color:  #dedede;}
 /*--------------------------------------------------------------
 ## select
 --------------------------------------------------------------*/
+.bootstrap-select{width: 100% !important;}
 .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){width: 100%;}
 
 

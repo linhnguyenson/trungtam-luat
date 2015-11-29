@@ -144,7 +144,21 @@ function thememe_scripts() {
 
 	wp_enqueue_style( 'thememe-css-bxslider', get_template_directory_uri() . '/skins/bxslider/jquery.bxslider.css','4.1.2', false );
 
+	//HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+	wp_enqueue_script( 'thememe-js-html5', 'https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js', array(), '20151010' );
+	wp_script_add_data( 'thememe-js-html5', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'thememe-js-respond', 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js', array(), '20151010' );
+	wp_script_add_data( 'thememe-js-respond', 'conditional', 'lt IE 9' );
+
 	wp_enqueue_style( 'thememe-style', get_stylesheet_uri() );
+
+
+	wp_enqueue_style( 'thememe-css-ie', get_template_directory_uri() . '/skins/css/ie.css', array( 'thememe-style' ), '20151010' );
+	wp_style_add_data( 'thememe-css-ie', 'conditional', 'lt IE 11' );
+
+
+	
 
 	wp_enqueue_script( 'thememe-js-bootstrap', get_template_directory_uri() . '/skins/js/bootstrap.min.js', array(), '3.3.5', true );
 

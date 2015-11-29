@@ -17,7 +17,7 @@ get_header(); ?>
 	<div class="row-sm-expand">
 		<div class="row row-sm-height">
 			<div class="col-sm-9 col-sm-height col-sm-top">
-				<div class="inside-full-height box-content">
+				<div class="box-content">
 				<?php echo get_template_part( 'template-parts/section', 'slider' ); ?>
 				</div>
 			</div>

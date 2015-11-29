@@ -98,6 +98,10 @@
 		    easing: 'ease-in',
   		});
 
+
+		$('article table').wrapAll('<div class="table-responsive"></div>');
+		$('article table').addClass("table table-bordered");
+
 		$( "#other-links" ).change(function() {
 		 	var url=($(this).val());
 		 	if(url!='none') window.open($(this).val(), "_blank");

@@ -1,0 +1,5 @@
+.list-social li.social-email a{bottom: auto; top: -3px;}
+#carousel-slider .carousel-caption .caption-title{background: url(../img/ie-slider-top.png) repeat-x bottom;}
+#carousel-slider .carousel-caption .caption-des{background: url(../img/ie-slider-bottom.png) repeat center;}
+.gallery-item .gallery-info{background: url(../img/ie-slider-bottom.png) repeat center; border-top: 2px solid #F22613;}
+iframe body{background-color: transparent;}
