@@ -4,7 +4,7 @@
 	if(!empty($links_data)){ ?>
 
 		<select id="other-links" class="selectpicker" data-style="btn-success">
-			<option value="none">Đơn vị trực thuộc</option>
+			<option value="none">Liên kết Website</option>
 			<?php foreach ($links_data as $key => $value) {
 			?>
 			<option value="<?php echo $value['url']?>"><?php echo $value['title']; ?></option>

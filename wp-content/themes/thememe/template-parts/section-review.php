@@ -88,7 +88,7 @@
 				</div>
 			</div>
 			<div class="col-xs-6 text-right">
-				<a class="readmore" href="/giang-vien-tu-van-vien/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
+				<a class="readmore" href="<?php echo get_permalink( get_page_by_path( 'giang-vien-tu-van-vien' ) ); ?>"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
 			</div>
 		</div>
 	</div>
