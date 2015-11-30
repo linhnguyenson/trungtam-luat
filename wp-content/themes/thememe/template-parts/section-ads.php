@@ -28,7 +28,7 @@
 				if(empty($value['embed_code'])){
 			?>
 
-				<a href="<?php echo $value['link']?>" title="<?php $value['title']?>" target="_blank"><img src="<?php echo $value['ads_image']?>"></a>
+				<a href="<?php echo $value['link']?>" title="<?php $value['title']?>" target="_blank"><img class="img-responsive" src="<?php echo $value['ads_image']?>"></a>
 				
 				<?php }else{ ?>
 

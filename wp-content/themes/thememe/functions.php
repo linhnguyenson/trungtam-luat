@@ -161,7 +161,7 @@ function thememe_scripts() {
 
 
 	wp_enqueue_style( 'thememe-css-ie', get_template_directory_uri() . '/skins/css/ie.css', array( 'thememe-style' ), '20151010' );
-	wp_style_add_data( 'thememe-css-ie', 'conditional', 'lt IE 11' );
+	wp_style_add_data( 'thememe-css-ie', 'conditional', 'lt IE 9' );
 
 
 	
