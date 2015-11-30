@@ -109,9 +109,9 @@ function thememe_widgets_init() {
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s box-content">',
-		'after_widget'  => '</div></aside>',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<div class="box-content-header"><h2 class="widget-title heading-title">',
-		'after_title'   => '</h2></div><div class="box-content-body">',
+		'after_title'   => '</h2></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'thememe' ),
@@ -122,6 +122,12 @@ function thememe_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+
+	function widget_content_wrap($content) {
+		$content = '<div class="box-content-body">'.$content.'</div>';
+		return $content;
+	}
+	add_filter('widget_text', 'widget_content_wrap');
 }
 add_action( 'widgets_init', 'thememe_widgets_init' );
 
