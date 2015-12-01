@@ -106,9 +106,7 @@ function breadcrumbs() {
 				the_category(' &bull; ');
 				echo '</li>';
 			}
-			echo '<li class="active">';
-			the_title();
-			echo '</li>';
+			
         } elseif (is_page()) {
             echo '<li class="active">';
             echo the_title();
@@ -200,3 +198,8 @@ function wpbeginner_numeric_posts_nav() {
 	echo '</ul></nav>' . "\n";
 
 }
+
+function new_excerpt_more( $more ) {
+	return ' <a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Xem thêm', 'your-text-domain' ) . '</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
