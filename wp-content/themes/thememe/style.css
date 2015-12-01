@@ -466,7 +466,7 @@ table ul{padding-left: 20px;}
 .cat-group .lcp_catlist:first-child li img{position: absolute; width: 120px; height: auto; left: 0; top: 0;}
 .cat-group .lcp_catlist:first-child li{color: #999;font-style: italic;font-size: 11px;}
 .cat-group .lcp_catlist:first-child li .lcp_excerpt{color: #333; font-style: normal; font-size: 13px;}
-.cat-group .lcp_catlist:first-child li .lcp_post{font-size: 16px; font-weight: 700; display: block; font-style: normal;}
+.cat-group .lcp_catlist:first-child li .lcp_post{font-size: 14px; font-weight: 700; display: block; font-style: normal; line-height: 1.42857143;}
 .cat-group .lcp_catlist:last-child li{position: relative; padding-left: 12px;}
 .cat-group .lcp_catlist:last-child li:before{position: absolute; content: "\f04b"; font-family: 'FontAwesome'; color: #999; left: 0; top: 6px; font-size: 6px;}
 .cat-group .lcp_catlist:last-child a{display: block; font-weight: 700;}
