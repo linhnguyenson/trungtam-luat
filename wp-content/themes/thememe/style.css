@@ -53,6 +53,7 @@ p,
 h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,strong,.strong,b,.b{font-weight: 600;}
 .text-brand-primary { color: #41218e; }
 hr {border-top-color:  #dedede;}
+a{color: #222;}
 
 /*--------------------------------------------------------------
 # Helper Class
