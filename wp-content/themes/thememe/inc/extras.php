@@ -106,9 +106,7 @@ function breadcrumbs() {
 				the_category(' &bull; ');
 				echo '</li>';
 			}
-			echo '<li class="active">';
-			the_title();
-			echo '</li>';
+			
         } elseif (is_page()) {
             echo '<li class="active">';
             echo the_title();

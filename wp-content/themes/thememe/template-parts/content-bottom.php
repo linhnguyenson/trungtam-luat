@@ -26,7 +26,7 @@ $post_type=get_post_type( get_the_ID() );
 if($post_type=='post'){
 ?>
 <div class="related-posts">
-	<h3>Related posts</h3>
+	<h3>Bài viết liên quan</h3>
 	
 		<div class="row">
 		<?php
@@ -34,7 +34,7 @@ if($post_type=='post'){
 		    global $post;
 		    $tags = wp_get_post_tags($post->ID);
 		   	$count=4;
-		   	$i=1;
+		   
 		    if ($tags) {
 			    $tag_ids = array();
 			    foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
@@ -53,23 +53,14 @@ if($post_type=='post'){
 				    $my_query->the_post();
 
 				    ?>
-				 	<div class="col-sm-6">
+				 	<div class="col-sm-12">
 					    <div class="post-block">
-					        <div class="row">
-					        	<div class="col-xs-5">
-					        		<a href="<?php the_permalink()?>"><?php the_post_thumbnail('thumb-post'); ?></a>
-					        	</div>
-					        	<div class="col-xs-7">
-					        		<h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
-					        		<span class="meta"><i class="fa fa-clock-o"></i> <?php the_time('M j, Y') ?></span>
-					        	</div>
-					        </div>
+					        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
+					        <p><span class="meta"><i class="fa fa-clock-o"></i> <?php the_time('M j, Y') ?></span></p>
 					    </div>
 					</div>
-					<?php if($i%2==0):?>
-					</div>
-					<div class="row">
-					<?php endif; $i++;?>
+					
+					
 
 				     
 			    <?php }
@@ -95,27 +86,20 @@ if($post_type=='post'){
 				
 				
 				while( $my_query->have_posts() ) {
-				$my_query->the_post();?>
+				    $my_query->the_post();
 
-					<div class="col-sm-6">
+				    ?>
+				 	<div class="col-sm-12">
 					    <div class="post-block">
-					        <div class="row">
-					        	<div class="col-xs-5">
-					        		<a href="<?php the_permalink()?>"><?php the_post_thumbnail('thumb-post'); ?></a>
-					        	</div>
-					        	<div class="col-xs-7">
-					        		<h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
-					        		<span class="meta"><i class="fa fa-clock-o"></i> <?php the_time('M j, Y') ?></span>
-					        	</div>
-					        </div>
+					        <h4><a href="<?php the_permalink()?>"><?php the_title(); ?></a></h4>
+					        <p><span class="meta"><i class="fa fa-clock-o"></i> <?php the_time('M j, Y') ?></span></p>
 					    </div>
 					</div>
-					<?php if($i%2==0):?>
-					</div>
-					<div class="row">
-					<?php endif; $i++;?>
+					
+					
 
-				<?php }
+				     
+			    <?php }
 
 				$post = $orig_post;
 		    	wp_reset_query();
