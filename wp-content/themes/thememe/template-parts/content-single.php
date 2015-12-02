@@ -20,7 +20,7 @@
 	<?php echo do_shortcode('[ssba]' );?>
 	<div class="entry-content">
 
-		<?php the_post_thumbnail('thumb-full');?>
+		
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

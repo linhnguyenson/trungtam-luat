@@ -426,6 +426,8 @@ box-shadow: 0 0 3px 1px rgba(0,0,0,0.4);}
 .more-link:hover, .more-link:focus, .more-link:active{color: #2C3E50;}
 
 .entry-content{margin-top: 20px;}
+.entry-content img{max-width: 100%}
+
 .single .entry-content ul li{margin-bottom: 10px; font-family: 'Noto Serif', serif;}
 
 .posts > article{margin-bottom: 30px;}
