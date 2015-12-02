@@ -403,7 +403,8 @@ box-shadow: 0 0 3px 1px rgba(0,0,0,0.4);}
 .breadcrumb>li+li:before{content: "\f105"; font-family: "FontAwesome"; font-weight: normal; font-size: 16px; position: relative; bottom: -1px;}
 .entry-title{font-weight: 600; margin-top: 0; /* text-transform: uppercase; */ font-size: 24px; line-height: 1.4}
 .archive .entry-title, .search .entry-title, .category .entry-title{font-size: 16px;}
-.entry-meta{color: #999; padding: 10px 0 12px; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1); font-size: 11px; text-transform: uppercase; color: #888; margin-top: 20px;}
+.entry-meta{color: #999;  font-size: 11px; text-transform: uppercase; color: #888;}
+.single .entry-meta{padding: 10px 0 12px; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(0, 0, 0, 0.1); margin-top: 20px;}
 .entry-meta i{font-size: 16px; position: relative; bottom: -1px;}
 .entry-meta > span{display: inline-block; margin-right: 10px;}
 .cat-links ul{list-style: none; margin: 0; padding: 0;}
@@ -430,7 +431,7 @@ box-shadow: 0 0 3px 1px rgba(0,0,0,0.4);}
 
 .single .entry-content ul li{margin-bottom: 10px; font-family: 'Noto Serif', serif;}
 
-.posts > article{margin-bottom: 30px;}
+
 .wp-post-image{margin-bottom: 20px;}
 
 .post-nav{
