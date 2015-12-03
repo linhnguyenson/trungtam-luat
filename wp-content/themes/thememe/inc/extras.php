@@ -88,10 +88,14 @@ function breadcrumbs() {
 				
 				switch ($post_type) {
 					case 'calendar':
-						echo '<li><a href="/khoa-hoc">Khóa học</a></li>';
+						echo '<li><a href="/dtnh/khoa-hoc">Khóa học</a></li>';
 						break;
 					case 'gallery':
-						echo '<li><a href="/hinh-anh-hoat-dong/">Hình ảnh hoạt động</a></li>';
+						echo '<li><a href="/dtnh/hinh-anh-hoat-dong/">Hình ảnh hoạt động</a></li>';
+						break;
+
+					case 'reviews':
+						echo '<li><a href="/dtnh/giang-vien-tu-van-vien/">Giảng viên-Tư vấn viên</a></li>';
 						break;
 
 					default:

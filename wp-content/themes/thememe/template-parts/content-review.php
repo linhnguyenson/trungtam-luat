@@ -10,7 +10,8 @@
 ?>
 
 <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-	$url = $thumb['0']; 
+	$url = $thumb['0'];
+	$contact_phone = get_post_meta( get_the_ID(), 'reviews_phone', true );
 	$contact_email = get_post_meta( get_the_ID(), 'reviews_email', true );
 	$contact_fb = get_post_meta( get_the_ID(), 'reviews_fb', true );
 	$contact_linkedin = get_post_meta( get_the_ID(), 'reviews_linkedin', true );
@@ -21,6 +22,7 @@
 	$contact = '';
 	if(!empty($contact_email)||!empty($contact_fb)||!empty($contact_linkedin)||!empty($contact_google_plus)||!empty($contact_youtube)):
 		$contact.= '<ul class="list-inline list-social">';
+			if(!empty($contact_phone)) $contact.= '<li><a href="tel:'.$contact_phone.'"><i class="fa fa-phone-square"></i></a></li>';
 			if(!empty($contact_email)) $contact.= '<li class="social-email"><a href="mailto:'.$contact_email.'"><i class="fa fa-envelope"></i></a></li>';
 			if(!empty($contact_fb)) $contact.= '<li><a href="'.$contact_fb.'" target="_blank"><i class="fa fa-facebook-square"></i></a></li>';
 			if(!empty($contact_linkedin)) $contact.= '<li><a href="'.$contact_linkedin.'" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>';
