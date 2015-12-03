@@ -44,14 +44,15 @@
 			<div class="col-sm-4">
 				<div class="review-left">
 					<div class="review-thumb" style="background-image:url('<?php echo $url; ?>')">
-						<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="130" height="130"></a>						
-					</div>
-					<div class="review-contact">
-						<label>Liên hệ</label><?php echo $contact;?>
+						<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="100%" height="100%"></a>						
 					</div>
 					<div class="entry">
 					<p> <?php echo $content; ?> </p>
 					</div>
+					<div class="review-contact">
+						<label>Liên hệ</label><?php echo $contact;?>
+					</div>
+					
 				</div>
 			</div>
 			<div class="col-sm-8">

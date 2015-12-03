@@ -484,15 +484,16 @@ table ul{padding-left: 20px;}
 .list-post li a{display: block; font-weight: 600;}
 .list-post li span.post-date{color: #999; font-style: italic; font-size: 11px; display: block; margin: 5px 0 10px;}
 
+.review-thumb{background-position: center; background-size: cover; }
+.review .review-thumb{width: 130px; height: 130px; border-radius: 50%; margin: 0 auto; }
 
-.review .review-thumb{width: 130px; height: 130px; border-radius: 50%; margin: 0 auto; background-position: center; background-size: cover;}
 .review .review-body .title{font-size: 16px; color: #333;}
-.review .review-body .entry{color: #999; padding: 10px 10px 0; position: relative;}
-.review .review-body .entry:before{content: "\f10d"; font-family: 'FontAwesome'; position: absolute; font-size: 20px; color: #eee; top: -10px; left: 0}
+.review .review-body .entry{position: relative; margin-bottom: 15px; padding-bottom: 15px;}
+.review .review-body .entry:before{content: ""; position: absolute; width: 20px; height: 4px; background-color: #efefef; bottom: 0; left: 50%; margin-left: -10px; }
 .page-template-page-reviews .review{margin: 10px 0;}
 
 .review-left{background-color: #efefef; padding-bottom: 20px; border-bottom: 2px solid #2C3E50}
-.review-left .entry {padding: 10px;}
+.review-left .entry {padding: 10px 10px 0;}
 .review-contact{margin-top: 10px; margin-bottom: 10px; padding: 0 10px;}
 .review-contact label{float: left; font-size: 12px; margin-top: 4px; margin-right: 10px; text-transform: uppercase; font-weight: 400;}
 

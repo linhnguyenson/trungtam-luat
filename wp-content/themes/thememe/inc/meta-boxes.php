@@ -33,10 +33,16 @@ function _custom_meta_boxes() {
           'id'          => 'reviews_intro',
           'label'       => __( 'Giới thiệu vắn tắt', 'thememe' ),
           'type'        => 'textarea',
+          'rows'        =>2,
         ),
         array(
           'id'          => 'reviews_email',
           'label'       => __( 'Email', 'thememe' ),
+          'type'        => 'text',
+        ),
+        array(
+          'id'          => 'reviews_phone',
+          'label'       => __( 'Phone', 'thememe' ),
           'type'        => 'text',
         ),
         array(
