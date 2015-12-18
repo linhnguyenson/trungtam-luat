@@ -43,7 +43,7 @@
 	
 	<div class="entry-content">
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-3">
 				<div class="review-left">
 					<div class="review-thumb" style="background-image:url('<?php echo $url; ?>')">
 						<a href="<?php the_permalink();?>"><img class="img-circle" src="<?php echo get_template_directory_uri();?>/skins/img/thumb-1x1.png" width="100%" height="100%"></a>						
@@ -57,7 +57,7 @@
 					
 				</div>
 			</div>
-			<div class="col-sm-8">
+			<div class="col-sm-9">
 				<?php the_content() ;?>
 			</div>
 		</div>

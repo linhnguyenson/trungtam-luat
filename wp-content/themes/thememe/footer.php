@@ -99,7 +99,7 @@
   		});
 
 
-		$('article table').wrapAll('<div class="table-responsive"></div>');
+		$('article table').wrap('<div class="table-responsive"></div>');
 		$('article table').addClass("table table-bordered");
 
 		$( "#other-links" ).change(function() {
