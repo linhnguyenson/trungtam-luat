@@ -29,8 +29,8 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6">
 						<ul class="list-inline list-icon-item">
-							<li><span><i class="fa fa-phone-square"></i></span><a href="tel:054 322 111"> 054 322 111</a></li>
-							<li><span><i class="fa fa-envelope"></i></span><a href="mailto:"> contact@hlu.edu.vn</a></li>
+							<li><span><i class="fa fa-phone-square"></i></span><a href="tel:0543946993"> 0543. 946993</a></li>
+							<li><span><i class="fa fa-envelope"></i></span><a href="mailto:daotaonganhanluathue@gmail.com"> daotaonganhanluathue@gmail.com</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-sm-6">

@@ -102,7 +102,7 @@
 				</div>
 			</div>
 			<div class="col-xs-6 text-right">
-				<a class="readmore" href="/hinh-anh-hoat-dong/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
+				<a class="readmore" href="<?php echo esc_url( home_url( '/' ) ); ?>/hinh-anh-hoat-dong/"><span><i class="fa fa-bars"></i></span> Xem tất cả</a>
 			</div>
 		</div>
 	</div>
