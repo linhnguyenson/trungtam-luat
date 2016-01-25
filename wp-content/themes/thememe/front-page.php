@@ -22,7 +22,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="col-sm-3 col-sm-height col-sm-top">
-				<?php echo get_template_part( 'template-parts/section', 'box-color' ); ?>
+				<?php echo get_template_part( 'template-parts/section', 'recents' ); ?>
 			</div>
 		</div>
 	</div>
